@@ -68,6 +68,10 @@ login_signup_page.addEventListener("click",(event)=>{
     // account_div.append(account_p_tag,account_link);
     // login_div.append(account_div)
 })
+// let login_signup_page = document.querySelector("#login-signup-btn");
+// login_signup_page.addEventListener("click",()=>{
+//     alert("login-signup page clicked");
+// })
 
 //------------------------------- search --------------------------------------
 
