@@ -45,9 +45,28 @@ explore_critique_collections.addEventListener("click",()=>{
 
 //-------------------------------- login/signup page ----------------------------------
 
+let login_div = document.querySelector(".home-page-login-signup-btn");
+let change_account = document.querySelector(".home-page-account-creation");
+console.log(change_account);
+
+
 let login_signup_page = document.querySelector("#login-signup-btn");
-login_signup_page.addEventListener("click",()=>{
-    alert("login-signup page clicked");
+
+login_signup_page.addEventListener("click",(event)=>{
+    event.preventDefault();
+    console.log("hello");
+    alert("signup successfully")
+    // let account_div = document.createElement("div")
+    // account_div.className = "account_div";
+
+    // let account_link = document.createElement("span")
+    // account_link =`<i class="fa-regular fa-circle-user account_creation"></i>`
+    // let account_p_tag = document.createElement("p")
+
+    // login_div.innerHTML = `<i class="fa-regular fa-circle-user account_creation"></i>`
+    // account_p_tag.innerText = "Account";
+    // account_div.append(account_p_tag,account_link);
+    // login_div.append(account_div)
 })
 
 //------------------------------- search --------------------------------------
@@ -88,3 +107,5 @@ login_signup_page.addEventListener("click",()=>{
 //     }
 
 // })
+
+
