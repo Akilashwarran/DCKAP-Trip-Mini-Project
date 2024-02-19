@@ -45,10 +45,10 @@ explore_critique_collections.addEventListener("click",()=>{
 
 //-------------------------------- login/signup page ----------------------------------
 
-let login_signup_page = document.querySelector("#login-signup-btn");
-login_signup_page.addEventListener("click",()=>{
-    alert("login-signup page clicked");
-})
+// let login_signup_page = document.querySelector("#login-signup-btn");
+// login_signup_page.addEventListener("click",()=>{
+//     alert("login-signup page clicked");
+// })
 
 //------------------------------- search --------------------------------------
 
