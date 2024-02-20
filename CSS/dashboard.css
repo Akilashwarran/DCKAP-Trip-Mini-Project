@@ -146,48 +146,6 @@ li{
     position: absolute;
   }
 
-  /* #home-page-quotes {
-    width: 90%;
-    height: 20em;
-    position: absolute;
-    top: 30%;
-    left: 3%;
-    color: white;
-    transition: 3s;
-    font-size: xxx-large;
-} */
-
-.home-page-adds{
-  width: 50%;
-  height: 50vh;
-  background-color: rgb(243, 243, 243);
-  position: absolute;
-  top: 25%;
-  right: 4%;
-  border-radius: 20px;
-}
-
-.home-page-adds{
-  display: flex;
-  gap: 3%;
-}
-
-#home-page-add-img{
-  width: 50%;
-  height: 250px;
-  margin-top: 8%;
-  margin-left: 4%;
-}
-
-.adds-content{
-  width: 50%;
-  margin-top: 5%;
-}
-
-#home-page-add-content{
-  width: 90%;
-}
-
 #search-icon{
   position: absolute;
   right: 20%;
