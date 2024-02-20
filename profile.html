@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Caveat&family=Inter:wght@100;200;300;400&family=Montserrat:wght@100;700&family=Open+Sans&family=Pacifico&family=Preahvihear&family=Rethink+Sans&family=Roboto&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="CSS/profile.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="leftContainer">
+            <h3>User Profile Management</h3>
+            <div class="management">
+                <div class="Personal-info"><span><i class="fa-solid fa-magnifying-glass"></i></span>Personal Info</div>
+                <div class="List-of-Favorites"><span><i class="fa-regular fa-heart"></i></span>List of Favorites</div>
+                <div class="Travel-history"><span><i class="fa-solid fa-clock-rotate-left"></i></span>Travel History</div>
+                <div class="backTohome"><span><i class="fa-solid fa-arrow-left"></i></span>Back To Home</div>
+                <div class="Log-out"><span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>Log Out</div>
+
+            </div>
+        </div>
+        <div class="rightContainer">
+            <div class="profile-details">
+                <div class="head">
+                    <h2>Profile Info</h2>
+                    <button class="btn">Edit</button>
+                </div>
+                
+                <div class="image">
+                    <img class="ProfileImg" src="Assets/gray-user-profile-icon-png-fP8Q1P.png" alt="">
+                    <label class="proImgicon" for="input-file"><i class="fa-solid fa-camera"></i></label>
+                    <input type="file" accept="image/jpeg, image/png, image/JPG" id="input-file" >
+                </div>
+
+                <div class="defaultShow-detials">
+                    <ul class="default-detials">
+                        <li>
+                            <label class="keyname" style="font-weight: bold;;" for="">Name :</label>
+                            <div class="filed-con">default name</div>
+                        </li>
+                        <li>
+                            <label class="keyname" style="font-weight: bold;;" for="">Email :</label>
+                            <div class="filed-con">default email</div>
+                        </li>
+                        <li>
+                            <label class="keyname" style="font-weight: bold;;" for="">Phone Number :</label>
+                            <div class="filed-con">1234567890</div>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <form action="a" class="form" id="profileform">
+                <div class="details">
+                    <div>
+                        <p style="font-size: 16px;">Name</p>
+                        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div>
+                        <p style="font-size: 16px;">Email</p>
+                        <input type="email" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                </div>
+                <div class="details">
+                    <div>
+                        <p style="font-size: 16px;">Phone Number</p>
+                        <input type="number" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div>
+                        <p style="font-size: 16px;">Username</p>
+                        <input type="text" name="username" id="username" placeholder="Enter your username">
+                    </div>
+                </div>
+                <div class="details">
+                    <div>
+                        <p style="font-size: 16px;">Password</p>
+                        <input type="password" name="password" id="password" placeholder="Enter your password">
+                    </div>
+                    <div>
+                        <p style="font-size: 16px;">Confirm Password</p>
+                        <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm your password">
+                    </div>
+                </div>
+            </form>
+
+            </div>
+        </div>
+        <div class="add-favorite">
+            <div class="b">
+                <h3>Add Favorite</h3>
+                <button class="addFavorite">+ Add Favorite</button>
+            </div>
+            <div>You have 0 Favorites</div>
+        </div>
+        <div class="travelHistory">
+            <div class="a">
+                <h3>Travel History</h3>
+                <button class="addTravel">+ Add Travel</button>
+            </div>
+            <div>You have 0 Travels</div>
+        </div>
+    </div>
+    <script src="JS/profile.js"></script>
+</body>
+</html>
