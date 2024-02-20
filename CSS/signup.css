@@ -33,23 +33,25 @@
     display: none;
   
   }
-   .container img{
-    width: 89%;
+
+  .container img {
+    width: 35%;
     height: 531px;
     position: relative;
-    /* right: 0px; */
+    left: 14%;
+    top: 141%;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
+}
 
-  }
-  .wrapper{
+.wrapper {
     overflow: hidden;
-    max-width: 390px;
-    padding: 30px;
+    max-width: 415px;
+    padding: 36px;
     position: relative;
-    right: 54px;
-  
-  }
+    left: 24%;
+}
+
   .wrapper .title-text{
     display: flex;
     width: 200%;

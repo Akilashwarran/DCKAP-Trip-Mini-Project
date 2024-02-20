@@ -1,5 +1,5 @@
 body{
-  /* max-width: 2000; */
+   max-width: 1440px;
     width: 100%;
     margin: 0;
     height: 100vh;
@@ -8,6 +8,7 @@ body{
 .home-page-main-container {
   height: 108.5%;
   transition: 1s;
+  margin: 0;
 } 
 
 *{
@@ -17,10 +18,21 @@ body{
 
 /*--------------------------- navbar -------------------------------- */
 
-img{
-    width: 100%;
-    background-position: center;
-    background-size: cover;
+.container{
+  margin: 0;
+  width: 100%;
+  z-index: 1;
+  height: 60px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0%;
+  position: fixed;
+}
+#home-page-image {
+  /* width: 100%; */
+  /* background-position: center; */
+  background-size: cover;
+
 }
 
 #search {
@@ -28,50 +40,51 @@ img{
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  margin-top: 1%;
   margin-left: auto;
   height: 30px;
+  background-color: #ebebeb;
 }
 
 #search:focus {
   outline: 2px solid #F9896B;
 }
 
-#logo-white{
-    width: 12%;
-    height: 35px;
-    position: absolute;
-    top: 2%;
-    left: 1%;
-    /* filter: brightness(0) invert(1); */
+#logo-white {
+  width: 10%;
+  height: 35px;
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  /* filter: brightness(0) invert(1); */
 }
 
 li{
     list-style: none;
 }
 
-.home-page-navbar> ul{
-    width: 50%;
-    display: flex;
-    gap: 7%;
-    position: absolute;
-    top: 2%;
-    left: 33%;
-    color: white;
-    cursor: pointer;
+.home-page-navbar> ul {
+  width: 50%;
+  display: flex;
+  gap: 7%;
+  position: absolute;
+  /* top: 0%; */
+  left: 33%;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
 }
 
-#login-signup-btn{
-    position: absolute;
-    top: 3%;
-    right: 2%;
-    width: 10%;
-    height: 30px;
-    background-color: #F9896B;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
+#login-signup-btn {
+  position: absolute;
+  top: 26%;
+  right: 2%;
+  width: 10%;
+  height: 30px;
+  background-color: #F9896B;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #login-signup-btn:hover{
@@ -93,20 +106,20 @@ li{
     height : 4px;
     background-color: #F9896B;
     position : absolute;
-    left : -30px;
-    bottom : -1px;
+    left : 1%;
+    bottom : 0px;
     transition : .8s;
   }
 
   .menu2::after{
     position : absolute;
-    left : 90px;
-    bottom : -1px;
+    left : 18%;
+    /* bottom : -1px; */
   }
 
   .menu3::after{
     position : absolute;
-    left : 205px;
+    left : 36%;
     bottom : -1px;
   }
    
@@ -133,16 +146,42 @@ li{
     position: absolute;
   }
 
-#home-page-quotes{
-  width: 40%;
-  position: absolute;
-  top: 30%;
-  left: 3%;
-  color: white;
-  line-height: 30px;
-  transform-style: initial;
-  transition: 3s;
+  #home-page-quotes {
+    width: 90%;
+    height: 20em;
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    color: white;
+    /* transform-style: initial; */
+    transition: 3s;
+    font-size: xxx-large;
+/*   
+  background-color: #CA4246;
+   background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+
+    animation: rainbow-text-simple-animation-rev 0.75s ease forwards; */
+
 }
+
+
+
+
 
 .home-page-adds{
   width: 50%;
@@ -186,6 +225,10 @@ input::placeholder{
   padding-left: 10px;
 }
 
+#home-page-tagline{
+  margin-left: 20%;
+}
+
 .account_div{
   display: flex;
 }
@@ -202,9 +245,10 @@ input::placeholder{
   height: 400px;
   width: 74%;
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background-color: #D9D9D9;
+  /* background-color: #D9D9D9; */
   position: absolute;
   right: 0;
+  /* background-color: #ffefeb */
 }
 
 .templates-description {
@@ -217,17 +261,19 @@ input::placeholder{
 
 #templates-module-name{
   position: absolute;
-  left: 13%;
-  top: 125%;
-  color: white;
+  right: 41%;
+  top: 113%;
+  color: #f57552;
 }
 
-#templates-description-content{
+#templates-description-content {
   width: 50%;
   position: absolute;
   right: 3%;
-  top: 115%;
-  line-height: 32px;
+  top: 122%;
+  line-height: 45px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 #templates-btn {
@@ -248,17 +294,16 @@ input::placeholder{
 }
 
 #template-image{
-  height: 670px;
-  transform: rotateX('angle');
+  height: 400px;
 }
 
 /*------------------------- planner-menu ------------------------------- */
 
 .planner-module {
   height: 400px;
-  width: 70%;
+  width: 48%;
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background-color: #9A9A9A;
+  background-color: #cecece;
   position: absolute;
   right: 0;
 }
@@ -267,7 +312,7 @@ input::placeholder{
   height: 400px;
   width: 75%;
   clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
-  background-color: #ffffff;
+  /* background-color:#ffefeb */
   
 }
 
@@ -277,18 +322,22 @@ input::placeholder{
 }
 
   #planner-module-name {
+    width: 90%;
     position: absolute;
-    right: 12%;
-    top: 197%;
+    left: 4%;
+    top: 175%;
+    color: #f57552;
 }
 
 
 #planner-description-content {
   width: 50%;
   position: absolute;
-  left: 6%;
-  top: 176%;
-  line-height: 32px;
+  left: 4%;
+  top: 185%;
+  line-height: 45px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 #planner-btn {
@@ -308,6 +357,10 @@ input::placeholder{
   background-color: #DB765B;
 }
 
+#planner-image{
+
+  height: 400px;
+}
 
 /*------------------------- Critique-collections-menu -------------------------------- */
 
@@ -315,7 +368,6 @@ input::placeholder{
   height: 400px;
   width: 70%;
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background-color:#D9D9D9;
   position: absolute;
   right: 0;
 }
@@ -325,7 +377,7 @@ input::placeholder{
   width: 46%;
   clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
   background-color: #9A9A9A;
-  
+ 
 }
 
 .Critique-collections{
@@ -335,16 +387,19 @@ input::placeholder{
 
 #Critique-collections-module-name {
   position: absolute;
-  left: 8%;
-  top: 249%;
+  right: 30%;
+  top: 235%;
+  color: #f57552;
 }
 
 #Critique-collections-description-content {
   width: 50%;
   position: absolute;
   right: 3%;
-  top: 236%;
-  line-height: 32px;
+  top: 243%;
+  line-height: 45px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 #Critique-collections-btn {
@@ -364,6 +419,9 @@ input::placeholder{
   background-color: #DB765B;
 }
 
+#Critique-collections-img{
+  height: 400px;
+}
 /* ----------------------------------- Review ----------------------------------- */
 
 .Review_mainContainer {
@@ -375,7 +433,8 @@ input::placeholder{
   color: rgb(2, 2, 2);
   text-align: center;
   position: relative;
-  top: 40px;
+  top: 10%;
+  color: #f57552;
 }
 
 
