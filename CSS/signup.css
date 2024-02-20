@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* transition: 2s;  */
   }
   html,body{
     /* display: grid; */
@@ -14,30 +15,32 @@
   
   .main_container {
     display: none;
-      width: 72%;
-      height: 89%;
-      background-color: rgb(255, 255, 255);
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-      border-radius: 12px;
-      position: relative; 
-      justify-content: center;
-      display: flex;
-      flex-direction: row;
-       top: 40px;
-        position: absolute;
-       right: 185px;
+    width: 72%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 12px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    top: 85px;
+    position: absolute;
+    right: 185px;
+    transition: 2s;
   }
   .overlap {
     display: none;
+  
   }
    .container img{
-        width: 89%;
-      height: 538px;
-      position: relative;
-      right: 20px;
-      border-top-left-radius: 12px;
-      border-bottom-left-radius: 12px;
-      border-radius: 12px,0px,0px,12px;
+    width: 89%;
+    height: 531px;
+    position: relative;
+    /* right: 0px; */
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
   }
   .wrapper{
     overflow: hidden;
@@ -45,6 +48,7 @@
     padding: 30px;
     position: relative;
     right: 54px;
+  
   }
   .wrapper .title-text{
     display: flex;

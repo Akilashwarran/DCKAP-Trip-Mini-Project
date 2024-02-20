@@ -5,8 +5,9 @@ body{
     height: 100vh;
 }
 
-.main-container {
+.home-page-main-container {
   height: 108.5%;
+  transition: 1s;
 } 
 
 *{
@@ -22,15 +23,17 @@ img{
     background-size: cover;
 }
 
-#search{
+#search {
   width: 25%;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  margin-left: 10%;
+  margin-top: 1%;
+  margin-left: auto;
+  height: 30px;
 }
 
-input:focus {
+#search:focus {
   outline: 2px solid #F9896B;
 }
 
@@ -38,8 +41,8 @@ input:focus {
     width: 12%;
     height: 35px;
     position: absolute;
-    top: 4%;
-    left: 2%;
+    top: 2%;
+    left: 1%;
     /* filter: brightness(0) invert(1); */
 }
 
@@ -60,7 +63,7 @@ li{
 
 #login-signup-btn{
     position: absolute;
-    top: 4%;
+    top: 3%;
     right: 2%;
     width: 10%;
     height: 30px;
@@ -90,21 +93,21 @@ li{
     height : 4px;
     background-color: #F9896B;
     position : absolute;
-    left : 0px;
-    bottom : -4px;
+    left : -30px;
+    bottom : -1px;
     transition : .8s;
   }
 
   .menu2::after{
     position : absolute;
-    left : 125px;
-    bottom : -2px;
+    left : 90px;
+    bottom : -1px;
   }
 
   .menu3::after{
     position : absolute;
-    left : 243px;
-    bottom : -2px;
+    left : 205px;
+    bottom : -1px;
   }
    
 
@@ -196,20 +199,19 @@ input::placeholder{
 }
 
 .templates-module {
-  height: 670px;
-  width: 70%;
+  height: 400px;
+  width: 74%;
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background-color:#D9D9D9;
+  background-color: #D9D9D9;
   position: absolute;
   right: 0;
 }
 
-.templates-description{
-  height: 670px;
+.templates-description {
+  height: 400px;
   width: 46%;
   clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
   background-color: #9A9A9A;
-  
 }
 
 
@@ -217,17 +219,18 @@ input::placeholder{
   position: absolute;
   left: 13%;
   top: 125%;
+  color: white;
 }
 
 #templates-description-content{
   width: 50%;
   position: absolute;
-  right: 1%;
+  right: 3%;
   top: 115%;
   line-height: 32px;
 }
 
-#templates-btn{
+#templates-btn {
   width: 10%;
   height: 30px;
   border: none;
@@ -236,20 +239,23 @@ input::placeholder{
   font-weight: bold;
   border-radius: 5px;
   position: absolute;
-  right: 5%;
-  top: 143%;
+  right: 6%;
+  top: 157%;
 }
 
 #templates-btn:hover{
   background-color: #DB765B;
 }
 
-
+#template-image{
+  height: 670px;
+  transform: rotateX('angle');
+}
 
 /*------------------------- planner-menu ------------------------------- */
 
 .planner-module {
-  height: 670px;
+  height: 400px;
   width: 70%;
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
   background-color: #9A9A9A;
@@ -258,7 +264,7 @@ input::placeholder{
 }
 
 .planner-description{
-  height: 670px;
+  height: 400px;
   width: 75%;
   clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
   background-color: #ffffff;
@@ -270,21 +276,22 @@ input::placeholder{
   display: flex;
 }
 
-#planner-module-name{
-  position: absolute;
-  right: 13%;
-  top:235%;
+  #planner-module-name {
+    position: absolute;
+    right: 12%;
+    top: 197%;
 }
 
-#planner-description-content{
+
+#planner-description-content {
   width: 50%;
   position: absolute;
   left: 6%;
-  top: 220%;
+  top: 176%;
   line-height: 32px;
 }
 
-#planner-btn{
+#planner-btn {
   width: 10%;
   height: 30px;
   border: none;
@@ -293,8 +300,8 @@ input::placeholder{
   font-weight: bold;
   border-radius: 5px;
   position: absolute;
-  left: 40%;
-  top: 252%;
+  left: 41%;
+  top: 220%;
 }
 
 #planner-btn:hover{
@@ -305,7 +312,7 @@ input::placeholder{
 /*------------------------- Critique-collections-menu -------------------------------- */
 
 .Critique-collections-module {
-  height: 670px;
+  height: 400px;
   width: 70%;
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
   background-color:#D9D9D9;
@@ -314,7 +321,7 @@ input::placeholder{
 }
 
 .Critique-collections-description{
-  height: 670px;
+  height: 400px;
   width: 46%;
   clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
   background-color: #9A9A9A;
@@ -326,22 +333,22 @@ input::placeholder{
   display: flex;
 }
 
-#Critique-collections-module-name{
+#Critique-collections-module-name {
   position: absolute;
   left: 8%;
-  top: 330%;
+  top: 249%;
 }
 
-#Critique-collections-description-content{
+#Critique-collections-description-content {
   width: 50%;
   position: absolute;
-  right: 1%;
-  top: 319%;
+  right: 3%;
+  top: 236%;
   line-height: 32px;
 }
 
-#Critique-collections-btn{
-  width: 10%;
+#Critique-collections-btn {
+  width: 19%;
   height: 30px;
   border: none;
   background-color: #F9896B;
@@ -350,7 +357,7 @@ input::placeholder{
   border-radius: 5px;
   position: absolute;
   right: 5%;
-  top: 345%;
+  top: 113%;
 }
 
 #Critique-collections-btn:hover{
@@ -371,12 +378,13 @@ input::placeholder{
   top: 40px;
 }
 
+
 .Review_Container1 {
   width: 90%;
   margin: 0 auto;
   display: flex;
   position: relative;
-  top: 50px;
+  top: 93px;
   gap: 10%;
   justify-content: center;
 }
@@ -397,21 +405,23 @@ input::placeholder{
 }
 
 h3.content1 {
-  padding: 20px;
-  font-weight: 300;
+  margin-top: 6%;
+  padding: 18px;
+  font-weight: 100;
+  line-height: 22px;
 }
 
 span.star {
   color: #ffff00;
   position: relative;
   left: 66px;
-  bottom: 20px;
+  bottom: 4px;
 }
 
 .customer-profile1,
 .customer-profile2,
 .customer-profile3{
-  margin-top: 10%;
+  margin-top: 15%;
   width: 100%;
   height: 80px;
   border-bottom-right-radius: 20px;
@@ -435,8 +445,8 @@ span.star {
   margin-right: 2%;
 }
 
-#review-added{
-  margin-top: -7%;
+#review-added {
+  margin-top: -5%;
   margin-left: 12%;
   cursor: pointer;
 }

@@ -2,6 +2,7 @@
 function navigateToPage() {
     let show=document.querySelector(".overlap")
       show.style.display="block" 
+      show.style.transition = "2s";
   }
   
   // ---------form change ------------------

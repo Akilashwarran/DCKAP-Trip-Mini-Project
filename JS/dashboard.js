@@ -1,5 +1,7 @@
 "use strict"
 
+
+let home_page_main_container = document.querySelector(".home-page-main-container")
 //--------------------------------- review ------------------------------------
 
 let review_added = document.getElementById("review-added")
@@ -47,7 +49,8 @@ explore_critique_collections.addEventListener("click",()=>{
 
 let login_div = document.querySelector(".home-page-login-signup-btn");
 let change_account = document.querySelector(".home-page-account-creation");
-console.log(change_account);
+let overlap = document.querySelector(".overlap")
+// console.log(change_account);
 
 
 let login_signup_page = document.querySelector("#login-signup-btn");
@@ -55,7 +58,13 @@ let login_signup_page = document.querySelector("#login-signup-btn");
 login_signup_page.addEventListener("click",(event)=>{
     event.preventDefault();
     console.log("hello");
-    alert("signup successfully")
+    
+    document.body.style.backgroundColor = "rgb(123 221 132 / 50%)";
+    home_page_main_container.style.opacity = "0.5";
+    document.body.style.opacity = "1";
+    overlap.style.transition = "all 2s";
+
+    // alert("signup successfully")
     // let account_div = document.createElement("div")
     // account_div.className = "account_div";
 
