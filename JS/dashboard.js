@@ -1,3 +1,4 @@
+
 "use strict"
 
 
@@ -80,5 +81,6 @@ login_signup_page.addEventListener("click",()=>{
 
 
 //------------------------------- search --------------------------------------
+
 
 
