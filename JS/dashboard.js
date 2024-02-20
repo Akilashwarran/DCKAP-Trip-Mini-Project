@@ -50,17 +50,14 @@ explore_critique_collections.addEventListener("click",()=>{
 let login_div = document.querySelector(".home-page-login-signup-btn");
 let change_account = document.querySelector(".home-page-account-creation");
 let overlap = document.querySelector(".overlap")
-// console.log(change_account);
 
 
 let login_signup_page = document.querySelector("#login-signup-btn");
 
-login_signup_page.addEventListener("click",(event)=>{
-    event.preventDefault();
-    console.log("hello");
-    alert("signup successfully")
-  
+login_signup_page.addEventListener("click",()=>{
 
+    let navigate_to_login = document.getElementById("change");
+    navigate_to_login.href="login.html";
 
     let account_div = document.createElement("div")
     account_div.className = "account_div";
@@ -72,60 +69,16 @@ login_signup_page.addEventListener("click",(event)=>{
     account_div.append(account_p_tag);
     login_div.append(account_div)
 
-    // document.body.style.backgroundColor = "rgb(123 221 132 / 50%)";
-    // home_page_main_container.style.opacity = "0.5";
-    // document.body.style.opacity = "1";
-    // overlap.style.transition = "all 2s";
-
     account_p_tag.addEventListener("click",()=>{
         alert("navigate profile page")
     })
-
-   
+    
+    //    alert("successfully")
 
 })
-// let login_signup_page = document.querySelector("#login-signup-btn");
-// login_signup_page.addEventListener("click",()=>{
-//     alert("login-signup page clicked");
-// })
+
+
 
 //------------------------------- search --------------------------------------
-
-// let search = document.querySelector("#search");
-// let dropdown = document.querySelector(".dropdown");
-
-// search.addEventListener("click",(event)=>{
-//     event.preventDefault();
-//    dropdown.classList.add("dropdown");
-// })
-// let p_tags = document.querySelectorAll(".pname");
-// let alertmsg = document.querySelector("h3");
-// console.log(p_tags);
-// let value=0;
-
-// search.addEventListener("keyup",()=>{
- 
-//     let Change_Uppercase_value = search.value.toUpperCase();
-//     console.log(Change_Uppercase_value);
-//     let str=1;
-   
-//     p_tags.forEach((Product_name,index) => {
-//         value=p_tags[index].parentElement;
-//         value.classList.add("opacity");
-//         Product_name = Product_name.innerHTML.toUpperCase();
-//         console.log(Product_name);
-//         if(Product_name.includes(Change_Uppercase_value) ){
-//                 value.classList.remove("opacity");
-//                 alertmsg.classList.remove("no_math_product_name");
-//                 str=0;
-//         }
-//     });
-
-//     if(str)
-//     {
-//         alertmsg.classList.add("no_math_product_name");
-//     }
-
-// })
 
 
