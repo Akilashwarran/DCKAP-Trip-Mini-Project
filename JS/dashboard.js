@@ -58,24 +58,31 @@ let login_signup_page = document.querySelector("#login-signup-btn");
 login_signup_page.addEventListener("click",(event)=>{
     event.preventDefault();
     console.log("hello");
-    
-    document.body.style.backgroundColor = "rgb(123 221 132 / 50%)";
-    home_page_main_container.style.opacity = "0.5";
-    document.body.style.opacity = "1";
-    overlap.style.transition = "all 2s";
+    alert("signup successfully")
+  
 
-    // alert("signup successfully")
-    // let account_div = document.createElement("div")
-    // account_div.className = "account_div";
 
-    // let account_link = document.createElement("span")
-    // account_link =`<i class="fa-regular fa-circle-user account_creation"></i>`
-    // let account_p_tag = document.createElement("p")
+    let account_div = document.createElement("div")
+    account_div.className = "account_div";
+    let account_p_tag = document.createElement("p")
+    account_p_tag.id = "account-text"
 
-    // login_div.innerHTML = `<i class="fa-regular fa-circle-user account_creation"></i>`
-    // account_p_tag.innerText = "Account";
-    // account_div.append(account_p_tag,account_link);
-    // login_div.append(account_div)
+    login_div.innerHTML = `<i class="fa-regular fa-circle-user account_creation"></i>`
+    account_p_tag.innerText = "Account";
+    account_div.append(account_p_tag);
+    login_div.append(account_div)
+
+    // document.body.style.backgroundColor = "rgb(123 221 132 / 50%)";
+    // home_page_main_container.style.opacity = "0.5";
+    // document.body.style.opacity = "1";
+    // overlap.style.transition = "all 2s";
+
+    account_p_tag.addEventListener("click",()=>{
+        alert("navigate profile page")
+    })
+
+   
+
 })
 // let login_signup_page = document.querySelector("#login-signup-btn");
 // login_signup_page.addEventListener("click",()=>{
