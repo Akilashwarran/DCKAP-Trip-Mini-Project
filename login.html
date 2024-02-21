@@ -15,7 +15,10 @@
     <title>DCKAP trip</title>
   </head>
   <body>
-    <!-- <button onclick="navigateToPage()">Go to Another Page</button> -->
+    <div class="xmark">
+       <a id="xmark"class="fa-solid fa-xmark fa-2x" href="login.html"></a>
+    </div>
+    
     <div class="overlap">
       <div class="main_container">
         <div class="container">
@@ -30,28 +33,30 @@
               <label for="signup" class="slide signup">Signup</label>
               <div class="slider-tab"></div>
             </div>
-            <div class="form-inner">
-              <form action="#" class="login" name="login">
+            <div class="form-inner"> 
+              <form action="#" class="login" id="login" >
                 <div class="field">
                   <input
                     type="text"
                     placeholder="Email Address"
                     class="email"
                     id="login_email"
-                    required
+                   
                   />
-                </div>
+                  <span class="login_email_error">INVALID email</span>
+                  </div>
                 <div class="field">
                   <input
                     type="password"
                     placeholder="Password"
                     class="pass"
                     id="login_pass"
-                    required
+                 
                   />
                   <i class="fa-regular fa-eye-slash"></i>
+                  
                 </div>
-                <div class="pass-link"><a href="#">Forgot password?</a></div>
+                <div class="pass-link"><span class="login_password_error">INVALID password</span><a href="#">Forgot password?</a></div>
 
                 <div class="login_way">
                   <p>OR</p>
@@ -143,7 +148,7 @@
                   </button>
                 </div>
                 <div class="login-btn">
-                  <button>login</button>
+                  <button type="submit">login</button>
                 </div>
                 <div class="signup-link">
                   Do you haven’t already an account ? <a href="">Signup</a>
@@ -159,6 +164,7 @@
                     class="username"
                     required
                   />
+                  <!-- <span class="signup_user_error">INVALID User</span> -->
                 </div>
                 <div class="field">
                   <input
@@ -168,6 +174,7 @@
                     id="signup_email"
                     required
                   />
+                  <!-- <span class="signup_email_error">INVALID email</span> -->
                 </div>
                 <div class="field">
                   <input
@@ -177,7 +184,13 @@
                     id="password_signup"
                     required
                   />
-                  <i onclick="togglePasswordVisibility('password_signup', 'eye_icon_signup')" class="fa-regular fa-eye-slash"></i>
+                  
+                  <i
+                    onclick="togglePasswordVisibility('password_signup', 'eye_icon_signup')"
+                    class="fa-regular fa-eye-slash"
+                    id="eye_icon_signup"
+                  ></i>
+                  <!-- <span class="signup_password_error">INVALID password</span> -->
                 </div>
                 <div class="field">
                   <input
@@ -187,9 +200,15 @@
                     id="Confirm_password"
                     required
                   />
-                  <i onclick="togglePasswordVisibility('Confirm_password', 'eye_icon_confirm')" class="fa-regular fa-eye-slash"></i>
-                </div>
+                  <i
+                    onclick="togglePasswordVisibility('Confirm_password', 'eye_icon_confirm')"
+                    class="fa-regular fa-eye-slash"
+                    id="eye_icon_confirm"
+                  ></i>
+                  <!-- <span class="signup_confirm_error">Miss Match</span> -->
+                   </div>
                 
+
                 <div class="login_way">
                   <p>OR</p>
                   <hr class="line_1" />
@@ -281,7 +300,7 @@
                 </div>
 
                 <div class="signup-btn">
-                  <button type="submit" id="sign_up_button">Sign-Up</button>
+                  <button type="submit" id="sign_up_button" >Sign-Up</button>
                 </div>
                 <div class="signup-link">
                   Do you have an already an account ? <a href="">login</a>
@@ -290,12 +309,23 @@
             </div>
           </div>
           <div id="otp_container">
-            <div class="otpdiv">
-              <label for="otpinputvalue" class="otplabel">OTP:</label>
-              <input type="text" id="otpinputvalue">
-              <button id="otpbtn" >OK</button>
+            <div class="OTP">
+              <div class="OTP_verifiction">
+                <h3>OTP verification</h3>
+              </div>
+              <div class="OTP_para">
+                <p>
+                  we've have sent a verification code to your email
+                  -your@gmail.com
+                </p>
+              </div>
+              <div class="otpdiv">
+                <!-- <label for="otpinputvalue" class="otplabel">OTP:</label> -->
+                <input type="text" id="otpinputvalue"  placeholder="Enter verification code" />
+                <button id="otpbtn">OK</button>
+              </div>
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
@@ -303,4 +333,3 @@
     <script src="JS/signup.js"></script>
   </body>
 </html>
-

@@ -32,7 +32,7 @@ html,body{
 } */
  .container img{
       width: 94%;
-    height: 538px;
+    height: 500px;
     position: relative;
     right: 20px;
     border-top-left-radius: 12px;
@@ -159,9 +159,10 @@ input[type="radio"]{
   height: 40px;
   font-size: 17px;
   position: relative;
-  left: 26%;
+  left: 32%;
   border: 0px;
-  top: 15px;
+  bottom: 11px;
+  cursor: pointer;
 
 }
 .login-btn button{
@@ -176,7 +177,13 @@ input[type="radio"]{
   left: 26%;
   border: 0px;
   top: 45%;
+  cursor: pointer;
 }
+/* #signup .login_way {
+  position: relative;
+  bottom: 27px;
+} */
+
 
 .email ,.pass,.username{
   width: 96%;
@@ -189,12 +196,12 @@ input{
   outline: none; 
 } 
 .signup-link{
-  padding-top: 16%;
+  padding-top: 2%;
   padding-left: 6%;
 
 }
 #signup .signup-link{
-  padding-top: 12%;
+  /* padding-top: 2%; */
   padding-left: 13%;
 }
 .login{
@@ -208,7 +215,9 @@ input{
   line-height: 0;
   font-size: 12px;
   position: relative;
-  bottom: 6px; 
+  bottom: 5px;
+  right: 4%; 
+  text-align: end;
 }
 
 .login_way p{
@@ -217,10 +226,13 @@ input{
   top: 11px;
    left: 45%;
 }
-
+/* #signup .signup-link{
+  position: relative;
+  bottom: 67px;
+}  */
 .login_way {
   position: relative;
-  bottom: 7px;
+  bottom: 13px;
 }
 hr{
   width: 35%;
@@ -251,6 +263,7 @@ svg{
     cursor: pointer;
     border-radius: 25px;
     display: flex; 
+    margin-bottom: 20px;
  }
 
  .signup{
@@ -311,7 +324,7 @@ top: 20px;
 }
 
 #otp_container{
-  padding-top: 35%;
+  padding-top: 30%;
   display: flex;
   gap: 20px;
 }
@@ -322,4 +335,91 @@ top: 20px;
   background-color: #F9896B;
   border: 0px;
   border-radius: 4px 4px 4px 4px;
+}
+
+.OTP_verifiction{
+  text-align: center;
+  color: #F9896B;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.OTP_para{    
+  width: 76%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 16%; */
+  background-color: #D3EDD9;
+  padding: 5%;
+  margin-left: 14%;
+  border: 1px solid #8da797;
+  line-height: 20px;
+
+}
+.google span{
+  color: black;
+}
+.OTP_para p{
+  color: #70917D;
+  text-align: center;
+}
+.OTP{
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+.otpdiv input{
+  width: 69%;
+  height: 40px;
+}
+#otpbtn{
+  width: 70%;
+  height: 40px;
+  border-radius: 12px;
+  color: #fff;
+   font-size: 16px;
+   font-weight: bold;
+}
+.otpdiv{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 5%;
+
+}
+.xmark{
+  z-index: 1;
+  margin-left: 95%;
+  margin-bottom: 38%;
+
+}
+#xmark{
+  width:20% ;
+  height: 40px;
+  text-decoration: none;
+}
+span{
+  font-size: 12px;
+  color: red;
+}
+
+.login_email_error{
+  display: none;
+}
+
+
+.pass-link .login_password_error{
+  display: flex;
+  /* justify-content: space-between; */
+  padding-right: 72%;
+  padding-left: 2%;
+
+}
+
+.pass-link .login_password_error{
+  display: none;
 }

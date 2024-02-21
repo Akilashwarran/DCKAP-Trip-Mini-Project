@@ -42,10 +42,8 @@ icon_hide.addEventListener("click", () => {
 
 
 // ---------------------signup password icon change---
-
 function togglePasswordVisibility(inputId, iconId) {
   const passwordInput = document.getElementById(inputId);
-  
   const eyeIcon = document.getElementById(iconId);
 
   if (passwordInput.type === "password") {
@@ -58,15 +56,14 @@ function togglePasswordVisibility(inputId, iconId) {
     eyeIcon.classList.add("fa-eye-slash");
   }
 }
-
-
-// ------------------------sign-up-OTP-------------
+// ------------------------sign-up-OTP-verification------------
  let username=document.getElementById("Username");
  let email_id=document.getElementById("signup_email");
 //  console.log(email_id)
 
 let form_div=document.querySelector(".form-container")
 console.log(form_div);
+  var sign = document.getElementById('sign_up_button')
   
  document.forms.signup.addEventListener("submit",(e)=>{
   e.preventDefault();
@@ -97,36 +94,6 @@ form_div.style.display="none"
  let overlap=document.querySelector(".overlap");
  let otp_container=document.getElementById("otp_container");
 
-//  function otpdata(){
-     
-//     overlap.style.display="none"
-  
-    
-    
-    // let otpdiv=document.createElement('div');
-    // otpdiv.className='otpdiv';
-    // console.log(otpdiv)
-    // let label=document.createElement('label');
-    // label.className='otplabel';
-    // label.textContent="OTP:";
-    //   let otpinput=document.createElement("input");
-    //     otpinput.type="text";
-    //     otpinput.id="otpinputvalue";
-    // let otpbutton=document.createElement("button");
-    
-    // otpbutton.textContent="ok";
-    // otpbutton.className="otpbtn";
-    
-    // otpmaincontainer.append(otpdiv);
-    //   otpdiv.append(label);
-    //   otpdiv.append(otpinput);
-    //   otpdiv.append(otpbutton);
-    
-
-    
-  
-//  }
-
  let otp_random=Math.floor(Math.random()*100000);
  let otpbutton=document.querySelector("#otpbtn")
           console.log(otpbutton)
@@ -142,6 +109,49 @@ form_div.style.display="none"
       alert("invalid OTP")
       }
 
-    
+      otp_value=" "
     
     })
+
+    // --------------------------------form--basic--validation----------------
+   let login_Form_validation= document.forms.login;
+
+
+   let login_email_validation=document.getElementById("login_email")
+
+   let login_password_validation=document.getElementById("login_pass")
+
+   login_Form_validation.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    console.log("clicked")
+   let login_email_error=document.querySelector(".login_email_error")
+   let login_password_error=document.querySelector(".pass-link .login_password_error")
+   console.log(login_password_error)
+    if(login_email_validation.value.trim().length==0){
+
+      login_email_error.style.display="block"
+
+    }
+    else{
+      login_email_error.style.display="none"
+    }
+     if(login_password_validation.value.trim().length==0){
+
+      login_password_error.style.display="block"
+    }
+    else{
+      login_password_error.style.display="none"
+    }
+
+    login_email_validation.value=""
+    login_password_validation.value=""
+
+   })
+
+  //--------------signup-base-validation---------
+  let signup_Form_validation= document.forms.signup;
+  console.log(signup_Form_validation);
+
+
+
+  
