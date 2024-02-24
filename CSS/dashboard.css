@@ -971,3 +971,11 @@ span {
   display: flex;
 }
 
+.ft-right a{
+  text-decoration: none;
+  color: rgb(1, 1, 36);
+}
+
+.ft-right a:hover{
+  color: #F9896B;
+}
