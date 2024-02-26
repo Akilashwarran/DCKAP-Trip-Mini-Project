@@ -134,6 +134,7 @@ document.forms.signup.addEventListener("submit", (e) => {
           usernameInput.classList.remove("border")
     }
 
+
     if (!validateEmail(emailInput.value)) {
           signup_email_error.style.display="block"
           emailInput.classList.add("border")
