@@ -23,7 +23,7 @@ sign_in_btn.addEventListener("click",()=>{
 
 let destination = document.querySelector("#destination-menu");
 destination.addEventListener("click",()=>{
-    destination.href="destination.html";
+    destination.href="destinations.html";
 });
 
 let planner = document.querySelector("#planner-menu");
