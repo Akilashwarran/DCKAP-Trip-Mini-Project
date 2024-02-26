@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Caveat&family=Inter:wght@100;200;300;400&family=Montserrat:wght@100;700&family=Open+Sans&family=Pacifico&family=Preahvihear&family=Rethink+Sans&family=Roboto&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="CSS/profile.css">
@@ -15,12 +18,10 @@
         <div class="leftContainer">
             <h3>User Profile Management</h3>
             <div class="management">
-                <div class="Personal-info"><span><i class="fa-solid fa-magnifying-glass"></i></span>Personal Info</div>
-                <div class="List-of-Favorites"><span><i class="fa-regular fa-heart"></i></span>List of Favorites</div>
+                <div class="Personal-info"><span><i class="fa-regular fa-user"></i></span>Personal Info</div>
                 <div class="Travel-history"><span><i class="fa-solid fa-clock-rotate-left"></i></span>Travel History</div>
                 <div class="backTohome"><span><i class="fa-solid fa-arrow-left"></i></span>Back To Home</div>
                 <div class="Log-out"><span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>Log Out</div>
-
             </div>
         </div>
         <div class="rightContainer">
@@ -31,24 +32,24 @@
                 </div>
                 
                 <div class="image">
-                    <img class="ProfileImg" src="Assets/gray-user-profile-icon-png-fP8Q1P.png" alt="">
+                    <img class="ProfileImg" src="images/gray-user-profile-icon-png-fP8Q1P.png" alt="">
                     <label class="proImgicon" for="input-file"><i class="fa-solid fa-camera"></i></label>
-                    <input type="file" accept="image/jpeg, image/png, image/JPG" id="input-file" >
+                    <input type="file" name="userProfile" accept="image/jpeg, image/png, image/JPG" id="input-file" >
                 </div>
 
                 <div class="defaultShow-detials">
                     <ul class="default-detials">
                         <li>
                             <label class="keyname" style="font-weight: bold;;" for="">Name :</label>
-                            <div class="filed-con">default name</div>
+                            <div id="defaultName" class="filed-con">default name</div>
                         </li>
                         <li>
                             <label class="keyname" style="font-weight: bold;;" for="">Email :</label>
-                            <div class="filed-con">default email</div>
+                            <div id="defaultEmail" class="filed-con">+Add</div>
                         </li>
                         <li>
                             <label class="keyname" style="font-weight: bold;;" for="">Phone Number :</label>
-                            <div class="filed-con">1234567890</div>
+                            <div id="defaultNo" class="filed-con">+Add</div>
                         </li>
                         
                     </ul>
@@ -57,35 +58,54 @@
                 <form action="a" class="form" id="profileform">
                 <div class="details">
                     <div>
-                        <p style="font-size: 16px;">Name</p>
+                        <p class="keyname" style="font-size: 16px;">Name</p>
                         <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                        <p id="errorName" class="err"></p>
                     </div>
                     <div>
-                        <p style="font-size: 16px;">Email</p>
+                        <p class="keyname" style="font-size: 16px;">Email</p>
                         <input type="email" name="email" id="email" placeholder="Enter your email">
+                        <p id="errorEmali" class="err"></p>
                     </div>
                 </div>
                 <div class="details">
                     <div>
-                        <p style="font-size: 16px;">Phone Number</p>
+                        <p class="keyname" style="font-size: 16px;">Phone Number</p>
                         <input type="number" name="phone" id="phone" placeholder="Enter your phone number">
+                        <p id="errorPhonenumber" class="err"></p>
                     </div>
                     <div>
-                        <p style="font-size: 16px;">Username</p>
+                        <p class="keyname" style="font-size: 16px;">Username</p>
                         <input type="text" name="username" id="username" placeholder="Enter your username">
+                        <p id="errorUsername" class="err"  > </p>
                     </div>
                 </div>
                 <div class="details">
                     <div>
-                        <p style="font-size: 16px;">Password</p>
-                        <input type="password" name="password" id="password" placeholder="Enter your password">
+                        <p class="keyname" style="font-size: 16px;">Password</p>
+                        <input type="password" name="password" id="password" placeholder="Enter your password" onkeyup="password_validation()" >
+                        <p id="errorPassword" class="err"></p>
                     </div>
                     <div>
-                        <p style="font-size: 16px;">Confirm Password</p>
+                        <p class="keyname" style="font-size: 16px;">Confirm Password</p>
                         <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm your password">
+                        <p id="errorconPassword" class="err"> </p>
                     </div>
                 </div>
             </form>
+
+
+            <div id="message">
+                <h3>The minimum password lenth is 8 character & must contain at least 1 lowercase letter, 1 capital letter, 1 number & 1 special charater</h3>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid">A <b>number</b></p>
+                <p id="special" class="invalid">A <b>Special charater</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                
+                <script src="script.js"></script>
+              </div>
+
 
             </div>
         </div>
@@ -95,6 +115,7 @@
                 <button class="addFavorite">+ Add Favorite</button>
             </div>
             <div>You have 0 Favorites</div>
+
         </div>
         <div class="travelHistory">
             <div class="a">
@@ -104,6 +125,6 @@
             <div>You have 0 Travels</div>
         </div>
     </div>
-    <script src="JS/profile.js"></script>
+    <script  type="module" src="JS/profile.js"></script>
 </body>
 </html>
