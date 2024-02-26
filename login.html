@@ -15,7 +15,7 @@
     <title>DCKAP trip</title>
   </head>
   <body>
-    <div class="xmark">
+ <div class="xmark">
        <a id="xmark"class="fa-solid fa-xmark fa-2x" href="login.html"></a>
     </div>
     
@@ -54,15 +54,19 @@
                  
                   />
                   <i class="fa-regular fa-eye-slash"></i>
-                  
+                 
                 </div>
                 <div class="pass-link"><span class="login_password_error">INVALID password</span><a href="#">Forgot password?</a></div>
 
-                <div class="login_way">
+               
+                <div class="login-btn">
+                  <button type="submit">login</button>
+                </div>
+              <div class="login_way">
                   <p>OR</p>
                   <hr class="line_1" />
                   <hr class="line" />
-                  <button class="google">
+                  <span class="google">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -145,16 +149,16 @@
                       </g>
                     </svg>
                     <span>continue with Google</span>
-                  </button>
+                  </span>
                 </div>
-                <div class="login-btn">
-                  <button type="submit">login</button>
-                </div>
-                <div class="signup-link">
+                  <div class="signup-link">
                   Do you haven’t already an account ? <a href="">Signup</a>
                 </div>
               </form>
-              <form action="#" id="signup">
+
+              <!-- google signin -->
+  
+              <form action="#" id="signup"  >
                 <div class="user_name">
                   <input
                     type="text"
@@ -162,9 +166,9 @@
                     id="Username"
                     placeholder="User name"
                     class="username"
-                    required
+                 
                   />
-                  <!-- <span class="signup_user_error">INVALID User</span> -->
+                  <p class="signup_user_error" class="error">INVALID User</p>
                 </div>
                 <div class="field">
                   <input
@@ -172,9 +176,9 @@
                     placeholder="Email Address"
                     class="email"
                     id="signup_email"
-                    required
+               
                   />
-                  <!-- <span class="signup_email_error">INVALID email</span> -->
+                  <p class="signup_email_error" class="error">INVALID email</p>
                 </div>
                 <div class="field">
                   <input
@@ -182,7 +186,7 @@
                     placeholder="Password"
                     class="pass"
                     id="password_signup"
-                    required
+                 
                   />
                   
                   <i
@@ -190,7 +194,16 @@
                     class="fa-regular fa-eye-slash"
                     id="eye_icon_signup"
                   ></i>
-                  <!-- <span class="signup_password_error">INVALID password</span> -->
+                  <p class="signup_password_error" class="error">INVALID password</p>
+                <div class="tooltip" id="passwordTooltip" class="password-container">       
+                     <h3>Password must include the following elements:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="special" class="invalid">A <b>Special character</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+
                 </div>
                 <div class="field">
                   <input
@@ -198,22 +211,23 @@
                     placeholder="Confirm password"
                     class="pass"
                     id="Confirm_password"
-                    required
+                    
                   />
                   <i
                     onclick="togglePasswordVisibility('Confirm_password', 'eye_icon_confirm')"
                     class="fa-regular fa-eye-slash"
                     id="eye_icon_confirm"
                   ></i>
-                  <!-- <span class="signup_confirm_error">Miss Match</span> -->
+                  <p class="signup_confirm_error" class="error">Miss Match</p>
                    </div>
-                
-
-                <div class="login_way">
+                <div class="signup-btn">
+                  <button type="submit" id="sign_up_button">Sign-Up</button>
+                </div>
+                                <div class="login_way">
                   <p>OR</p>
                   <hr class="line_1" />
                   <hr class="line" />
-                  <button class="google">
+                  <span class="google">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -296,12 +310,9 @@
                       </g>
                     </svg>
                     <span>continue with Google</span>
-                  </button>
+                  </span>
                 </div>
 
-                <div class="signup-btn">
-                  <button type="submit" id="sign_up_button" >Sign-Up</button>
-                </div>
                 <div class="signup-link">
                   Do you have an already an account ? <a href="">login</a>
                 </div>
@@ -320,8 +331,9 @@
                 </p>
               </div>
               <div class="otpdiv">
-                <!-- <label for="otpinputvalue" class="otplabel">OTP:</label> -->
-                <input type="text" id="otpinputvalue"  placeholder="Enter verification code" />
+                
+                <input type="text" id="otpinputvalue"  placeholder="Enter the verification code" />
+                
                 <button id="otpbtn">OK</button>
               </div>
             </div>
@@ -329,7 +341,15 @@
         </div>
       </div>
     </div>
-
-    <script src="JS/signup.js"></script>
+     <div class="check">
+      <div class="mark">
+       <a id="mark"class="fa-solid fa-xmark fa" ></a>
+    </div>
+      <h5>This account already signup our website please login with us</h5>
+     </div>
+  
+    <script type="module" src="JS/signup.js"></script>
+   
+    </script>
   </body>
 </html>
