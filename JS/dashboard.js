@@ -42,7 +42,7 @@ collections.addEventListener("click",()=>{
 
 let destination_explore = document.querySelector("#destination-explore");
 destination_explore.addEventListener("click",()=>{
-    destination_explore.href="destination.html";
+    destination_explore.href="destinations.html";
 });
 
 let planner_explore = document.querySelector("#planner-explore");
