@@ -1009,3 +1009,7 @@ span {
 .trm{
   margin-top: 2%;
 }
+
+.account-div{
+  display: flex;
+}

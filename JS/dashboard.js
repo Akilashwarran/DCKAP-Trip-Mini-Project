@@ -5,8 +5,19 @@
 
 let sign_in_btn = document.querySelector("#sign-in-btn");
 sign_in_btn.addEventListener("click",()=>{
+    alert("login successfully");
+
+    // let account_div = document.createElement("div")
+    // account_div.className = "account_div";
+    // let account_p_tag = document.createElement("p")
+    // account_p_tag.id = "account-text"
+
+    // login_div.innerHTML = `<i class="fa-regular fa-circle-user account_creation"></i>`
+    // account_p_tag.innerText = "Account";
+    // account_div.append(account_p_tag);
+    // sign_in_btn.append(account_div);
+
     sign_in_btn.href = "login.html";
-    console.log("he");
 })
 //--------------------------- menus ------------------------------
 
