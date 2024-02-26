@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 "use strict"
 
@@ -55,5 +55,4 @@ collections_explore.addEventListener("click",()=>{
     collections_explore.href="collections.html";
 });
 
-=======
->>>>>>> signup
+
