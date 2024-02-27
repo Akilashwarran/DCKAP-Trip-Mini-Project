@@ -259,78 +259,112 @@
       // ----------------------------------------------------------------
   
   
-      //  function searchvalue(btn) {
+
+
+  function searchvalue(btn) {
+  if (re_search.value.toLowerCase() === "munnar") {
+    munnar1.forEach(function(item, index) {
+      cards[index].style.display = "flex";
+      avatarImg[index].src = item.avatar;
+      reviwName[index].innerText = item.name;
+      reviewRating[index].innerHTML = item.rating;
+      hoverContent[index].innerText = item.hovercontent;
+    });
+  }
+
+if (re_search.value.toLowerCase() === "ooty") {
+  ooty1.forEach(function(item, index) {
+    cards[index].style.display = "flex";
+    avatarImg[index].src = item.avatar;
+    reviwName[index].innerText = item.name;
+    reviewRating[index].innerHTML = item.rating;
+    hoverContent[index].innerText = item.hovercontent;
+  });
+}
+
+if (re_search.value.toLowerCase() === "kodaikanal") {
+  kodaikanal1.forEach(function(item, index) {
+    cards[index].style.display = "flex";
+    avatarImg[index].src = item.avatar;
+    reviwName[index].innerText = item.name;
+    reviewRating[index].innerHTML = item.rating;
+    hoverContent[index].innerText = item.hovercontent;
+  });
+}
+}
+
+
+
+
+
   
-      //  }
+      // function searchvalue(btn) {
+      //   if (re_search.value.toLowerCase() == "munnar") {
+      //     console.log("kodaikanal");
+      //     cards[0].style.display = "flex";
+      //     cards[1].style.display = "flex";
+      //     cards[2].style.display = "flex";
   
+      //     avatarImg[0].src = munnar1[0].avatar;
+      //     reviwName[0].innerText = munnar1[0].name;
+      //     reviewRating[0].innerHTML = munnar1[0].rating
+      //     hoverContent[0].innerText = munnar1[0].hovercontent;
   
-      function searchvalue(btn) {
-        if (re_search.value.toLowerCase() == "munnar") {
-          console.log("kodaikanal");
-          cards[0].style.display = "flex";
-          cards[1].style.display = "flex";
-          cards[2].style.display = "flex";
-  
-          avatarImg[0].src = munnar1[0].avatar;
-          reviwName[0].innerText = munnar1[0].name;
-          reviewRating[0].innerHTML = munnar1[0].rating
-          hoverContent[0].innerText = munnar1[0].hovercontent;
-  
-          avatarImg[1].src = munnar1[1].avatar;
-          reviwName[1].innerText = munnar1[1].name;
-          reviewRating[1].innerHTML = munnar1[1].rating
-          hoverContent[1].innerText = munnar1[1].hovercontent;
-  
-  
-          avatarImg[2].src = munnar1[2].avatar;
-          reviwName[2].innerText = munnar1[2].name;
-          reviewRating[2].innerHTML = munnar1[2].rating
-          hoverContent[2].innerText = munnar1[2].hovercontent;
-        }
-        if (re_search.value.toLowerCase() == "ooty") {
-          cards[0].style.display = "flex";
-          cards[1].style.display = "flex";
-          cards[2].style.display = "flex";
-  
-          avatarImg[0].src = ooty1[0].avatar;
-          reviwName[0].innerText = ooty1[0].name;
-          reviewRating[0].innerHTML = ooty1[0].rating
-          hoverContent[0].innerText = ooty1[0].hovercontent;
-  
-          avatarImg[1].src = ooty1[1].avatar;
-          reviwName[1].innerText = ooty1[1].name;
-          reviewRating[1].innerHTML = ooty1[1].rating
-          hoverContent[1].innerText = ooty1[1].hovercontent;
-  
-  
-          avatarImg[2].src = ooty1[2].avatar;
-          reviwName[2].innerText = ooty1[2].name;
-          reviewRating[2].innerHTML = ooty1[2].rating
-          hoverContent[2].innerText = ooty1[2].hovercontent;
-        }
-        if (re_search.value.toLowerCase() == "kodaikanal") {
-  
-          cards[0].style.display = "flex";
-          cards[1].style.display = "flex";
-          cards[2].style.display = "flex";
-  
-          avatarImg[0].src = kodaikanal1[0].avatar;
-          reviwName[0].innerText = kodaikanal1[0].name;
-          reviewRating[0].innerHTML = kodaikanal1[0].rating
-          hoverContent[0].innerText = kodaikanal1[0].hovercontent;
-  
-          avatarImg[1].src = kodaikanal1[1].avatar;
-          reviwName[1].innerText = kodaikanal1[1].name;
-          reviewRating[1].innerHTML = kodaikanal1[1].rating
-          hoverContent[1].innerText = kodaikanal1[1].hovercontent;
+      //     avatarImg[1].src = munnar1[1].avatar;
+      //     reviwName[1].innerText = munnar1[1].name;
+      //     reviewRating[1].innerHTML = munnar1[1].rating
+      //     hoverContent[1].innerText = munnar1[1].hovercontent;
   
   
-          avatarImg[2].src = kodaikanal1[2].avatar;
-          reviwName[2].innerText = kodaikanal1[2].name;
-          reviewRating[2].innerHTML = kodaikanal1[2].rating
-          hoverContent[2].innerText = kodaikanal1[2].hovercontent;
-        }
-      }
+      //     avatarImg[2].src = munnar1[2].avatar;
+      //     reviwName[2].innerText = munnar1[2].name;
+      //     reviewRating[2].innerHTML = munnar1[2].rating
+      //     hoverContent[2].innerText = munnar1[2].hovercontent;
+      //   }
+      //   if (re_search.value.toLowerCase() == "ooty") {
+      //     cards[0].style.display = "flex";
+      //     cards[1].style.display = "flex";
+      //     cards[2].style.display = "flex";
+  
+      //     avatarImg[0].src = ooty1[0].avatar;
+      //     reviwName[0].innerText = ooty1[0].name;
+      //     reviewRating[0].innerHTML = ooty1[0].rating
+      //     hoverContent[0].innerText = ooty1[0].hovercontent;
+  
+      //     avatarImg[1].src = ooty1[1].avatar;
+      //     reviwName[1].innerText = ooty1[1].name;
+      //     reviewRating[1].innerHTML = ooty1[1].rating
+      //     hoverContent[1].innerText = ooty1[1].hovercontent;
+  
+  
+      //     avatarImg[2].src = ooty1[2].avatar;
+      //     reviwName[2].innerText = ooty1[2].name;
+      //     reviewRating[2].innerHTML = ooty1[2].rating
+      //     hoverContent[2].innerText = ooty1[2].hovercontent;
+      //   }
+      //   if (re_search.value.toLowerCase() == "kodaikanal") {
+  
+      //     cards[0].style.display = "flex";
+      //     cards[1].style.display = "flex";
+      //     cards[2].style.display = "flex";
+  
+      //     avatarImg[0].src = kodaikanal1[0].avatar;
+      //     reviwName[0].innerText = kodaikanal1[0].name;
+      //     reviewRating[0].innerHTML = kodaikanal1[0].rating
+      //     hoverContent[0].innerText = kodaikanal1[0].hovercontent;
+  
+      //     avatarImg[1].src = kodaikanal1[1].avatar;
+      //     reviwName[1].innerText = kodaikanal1[1].name;
+      //     reviewRating[1].innerHTML = kodaikanal1[1].rating
+      //     hoverContent[1].innerText = kodaikanal1[1].hovercontent;
+  
+  
+      //     avatarImg[2].src = kodaikanal1[2].avatar;
+      //     reviwName[2].innerText = kodaikanal1[2].name;
+      //     reviewRating[2].innerHTML = kodaikanal1[2].rating
+      //     hoverContent[2].innerText = kodaikanal1[2].hovercontent;
+      //   }
+      // }
   
   
   

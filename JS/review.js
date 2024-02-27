@@ -49,6 +49,8 @@ var After_review_content=document.querySelector(".After_review_content");
 
 var stars = document.querySelectorAll(".stars i");
 
+
+// ['Userdata':{name,email}]
 stars.forEach((star, index1) => {
  
   star.addEventListener("click", () => {
