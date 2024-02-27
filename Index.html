@@ -265,7 +265,7 @@
   
   
       function searchvalue(btn) {
-        if (re_search.value == "Munnar") {
+        if (re_search.value.toLowerCase() == "munnar") {
           console.log("kodaikanal");
           cards[0].style.display = "flex";
           cards[1].style.display = "flex";
@@ -287,7 +287,7 @@
           reviewRating[2].innerHTML = munnar1[2].rating
           hoverContent[2].innerText = munnar1[2].hovercontent;
         }
-        if (re_search.value == "Ooty") {
+        if (re_search.value.toLowerCase() == "ooty") {
           cards[0].style.display = "flex";
           cards[1].style.display = "flex";
           cards[2].style.display = "flex";
@@ -308,7 +308,7 @@
           reviewRating[2].innerHTML = ooty1[2].rating
           hoverContent[2].innerText = ooty1[2].hovercontent;
         }
-        if (re_search.value == "Kodaikanal") {
+        if (re_search.value.toLowerCase() == "kodaikanal") {
   
           cards[0].style.display = "flex";
           cards[1].style.display = "flex";
