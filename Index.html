@@ -4,131 +4,345 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DCKAP Trip</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet" href="CSS/review.css">
-    
+    <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@400;500&family=Pacifico&family=Poppins:wght@200&family=Raleway:wght@300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/review.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<body>
 
-
-    <body>
-        <div class="review_maincontainer">
-            <div class="review_container1">
-                <input type="text" placeholder="Search..." id="review_search" spellcheck="false">
-                <button id="review_btn1"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-            <div class="review_placeImg">
-                <img src="Assets/siva.avif" alt="img1" class="review_placeImgs">
-                <img src="Assets/Malampuzha-Dam-and-Gardens.jpg" alt="img2" class="review_placeImgs">
-                <img src="Assets/Siruvani-Waterfalls.jpg" alt="img3" class="review_placeImgs">
-            </div>
-
-<div class="testimonial-containers">
-
-    <div class="testimonial-containers1">
-
-            <div class="testimonial-container1">
-                        <span class="testti_quote1"><i class="fa-solid fa-quote-left"></i></span>
-                        <div class="testimonial-text">
-                            Adiyogi Shiva stands tall at the the velliangiri foothills in the Southern part of India, the Tamil Nadu state. It is a landmark of the area, found in the Guinness book of records.
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-            </div>    
-            <div class="testimonial-container2">
-                        <div class="testimonial-avatar"><img class="img1" src="Assets/Ellipse 4(1).png"alt=""></div>
-                        <div class="testimonial-author">Joel </div>                 
-            </div>
-                    
-    </div>
-
-
-
-    <div class="testimonial-containers1">
-
-        <div class="testimonial-container1">
-                    <span class="testti_quote2"><i class="fa-solid fa-quote-left"></i></span>
-                    <div class="testimonial-text">
-                        We visited this dam on our trip to Palakkad. I wish this place was maintained better. The fountains are not functional and the gardens are being overtaken by weeds.                     </div>
-                    <div class="testimonial-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                    </div>
-        </div>    
-        <div class="testimonial-container3">
-            <div class="testimonial-avatar"><img class="img1" src="Assets/Ellipse 4(2).png" alt=""></div>
-                    <div class="testimonial-author">Vignesh</div>
-        </div>
-                
-    </div>
-
-
-    <div class="testimonial-containers1">
-
-        <div class="testimonial-container1">
-                    <span class="testti_quote3"><i class="fa-solid fa-quote-left"></i></span>
-                    <div class="testimonial-text">
-                        Hello guys, Malambuzha Dam is situation in Kerala ,Palakkad. It`s a beautiful and adventurous place to visit . A lot see , A lot of new experiences. The visit will get more natural Friendly, adventurous rides, peaceful Place.                     </div>
-                    <div class="testimonial-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="far fa-star"></i>
-                    </div>
-        </div>    
-        <div class="testimonial-container4">
-            <div class="testimonial-avatar"><img class="img1" src="Assets/Ellipse 4.png" alt=""></div>
-                <div class="testimonial-author">Priya</div>                  
-        </div>
-                
-    </div>
-
-</div>
-
-
-
-
-
-
-            <div class="review_share">
-                <button class="review_share_btn">Share Your Review</button>
-            </div>
-           
-        </div>
-        <div class="review_maincontainer2">      </div>
-        <div class="review_container2">
-            <button id="review_cancel_btn"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="review_container2_heading1">Share Your Journey with Us</h2>
-            <h3 class="review_container2_heading2">How would you rate your experience ?</h3>
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+    <input type="text" class="search">
+    <button class="btn1" onclick="searchvalue(this)">click</button>
+    <br><br>
+   
+  
+    <div class="review_main">
+  
+      <section class="container">
+        <div class="card" style="display: none;">
+          <div class="content">
+            <div class="testimonial-avatar"><img class="img1" src="" alt="">
+              <div class="content2">
+                <div class="h6"></div>
+                <div class="testimonial-rating">
+  
+                </div>
               </div>
-              
-            <textarea id="review_textarea"rows="3" cols="50" spellcheck="false"></textarea>
-            <button class="review_submit_btn">Submit review</button>
-          
-</div>
+            </div>
+  
+            <div class="hover_content">
+              <p></p>
+            </div>
+          </div>
+        </div>
+  
+  
+      </section>
+  
+  
+      <section class="container">
+        <div class="card" style="display: none;">
+          <div class="content">
+            <div class="testimonial-avatar"><img class="img1" src="" alt="">
+              <div class="content2">
+                <div class="h6"></div>
+                <div class="testimonial-rating">
+  
+                </div>
+              </div>
+            </div>
+  
+            <div class="hover_content">
+              <p></p>
+            </div>
+          </div>
+        </div>
+  
+  
+      </section>
+  
+      <section class="container">
+        <div class="card" style="display: none;">
+          <div class="content">
+            <div class="testimonial-avatar"><img class="img1" src="" alt="">
+              <div class="content2">
+                <div class="h6"></div>
+                <div class="testimonial-rating">
+  
+                </div>
+              </div>
+            </div>
+  
+            <div class="hover_content">
+              <p></p>
+            </div>
+          </div>
+        </div>
+  
+  
+      </section>
+  
+      <!-- ----------------------------------------//review-share--------------------->
+  
+  
+  
+      <div class="review_share">
+        <button class="review_share_btn" style="display: none;">Share Your Review</button>
+      </div>
+  
+    </div>
+    <div class="review_maincontainer2"> </div>
+    <div class="review_container2">
+      <button id="review_cancel_btn"><i class="fa-solid fa-xmark"></i></button>
+      <h2 class="review_container2_heading1">Share Your Journey with Us</h2>
+      <h3 class="review_container2_heading2">How would you rate your experience ?</h3>
+      <div class="stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <h3 class="review_container2_heading2">Write a Review</h3>
+      <textarea id="review_textarea" rows="3" cols="50" spellcheck="false"></textarea>
+      <button class="review_submit_btn">Submit review</button>
+  
+    </div>
+  
+  
+  
+  
+    </div>
+    <!-- --------------------------------------------------------------------------------------->
+  
+  
+    <script>
+      var re_search = document.querySelector(".search");
+      var clk_btn = document.querySelector(".btn1");
+      var btn2_btn = document.querySelectorAll(".btn2")
+      var review_share_btn = document.querySelector(".review_share_btn");
+  
+  
+      clk_btn.addEventListener("click", (e) => {
+        review_share_btn.style.display = "block";
+  
+      });
+  
+  
+      // Get all container elements
+      var containers = document.querySelectorAll('.review_main .container');
+  
+  
+      // Get elements inside each container
+      var cards = document.querySelectorAll('.card');
+      var avatarImg = document.querySelectorAll('.testimonial-avatar img');
+      var reviwName = document.querySelectorAll('.h6');
+      console.log(reviwName);
+      var reviewRating = document.querySelectorAll('.testimonial-rating');
+      var hoverContent = document.querySelectorAll('.hover_content p');
+  
+  
+      // ----------------------------------Array-obj------------------------------------
+  
+  
+      var ooty1 = [{
+        avatar: "Assets/Ellipse 4(2).png",
+        name: "Jack",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>`,
+        hovercontent: "We visited this dam on our trip to Palakkad. I wish this place was maintained better. The fountains are not functional and the gardens are being overtaken by weeds."
+  
+      },
+      {
+        avatar: "./Assets/Ellipse 4.png",
+        name: "Priya",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="far fa-star"></i>`,
+        hovercontent: "We visited this dam on our trip to Palakkad. I wish this place was maintained better. The fountains are not functional and the gardens are being overtaken by weeds."
+  
+      },
+      {
+        avatar: "./Assets/Ellipse 4(1).png",
+        name: "Sakthi",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>`,
+        hovercontent: "Trip of the word 'dolorem', meaning pain. This makes lace was maintained better. the current dummy text impossible to translate into English"
+  
+      }
+      ]
+  
+  
+  
+      var kodaikanal1 = [{
+        avatar: "Assets/Ellipse 4(3).png",
+        name: "Siva",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>`,
+        hovercontent: "We visited this dam on our trip to Palakkad. I wish this place was maintained better. The fountains are not functional and the gardens are being overtaken by weeds."
+  
+      },
+      {
+        avatar: "./Assets/Ellipse 4(4).png",
+        name: "Rosy",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="far fa-star"></i>`,
+        hovercontent: "We visited this dam on our trip to Palakkad. I wish this place was maintained better. The fountains are not functional and the gardens are being overtaken by weeds."
+  
+      },
+      {
+        avatar: "./Assets/Ellipse 4(5).png",
+        name: "Magi",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>`,
+        hovercontent: "Trip of the word 'dolorem', meaning pain. This makes lace was maintained better. the current dummy text impossible to translate into English"
+  
+      }
+      ]
+  
+  
+      var munnar1 = [{
+        avatar: "Assets/Ellipse 4(6).png",
+        name: "Akil",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>`,
+        hovercontent: "We visited this dam on our trip to Palakkad. I wish this place was maintained better. The fountains are not functional and the gardens are being overtaken by weeds."
+  
+      },
+      {
+        avatar: "./Assets/Ellipse 4(7).png",
+        name: "Madhan Prince",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="far fa-star"></i>`,
+        hovercontent: "We visited this dam on our trip to Palakkad. I wish this place was maintained better. The fountains are not functional and the gardens are being overtaken by weeds."
+  
+      },
+      {
+        avatar: "./Assets/Ellipse 4(8).png",
+        name: "Riya",
+        rating: `<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>`,
+        hovercontent: "Trip of the word 'dolorem', meaning pain. This makes lace was maintained better. the current dummy text impossible to translate into English"
+  
+      }
+      ]
+  
+      // ----------------------------------------------------------------
+  
+  
+      //  function searchvalue(btn) {
+  
+      //  }
+  
+  
+      function searchvalue(btn) {
+        if (re_search.value == "Munnar") {
+          console.log("kodaikanal");
+          cards[0].style.display = "flex";
+          cards[1].style.display = "flex";
+          cards[2].style.display = "flex";
+  
+          avatarImg[0].src = munnar1[0].avatar;
+          reviwName[0].innerText = munnar1[0].name;
+          reviewRating[0].innerHTML = munnar1[0].rating
+          hoverContent[0].innerText = munnar1[0].hovercontent;
+  
+          avatarImg[1].src = munnar1[1].avatar;
+          reviwName[1].innerText = munnar1[1].name;
+          reviewRating[1].innerHTML = munnar1[1].rating
+          hoverContent[1].innerText = munnar1[1].hovercontent;
+  
+  
+          avatarImg[2].src = munnar1[2].avatar;
+          reviwName[2].innerText = munnar1[2].name;
+          reviewRating[2].innerHTML = munnar1[2].rating
+          hoverContent[2].innerText = munnar1[2].hovercontent;
+        }
+        if (re_search.value == "Ooty") {
+          cards[0].style.display = "flex";
+          cards[1].style.display = "flex";
+          cards[2].style.display = "flex";
+  
+          avatarImg[0].src = ooty1[0].avatar;
+          reviwName[0].innerText = ooty1[0].name;
+          reviewRating[0].innerHTML = ooty1[0].rating
+          hoverContent[0].innerText = ooty1[0].hovercontent;
+  
+          avatarImg[1].src = ooty1[1].avatar;
+          reviwName[1].innerText = ooty1[1].name;
+          reviewRating[1].innerHTML = ooty1[1].rating
+          hoverContent[1].innerText = ooty1[1].hovercontent;
+  
+  
+          avatarImg[2].src = ooty1[2].avatar;
+          reviwName[2].innerText = ooty1[2].name;
+          reviewRating[2].innerHTML = ooty1[2].rating
+          hoverContent[2].innerText = ooty1[2].hovercontent;
+        }
+        if (re_search.value == "Kodaikanal") {
+  
+          cards[0].style.display = "flex";
+          cards[1].style.display = "flex";
+          cards[2].style.display = "flex";
+  
+          avatarImg[0].src = kodaikanal1[0].avatar;
+          reviwName[0].innerText = kodaikanal1[0].name;
+          reviewRating[0].innerHTML = kodaikanal1[0].rating
+          hoverContent[0].innerText = kodaikanal1[0].hovercontent;
+  
+          avatarImg[1].src = kodaikanal1[1].avatar;
+          reviwName[1].innerText = kodaikanal1[1].name;
+          reviewRating[1].innerHTML = kodaikanal1[1].rating
+          hoverContent[1].innerText = kodaikanal1[1].hovercontent;
+  
+  
+          avatarImg[2].src = kodaikanal1[2].avatar;
+          reviwName[2].innerText = kodaikanal1[2].name;
+          reviewRating[2].innerHTML = kodaikanal1[2].rating
+          hoverContent[2].innerText = kodaikanal1[2].hovercontent;
+        }
+      }
+  
+  
+  
+  
+    </script>
+  
+    <script src="JS/review.js" type="module"></script>
+  </body>
+  
+  </html>
 
 
-<br><br>  <br><br>  <br><br>
-
-<!-- <h1 class="star_count"></h1> -->
-<p class="After_review_content"></p>
-        <script src="JS/review.js"></script>
-</body>
-</html>
 
 
 
