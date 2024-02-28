@@ -1,0 +1,59 @@
+{
+    "id": "unique_package_id_12345",
+    "destination": "Kodaikanal",
+    "name": "Journey to the Heart of the Hills",
+    "days": 5,
+    "image": "Assets/17702.jpg",
+    "places": [
+      {
+        "name": "Kodai Lake",
+        "description": "A descriptive text about Kodai Lake."
+      },
+      {
+        "name": "Silver Cascade falls",
+        "description": "Information about Silver Cascade falls."
+      },
+      {
+        "name": "Pine Forest",
+        "description": "Details about the Pine Forest."
+      }
+    ],
+    "iframeLink": "https://www.google.com/maps/embed?pb=..."
+}
+
+{
+
+    "days":2,
+    "destination":"Ooty",
+    "iframeLink":"asdasdasdsad",
+    "image":"Assets/17702.jpg",
+    "name":"Enchanted Ooty Expedition",
+
+    "places":[
+    {
+    "description":"Surrounded by palatial tea estates, dense shola forests, manicured gardens, and mist clad mountains, Doddabetta Peak is one of the most brilliant sightseeing spots of Ooty. Perched at a height of 2637m, it is a popular jumping off point to explore nature’s bounties. Witness the unmatched natural beauty encircling the peak through the telescopes at the Telescope House maintained by the Tamil Nadu Tourism Development Corporation.",
+    "name":"Doddabetta Peak"
+    },
+    {
+    "description":"Another stunning sightseeing spot among the places to visit in Ooty is the highly photographed Pykara Lake, flanked by gorgeous scenery which will enhance the charm of your visit. It’s hemmed in by beautiful rolling hills and surrounded by impressive scenery. Touring the lake by a boat run by the Tamil Nadu Tourism Development Corporation gives you the best views of surrounding landscape with hills rising up behind it. Don’t miss the boat cruise that enables you to enjoy the relaxing ambience enveloping the lake.",
+    "name":"Pykara Lake/Boat Club"
+    }
+    ],
+    "review":[
+        {
+        "review-para":"Surrounded by palatial tea estates, dense shola forests, manicured gardens, and mist clad mountains, Doddabetta Peak is one of the most brilliant sightseeing spots of Ooty. Perched at a height of 2637m, it is a popular jumping off point to explore nature’s bounties. Witness the unmatched natural beauty encircling the peak through the telescopes at the Telescope House maintained by the Tamil Nadu Tourism Development Corporation.",
+        "username":"Doddabetta Peak",
+        "ratings":4,
+        "avatar": "png"
+        },
+        {
+        "review-para":"Another stunning sightseeing spot among the places to visit in Ooty is the highly photographed Pykara Lake, flanked by gorgeous scenery which will enhance the charm of your visit. It’s hemmed in by beautiful rolling hills and surrounded by impressive scenery. Touring the lake by a boat run by the Tamil Nadu Tourism Development Corporation gives you the best views of surrounding landscape with hills rising up behind it. Don’t miss the boat cruise that enables you to enjoy the relaxing ambience enveloping the lake.",
+        "username":"Pykara Lake/Boat Club",
+        "ratings":4,
+        "avatar": "png"
+        }
+]
+
+}
+
+  
