@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Function to generate package card HTML
     function createPackageCard(packageData) {
         const { destination, name, days, image, places } = packageData;
-
+        console.log(packageData)
         const packageCard = document.createElement('div');
         packageCard.classList.add('w-72', 'package-card', 'h-72', 'bg-white', 'shadow-md', 'rounded-xl', 'duration-500', 'hover:scale-105', 'hover:shadow-xl');
 

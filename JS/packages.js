@@ -104,7 +104,7 @@ getLastDocumentId().then(lastId => {
 
 document.getElementById('packageForm').addEventListener('submit', async function(event) {
     event.preventDefault();
-
+    
     try {
         // Get form values
         let destination = document.getElementById('destination').value.trim();
