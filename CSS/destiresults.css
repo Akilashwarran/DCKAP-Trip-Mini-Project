@@ -269,11 +269,21 @@ span {
     font-size: 40px;
     font-weight: bolder;
   }
+  h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Montserrat';
+  }
+  .place-name{
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Montserrat';
+  }
   .we2 .text {
     width: 65%;
     padding: 20px;
     border-radius: 10px;
-    border:  1px solid #23313e;
+    /* border:  1px solid #23313e; */
     
   }
 .we2 .pic {

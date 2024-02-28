@@ -71,6 +71,7 @@ body {
   text-decoration: none;
   color: rgb(1, 1, 36);
   padding: 15px;
+
 }
 .sol{
     display:none;
@@ -600,3 +601,21 @@ main {
   display: flex;
 }
 
+/* ---------------------- */
+.destination-name{
+  font-family: "Montserrat";
+}
+.destinations-heading{
+  font-family: "Montserrat";
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: 'Montserrat';
+}
+.package-name{
+  font-family: 'Montserrat';
+}
+.no-days{
+  font-family: 'Montserrat';
+}
