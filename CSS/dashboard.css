@@ -553,8 +553,9 @@ span {
   font-size: 30px;
   font-family: "Montserrat";
   color: #23313e;
-  
+  margin-top: 4%;
 }
+
 .hr1 hr{
   border: 1px solid #a0bad6;
   border-radius: 2px;
