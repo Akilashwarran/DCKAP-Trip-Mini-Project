@@ -24,22 +24,22 @@ let db = getFirestore(app);
 let username_firebase = document.getElementById("Username");
 let password_firebase = document.getElementById("password_signup");
 let email_firebase = document.getElementById("signup_email")
-console.log(username_firebase)
-console.log(password_firebase)
-console.log(email_firebase)
+// console.log(username_firebase)
+// console.log(password_firebase)
+// console.log(email_firebase)
 let signup_fire_btn = document.getElementById("sign_up_button");
 
-signupBtn.onclick = (() => {
+signupBtn.addEventListener('click', () => {
     loginForm.style.marginLeft = "-50%";
-
 });
-loginBtn.onclick = (() => {
+
+loginBtn.addEventListener('click', () => {
     loginForm.style.marginLeft = "0%";
-
 });
-signupLink.onclick = (() => {
+
+signupLink.addEventListener('click', (event) => {
     signupBtn.click();
-    return false;
+    event.preventDefault();
 });
 
 // ------------login password icon change--------------
@@ -220,23 +220,27 @@ otpbutton.addEventListener("click", async () => {
                 // alert("Data Added Successfully");
                 location.href="index.html"
             })
+            let userData = {
+    uid: 0, // Initialize user ID
+    username_signup: usernamevalue.value,
+    email_signup: emailvalue.value,
+    password_signup: passwordvalue.value
+};
 
-        // Retrieve existing userData from sessionStorage
-        let existingUserData = sessionStorage.getItem('u_ID');
-        console.log(existingUserData)
+// // Retrieve existing user data from session storage
+// let existingUserData = sessionStorage.getItem('userData');
 
-        let userData = existingUserData ? JSON.parse(existingUserData) : {};
+// // If existing user data exists, parse it from JSON
+// if (existingUserData) {
+//     userData = JSON.parse(existingUserData);
+// }
 
-        userData.uid = (userData.uid || 0) + 1;
+// Increment user ID
+userData.uid = (userData.uid || 0) + 1;
 
+// Store updated user data in session storage
+sessionStorage.setItem('userData', JSON.stringify(userData));
 
-        userData.u_ID = userData.uid;
-        userData.username_signup = usernamevalue.value;
-        userData.email_signup = emailvalue.value;
-        userData.password_signup = passwordvalue.value;
-
-
-        sessionStorage.setItem('u_ID', JSON.stringify(userData));
     } else {
         alert("invalid OTP");
     }
@@ -247,6 +251,19 @@ async function checkIfEmailExists(email) {
     const checking_email = await getDocs(collection(db, "user_data"));
     return checking_email.docs.some(doc => doc.data().email_ID === email);
 }
+
+
+if(sessionStorage.getItem('userData'))
+
+  { 
+   let sessionStorage_value=sessionStorage.getItem('userData');
+   console.log("email: "+sessionStorage_value)
+ 
+   }
+else{
+       console.log('user data not found')
+}
+
 
 
 function validateUsername(username) {
@@ -334,6 +351,12 @@ async function checkIfloginpasswordExists(pass) {
     return checking_email.docs.some(doc => doc.data().password === pass);
 }
 
+
+let storedEmail = sessionStorage.getItem("login_details");
+let storedName = localStorage.getItem("login_details");
+
+console.log(storedEmail);
+console.log(storedName);
 //--------------tooltip--------------
 
 document.addEventListener('DOMContentLoaded', function () {
