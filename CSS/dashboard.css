@@ -258,6 +258,7 @@ span {
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 40px;
+  margin-top: 2%;
 }
 .pic {
   width: 45%;
@@ -555,7 +556,6 @@ span {
   color: #23313e;
   margin-top: 4%;
 }
-
 .hr1 hr{
   border: 1px solid #a0bad6;
   border-radius: 2px;

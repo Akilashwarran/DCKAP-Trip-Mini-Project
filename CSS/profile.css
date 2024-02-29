@@ -182,8 +182,7 @@ input {
   margin: 10px;
 }
 
-.addTravel,
-.addFavorite {
+.addTravel, .addFavorite {
   width: 100px;
   height: 30px;
   background-color: #F9896B;
@@ -191,7 +190,9 @@ input {
   color: #fff;
   border-radius: 5px;
   box-shadow: 1px 1px 3px #535353;
+  border-radius: 50px;
 }
+
 .addTravel:hover {
   background-color: #DB765B;
 }
