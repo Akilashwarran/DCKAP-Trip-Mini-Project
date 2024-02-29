@@ -1,0 +1,15 @@
+body{
+    max-width: 1440px;
+    
+    /* width: 100vw; */
+    /* height: 100vh; */
+    /* background-image: url('Assets/under-construction.png'); */
+}
+.under-construction{
+    display: flex;
+    justify-content: center;
+}
+img{
+    width: 1000px;
+    height: 594px;
+}
