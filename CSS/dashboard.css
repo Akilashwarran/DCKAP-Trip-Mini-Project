@@ -70,7 +70,7 @@ body {
   position: sticky;
   top: 0px;
   left: 0px;
-  /* height: 50px; */
+  height: 50px;
 }
 .iconbars{
   max-width: 1440px;
@@ -204,7 +204,9 @@ body {
   display: flex;
   align-items: center;
   font-family: "Montserrat";
+  margin-top: -1%;
 }
+
 .we button  {
   border-radius: 20px;
   background-color: #F9896B;
@@ -256,6 +258,7 @@ span {
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 40px;
+  margin-top: 2%;
 }
 .pic {
   width: 45%;
@@ -551,7 +554,7 @@ span {
   font-size: 30px;
   font-family: "Montserrat";
   color: #23313e;
-  
+  margin-top: 4%;
 }
 .hr1 hr{
   border: 1px solid #a0bad6;
@@ -1011,6 +1014,24 @@ span {
   margin-top: 2%;
 }
 
-.account-div{
+.login-div {
+  margin-top: 0%;
   display: flex;
+}
+
+
+
+.user_profile{
+  
+ display: none;
+}
+
+.account{
+  margin-top: 25%;
+}
+
+.user-profile_blk{
+  display: block;
+  display: flex;
+  gap: 8%;
 }
