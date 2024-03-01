@@ -427,7 +427,7 @@ main {
 
 .icon {
   position: absolute;
-  left: 0;
+  right: 0;
   height: 45px;
   width: 45px;
   background-color: #fff;

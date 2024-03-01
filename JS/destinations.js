@@ -1,33 +1,33 @@
 // document.addEventListener("DOMContentLoaded", function() {
 //     // Function to generate package card HTML
 //     function createPackageCard(destination, packageName, duration, imageUrl) {
-//         const packageCard = document.createElement('div');
+//         let packageCard = document.createElement('div');
 //         packageCard.classList.add('w-72', 'package-card', 'h-72', 'bg-white', 'shadow-md', 'rounded-xl', 'duration-500', 'hover:scale-105', 'hover:shadow-xl');
         
-//         const link = document.createElement('a');
+//         let link = document.createElement('a');
 //         link.setAttribute('href', 'destiresults.html');
         
-//         const image = document.createElement('img');
+//         let image = document.createElement('img');
 //         image.setAttribute('src', imageUrl);
 //         image.setAttribute('alt', 'Product');
 //         image.classList.add('h-50', 'w-74', 'object-cover', 'rounded-t-xl');
         
-//         const detailsContainer = document.createElement('div');
+//         let detailsContainer = document.createElement('div');
 //         detailsContainer.classList.add('px-4', 'py-3', 'w-72');
         
-//         const destinationSpan = document.createElement('span');
+//         let destinationSpan = document.createElement('span');
 //         destinationSpan.classList.add('destination-name', 'text-gray-400', 'mr-3', 'uppercase', 'text-xs');
 //         destinationSpan.textContent = destination;
         
-//         const packageNameP = document.createElement('p');
+//         let packageNameP = document.createElement('p');
 //         packageNameP.classList.add('package-name', 'text-lg', 'font-bold', 'text-black', 'truncate', 'block', 'capitalize');
 //         packageNameP.textContent = packageName;
         
-//         const durationP = document.createElement('p');
+//         let durationP = document.createElement('p');
 //         durationP.classList.add('no-days', 'text-lg', 'font-semibold', 'text-black', 'cursor-auto', 'my-3');
 //         durationP.textContent = duration + ' Days';
         
-//         const bagIcon = document.createElement('svg');
+//         let bagIcon = document.createElement('svg');
 //         bagIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
 //         bagIcon.setAttribute('width', '20');
 //         bagIcon.setAttribute('height', '20');
@@ -35,11 +35,11 @@
 //         bagIcon.setAttribute('class', 'bi bi-bag-plus');
 //         bagIcon.setAttribute('viewBox', '0 0 16 16');
         
-//         const path1 = document.createElement('path');
+//         let path1 = document.createElement('path');
 //         path1.setAttribute('fill-rule', 'evenodd');
 //         path1.setAttribute('d', 'M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z');
         
-//         const path2 = document.createElement('path');
+//         let path2 = document.createElement('path');
 //         path2.setAttribute('d', 'M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z');
         
 //         // Append elements
@@ -60,16 +60,16 @@
 //     }
     
 //     // Example data
-//     const destination = 'Kodaikanal';
-//     const packageName = 'Journey to the Heart of the Hills';
-//     const duration = 5;
-//     const imageUrl = 'Assets/17702.jpg';
+//     let destination = 'Kodaikanal';
+//     let packageName = 'Journey to the Heart of the Hills';
+//     let duration = 5;
+//     let imageUrl = 'Assets/17702.jpg';
     
 //     // Get the container element to append the package card
-//     const container = document.getElementById('Projects');
+//     let container = document.getElementById('Projects');
     
 //     // Create the package card
-//     const packageCard = createPackageCard(destination, packageName, duration, imageUrl);
+//     let packageCard = createPackageCard(destination, packageName, duration, imageUrl);
     
 //     // Append the package card to the container
 //     container.appendChild(packageCard);
@@ -78,7 +78,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, doc ,setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-const firebaseConfig = {
+let firebaseConfig = {
     apiKey: "AIzaSyAb3BzH5tfNzTuKUDEhVpz51RzPySS5Vfc",
     authDomain: "dckap-trip-26e10.firebaseapp.com",
     databaseURL: "https://dckap-trip-26e10-default-rtdb.firebaseio.com",
@@ -89,14 +89,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+let app = initializeApp(firebaseConfig);
+let db = getFirestore(app);
 
 // // Function to retrieve packages from Firestore
 // async function getPackagesFromFirestore() {
 //     try {
-//         const querySnapshot = await getDocs(collection(db, "packages"));
-//         const packages = [];
+//         let querySnapshot = await getDocs(collection(db, "packages"));
+//         let packages = [];
 //         querySnapshot.forEach((doc) => {
 //             packages.push({
 //                 id: doc.id,
@@ -118,28 +118,28 @@ const db = getFirestore(app);
 document.addEventListener("DOMContentLoaded", async function() {
     // Function to generate package card HTML
     function createPackageCard(packageData) {
-        const { destination, name, days, image, places } = packageData;
+        let { destination, name, days, image, places } = packageData;
         console.log(packageData)
-        const packageCard = document.createElement('div');
+        let packageCard = document.createElement('div');
         packageCard.classList.add('w-72', 'package-card', 'h-72', 'bg-white', 'shadow-md', 'rounded-xl', 'duration-500', 'hover:scale-105', 'hover:shadow-xl');
 
-        const img = document.createElement('img');
+        let img = document.createElement('img');
         img.setAttribute('src', image);
         img.setAttribute('alt', name);
         img.classList.add('h-50', 'w-74', 'object-cover', 'rounded-t-xl');
 
-        const detailsContainer = document.createElement('div');
+        let detailsContainer = document.createElement('div');
         detailsContainer.classList.add('px-4', 'py-3', 'w-72');
 
-        const destinationSpan = document.createElement('span');
+        let destinationSpan = document.createElement('span');
         destinationSpan.classList.add('destination-name', 'text-gray-400', 'mr-3', 'uppercase', 'text-xs');
         destinationSpan.textContent = destination;
 
-        const packageNameP = document.createElement('p');
+        let packageNameP = document.createElement('p');
         packageNameP.classList.add('package-name', 'text-lg', 'font-bold', 'text-black', 'truncate', 'block', 'capitalize');
         packageNameP.textContent = name;
 
-        const durationP = document.createElement('p');
+        let durationP = document.createElement('p');
         durationP.classList.add('no-days', 'text-lg', 'font-semibold', 'text-black', 'cursor-auto', 'my-3');
         durationP.textContent = days + ' Days';
 
@@ -164,13 +164,13 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     // Get the container element to append the package cards
-    const container = document.getElementById('Projects');
+    let container = document.getElementById('Projects');
 
     // Fetch package data from Firestore
     async function fetchPackageDataFromFirestore() {
         try {
-            const querySnapshot = await getDocs(collection(db, "packages"));
-            const packageData = querySnapshot.docs.map(doc => doc.data());
+            let querySnapshot = await getDocs(collection(db, "packages"));
+            let packageData = querySnapshot.docs.map(doc => doc.data());
             return packageData;
         } catch (error) {
             console.error('Error fetching package data:', error);
@@ -179,25 +179,54 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     // Fetch package data and create cards
-    const packageData = await fetchPackageDataFromFirestore();
+    let packageData = await fetchPackageDataFromFirestore();
     packageData.forEach(data => {
-        const packageCard = createPackageCard(data);
+        let packageCard = createPackageCard(data);
         container.appendChild(packageCard);
     });
 });
 
 
-function searchdes(){
-    var search = document.getElementById('dest-search').value;
-    search = search.toLowerCase();
-    let dest_name = document.getElementsByClassName('destination-name')
-    let package_crd = document.getElementsByClassName('package-card')
-    for(var i=0; i<dest_name.length;i++){
-        if(!dest_name[i].innerHTML.toLowerCase().includes(search)){
-            package_crd[i].style.display ='none';
+// ----------------------- Search click and blur event----------------
+  document.addEventListener('DOMContentLoaded', (event) => {
+
+
+    let input = document.getElementById('dest-search');
+
+    input.addEventListener('keydown', function(event) {
+     
+
+      if (event.key === "Enter" || event.keyCode === 13) {
+        
+        console.log('Enter key was pressed.');
+
+        var search = document.getElementById('dest-search').value;
+        search = search.toLowerCase();
+        let dest_name = document.getElementsByClassName('destination-name')
+        let package_crd = document.getElementsByClassName('package-card')
+        for(var i=0; i<dest_name.length;i++){
+            if(!dest_name[i].innerHTML.toLowerCase().includes(search)){
+                package_crd[i].style.display ='none';
+            }
+            else{
+                package_crd[i].style.display ='block'
+            }
         }
-        else{
-            package_crd[i].style.display ='block'
+      }
+      input.addEventListener('blur', function(event) {
+        var search = document.getElementById('dest-search').value;
+        search = search.toLowerCase();
+        let dest_name = document.getElementsByClassName('destination-name')
+        let package_crd = document.getElementsByClassName('package-card')
+        for(var i=0; i<dest_name.length;i++){
+            if(!dest_name[i].innerHTML.toLowerCase().includes(search)){
+                package_crd[i].style.display ='none';
+            }
+            else{
+                package_crd[i].style.display ='block'
+            }
         }
-    }
-}
+      });
+    });
+  });
+
