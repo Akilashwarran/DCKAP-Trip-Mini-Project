@@ -1,6 +1,9 @@
 
+//-------------------------- login signup process --------------------------
+
 let sign_in_btn = document.querySelector("#sign-in-btn");
 let user_profile_div = document.querySelector(".user_profile");
+let username = document.querySelector("#user-profile");
 
 // sessionStorage.clear();
 if(sessionStorage.getItem('userData'))
@@ -8,13 +11,40 @@ if(sessionStorage.getItem('userData'))
 { 
   let sessionStorage_value=sessionStorage.getItem('userData');
   console.log("email: "+sessionStorage_value)
-  sign_in_btn.style.display = 'none';
-  user_profile_div.classList.add("user-profile_blk")
+  
+if (sessionStorage.getItem('userData')) {
 
+    let userDataString = sessionStorage.getItem('userData');
+    
+  
+    let userData = JSON.parse(userDataString);
+    if (userData.username_signup) {
+      
+        let user_name = userData.username_signup;
+        username.innerText = user_name
+        console.log("Username: " + user_name);
+    } else {
+        console.log("Username not found in userData");
+    }
+} else {
+    console.log('userData not found');
+}
+  sign_in_btn.style.display = 'none';
+ 
+  user_profile_div.classList.add("user-profile_blk")
+  
+
+ }
+ else if(sessionStorage.getItem('login_details')){
+    let sessionStorage_value=sessionStorage.getItem('login_details');
+    console.log("login: "+sessionStorage_value)
+    sign_in_btn.style.display = 'none';
+    user_profile_div.classList.add("user-profile_blk")
  }
 else{
   sign_in_btn.style.display = 'block'
-}    
+}   
+
      
 
 sign_in_btn.addEventListener("click",()=>{
