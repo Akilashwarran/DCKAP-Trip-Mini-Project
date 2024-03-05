@@ -18,8 +18,8 @@
 <body>
 
   <!-- ------------------------------ navbar ----------------------------- -->
-
-  <div class="navbar">
+  <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 50px; "></header>
+  <!-- <div class="navbar">
     <div class="homepage-image">
       <a href="index.html"><img class="logo" src="./Assets/dckap-trip-logo.png" alt="logo" /></a>
     </div>
@@ -41,12 +41,12 @@
       <a href=" " id="sign-in-btn"><button class="bt" id="sign-in-btn">Sign In</button></a>
       <a href="profile.html"><div class="user_profile">
         <i class="fa-solid fa-circle-user account"></i>
-       <!-- <p id="user-profile">Profile</p> -->
+       <!-- <p id="user-profile">Profile</p> 
       </div></a>
     </div>
 
 
-  </div>
+  </div> -->
 
   <!-- ------------------------------- home body ------------------------------------ -->
 
@@ -208,51 +208,17 @@
   </div>
 
   <!-- -------------------------------- footer ------------------------------- -->
-<!-- 
-  <div class="footer">
-    <div class="ft-lin">
-       <hr /> 
-    </div>
-    <div class="ft-content">
-      <div class="footer-logo-div">
-        <div class="footer-logo">
-          <img src="./Assets/dckap-trip-logo.png" alt="" id="footer-logo" />
-        </div>
 
-
-      </div>
-      <div class="ft-right">
-        <div class="resources">
-          <h2>Resources</h2>
-          <li><a href="https://mail.google.com/mail/u/0/?ogbl#inbox/FMfcgzGxRfDnCJRnbcKgPscsnJWhRWhT">Sunil M</a></li>
-          <li><a href="https://mail.google.com/mail/u/0/?ogbl#inbox/FMfcgzGxRfCdzVkcMZkcrtsJdrKjpqrW">Mukesh S</a></li>
-
-        </div>
-        <div class="ft-follow-us">
-          <h2>Follow Us</h2>
-          <li><a href="https://discord.com/channels/1130395220102623242/1199217823910744125">Discord</a></li>
-          <li><a href="https://github.com/Akilashwarran/DCKAP-Trip-Mini-Project">Github</a></li>
-        </div>
-        <div class="ft-legal">
-          <h2>Legal</h2>
-          <li><a href="">Privacy Policy</a></li>
-          <li><a href="">Terms and conditions</a></li>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="ft-c">
-      <hr id="footer-line"/>
-    </div>
-    <div class="ft-end">
-  
-      <div class="footer-space"></div>
-    </div>
-  </div> -->
 <script src="./JS/navbar.js"></script>
 <script type="module" src="./JS/signup.js"></script>
   <script src="./JS/dashboard.js"></script>
+  <script>
+    fetch('tripnav.html')
+  .then(response => response.text())
+  .then(data => {
+    document.querySelector('header').innerHTML += data;
+  });
+  </script>
 </body>
 
 </html>

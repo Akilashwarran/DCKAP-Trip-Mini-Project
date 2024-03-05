@@ -12,41 +12,21 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="CSS/planner.css">
-    <link rel="stylesheet" href="CSS/dashboard.css">
+  
     <title>Document</title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="homepage-image">
-          <a href="index.html"><img class="logo" src="./Assets/dckap-trip-logo.png" alt="logo" /></a>
-        </div>
-        <div class="navbar-menus">
-          <div class="navbar-home-menu">
-            <a href="index.html">Home</a>
-          </div>
-          <div class="navbar-destination-menu">
-            <a href="destinations.html" id="destination-menu">Destinations</a>
-          </div>
-          <div class="navbar-planner-menu">
-            <a href="planner.html" id="planner-menu">Planner</a>
-          </div>
-          <div class="navbar-collection-menu">
-            <a href="collections.html" id="collections-menu">Collections</a>
-          </div>
-    
-          <a href="Admin" id="dashboard">Dashboard</a>
-          <a href=" " id="sign-in-btn"><button class="bt" id="sign-in-btn">Sign In</button></a>
-          <a href="profile.html"><div class="user_profile">
-            <i class="fa-solid fa-circle-user account"></i>
-           <p id="user-profile">Profile</p>
-          </div></a>
-        </div>
-    
-    
-      </div>
+    <header style="position: sticky; top: 0; left: 0; z-index: 1000;"></header>
     <div class="under-construction">
         <img class="construction-png" src="Assets/construction-2.png" alt="">
     </div>
     <script src="JS/navbar.js"></script>
+    <script>
+        fetch('tripnav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('header').innerHTML += data;
+      });
+      </script>
 </body>
 </html>

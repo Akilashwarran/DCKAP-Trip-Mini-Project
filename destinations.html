@@ -1,120 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@400;500&family=Pacifico&family=Poppins:wght@200&family=Raleway:wght@300&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@400;500&family=Pacifico&family=Poppins:wght@200&family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="CSS/destinations.css" />
-    <link rel="stylesheet" href="CSS/dashboard.css">
-    <link rel="stylesheet" href="CSS/review.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="CSS/review.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-   
-  <div class="navbar">
-    <div class="homepage-image">
-      <a href="index.html"><img class="logo" src="./Assets/dckap-trip-logo.png" alt="logo" /></a>
+  <body>
+    <header style="position: sticky; top: 0; left: 0; z-index: 1000;"></header>
+
+    <!-- <main> -->
+    <!-- source: https://github.com/mfg888/Responsive-Tailwind-CSS-Grid/blob/main/index.html -->
+
+    <div class="top-div">
+      <h1 class="font-bold text-4xl mb-4 mt-4 destinations-heading">
+        Destinations
+      </h1>
+      <h1 class="text-3xl">
+        “A journey of a thousand miles begins with a single step.”
+      </h1>
+      <div class="input-container">
+        <input
+          type="text"
+          name="text"
+          class="input"
+          id="dest-search"
+          placeholder="Search Destinations..."
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill=""
+          viewBox="0 0 24 24"
+          class="icon"
+        >
+          <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+          <g
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            id="SVGRepo_tracerCarrier"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <rect fill="white" height="24" width="24"></rect>
+            <path
+              fill=""
+              d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM9 11.5C9 10.1193 10.1193 9 11.5 9C12.8807 9 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5ZM11.5 7C9.01472 7 7 9.01472 7 11.5C7 13.9853 9.01472 16 11.5 16C12.3805 16 13.202 15.7471 13.8957 15.31L15.2929 16.7071C15.6834 17.0976 16.3166 17.0976 16.7071 16.7071C17.0976 16.3166 17.0976 15.6834 16.7071 15.2929L15.31 13.8957C15.7471 13.202 16 12.3805 16 11.5C16 9.01472 13.9853 7 11.5 7Z"
+              clip-rule="evenodd"
+              fill-rule="evenodd"
+            ></path>
+          </g>
+        </svg>
+      </div>
     </div>
-    <div class="navbar-menus">
-      <div class="navbar-home-menu">
-        <a href="index.html">Home</a>
-      </div>
-      <div class="navbar-destination-menu">
-        <a href="destinations.html" id="destination-menu">Destinations</a>
-      </div>
-      <div class="navbar-planner-menu">
-        <a href="planner.html" id="planner-menu">Planner</a>
-      </div>
-      <div class="navbar-collection-menu">
-        <a href="collections.html" id="collections-menu">Collections</a>
-      </div>
 
-      <a href="Admin" id="dashboard">Dashboard</a>
-      <a href=" " id="sign-in-btn"><button class="bt" id="sign-in-btn">Sign In</button></a>
-      <a href="profile.html"><div class="user_profile">
-        <i class="fa-solid fa-circle-user account"></i>
-       <p id="user-profile">Profile</p>
-      </div></a>
+    <!-- ✅ Grid Section - Starts Here 👇 -->
+    <section
+      id="Projects"
+      class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"
+    ></section>
+    <!-- </main> -->
+
+    <div class="review_main" id="main_id"></div>
+
+    <div class="review_share">
+      <button class="review_share_btn">Share Your Review</button>
+    </div>
+    <div class="review_maincontainer2"></div>
+    <div class="review_container2">
+      <button id="review_cancel_btn"><i class="fa-solid fa-xmark"></i></button>
+      <h2 class="review_container2_heading1">
+        Review Zone Share Your Thoughts!!
+      </h2>
+      <h3 class="review_container2_heading2">
+        How would you rate your experience ?
+      </h3>
+      <div class="stars" id="star_id">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <h3 class="review_container2_heading2">Write a Review</h3>
+      <textarea
+        id="review_textarea"
+        rows="3"
+        cols="50"
+        spellcheck="false"
+        placeholder="Write a review here..."
+      ></textarea>
+      <button class="review_submit_btn">Submit review</button>
     </div>
 
-
-  </div>
-    <main>
-        <!-- source: https://github.com/mfg888/Responsive-Tailwind-CSS-Grid/blob/main/index.html -->
-
-        <div class="top-div text-center p-2">
-            <h1 class="font-bold text-4xl mb-4 destinations-heading"> Destinations</h1>
-            <h1 class="text-3xl">“A journey of a thousand miles begins with a single step.”</h1>
-            <div class="input-container">
-                <input type="text" name="text" class="input" id="dest-search"  placeholder="Search Destinations...">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24" class="icon">
-                    <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                    <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <rect fill="white" height="24" width="24"></rect>
-                        <path fill=""
-                            d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM9 11.5C9 10.1193 10.1193 9 11.5 9C12.8807 9 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5ZM11.5 7C9.01472 7 7 9.01472 7 11.5C7 13.9853 9.01472 16 11.5 16C12.3805 16 13.202 15.7471 13.8957 15.31L15.2929 16.7071C15.6834 17.0976 16.3166 17.0976 16.7071 16.7071C17.0976 16.3166 17.0976 15.6834 16.7071 15.2929L15.31 13.8957C15.7471 13.202 16 12.3805 16 11.5C16 9.01472 13.9853 7 11.5 7Z"
-                            clip-rule="evenodd" fill-rule="evenodd"></path>
-                    </g>
-                </svg>
-            </div>
-        </div>
-
-        <!-- ✅ Grid Section - Starts Here 👇 -->
-        <section id="Projects"
-            class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
-
-            
-        
-        </section>
-    </main>
-
-  <div class="review_main" id="main_id">
-
-  </div>
-
-
-  <div class="review_share">
-    <button class="review_share_btn">Share Your Review</button>
-  </div>
-  <div class="review_maincontainer2"> </div>
-  <div class="review_container2">
-    <button id="review_cancel_btn"><i class="fa-solid fa-xmark"></i></button>
-    <h2 class="review_container2_heading1">Review Zone Share Your Thoughts!!</h2>
-    <h3 class="review_container2_heading2">How would you rate your experience ?</h3>
-    <div class="stars" id="star_id">
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-    </div>
-    <h3 class="review_container2_heading2">Write a Review</h3>
-    <textarea id="review_textarea" rows="3" cols="50" spellcheck="false"
-      placeholder="Write a review here..."></textarea>
-    <button class="review_submit_btn">Submit review</button>
-
-  </div>
-
-    <script  type="module"  src="JS/destinations.js"></script>
+    <script type="module" src="JS/destinations.js"></script>
     <script src="JS/navbar.js"></script>
     <!-- <script  type="module" src="JS/packages.js"></script>
      -->
-
-</body>
-
+    <script>
+      fetch("tripnav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.querySelector("header").innerHTML += data;
+        });
+    </script>
+  </body>
 </html>
