@@ -2,13 +2,15 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, doc ,setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 const firebaseConfig = {
-    apiKey: "AIzaSyBl2nSsWE6IwcC3uPUZF7bgStLcoWJQ2g4",
-    authDomain: "dckaptrip-2.firebaseapp.com",
-    projectId: "dckaptrip-2",
-    storageBucket: "dckaptrip-2.appspot.com",
-    messagingSenderId: "1003076308711",
-    appId: "1:1003076308711:web:ebe6bf59db2211fad0dc42"
+    apiKey: "AIzaSyAb3BzH5tfNzTuKUDEhVpz51RzPySS5Vfc",
+    authDomain: "dckap-trip-26e10.firebaseapp.com",
+    databaseURL: "https://dckap-trip-26e10-default-rtdb.firebaseio.com",
+    projectId: "dckap-trip-26e10",
+    storageBucket: "dckap-trip-26e10.appspot.com",
+    messagingSenderId: "149435458483",
+    appId: "1:149435458483:web:41d72b11078e86b888e1c6"
   };
+
 
 
 document.addEventListener("DOMContentLoaded", function() {

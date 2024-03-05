@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
 }
-img{
+.construction-png{
     width: 1000px;
     height: 594px;
 }

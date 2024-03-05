@@ -1,119 +1,22 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     // Function to generate package card HTML
-//     function createPackageCard(destination, packageName, duration, imageUrl) {
-//         let packageCard = document.createElement('div');
-//         packageCard.classList.add('w-72', 'package-card', 'h-72', 'bg-white', 'shadow-md', 'rounded-xl', 'duration-500', 'hover:scale-105', 'hover:shadow-xl');
-        
-//         let link = document.createElement('a');
-//         link.setAttribute('href', 'destiresults.html');
-        
-//         let image = document.createElement('img');
-//         image.setAttribute('src', imageUrl);
-//         image.setAttribute('alt', 'Product');
-//         image.classList.add('h-50', 'w-74', 'object-cover', 'rounded-t-xl');
-        
-//         let detailsContainer = document.createElement('div');
-//         detailsContainer.classList.add('px-4', 'py-3', 'w-72');
-        
-//         let destinationSpan = document.createElement('span');
-//         destinationSpan.classList.add('destination-name', 'text-gray-400', 'mr-3', 'uppercase', 'text-xs');
-//         destinationSpan.textContent = destination;
-        
-//         let packageNameP = document.createElement('p');
-//         packageNameP.classList.add('package-name', 'text-lg', 'font-bold', 'text-black', 'truncate', 'block', 'capitalize');
-//         packageNameP.textContent = packageName;
-        
-//         let durationP = document.createElement('p');
-//         durationP.classList.add('no-days', 'text-lg', 'font-semibold', 'text-black', 'cursor-auto', 'my-3');
-//         durationP.textContent = duration + ' Days';
-        
-//         let bagIcon = document.createElement('svg');
-//         bagIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-//         bagIcon.setAttribute('width', '20');
-//         bagIcon.setAttribute('height', '20');
-//         bagIcon.setAttribute('fill', 'currentColor');
-//         bagIcon.setAttribute('class', 'bi bi-bag-plus');
-//         bagIcon.setAttribute('viewBox', '0 0 16 16');
-        
-//         let path1 = document.createElement('path');
-//         path1.setAttribute('fill-rule', 'evenodd');
-//         path1.setAttribute('d', 'M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z');
-        
-//         let path2 = document.createElement('path');
-//         path2.setAttribute('d', 'M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z');
-        
-//         // Append elements
-//         bagIcon.appendChild(path1);
-//         bagIcon.appendChild(path2);
-        
-//         detailsContainer.appendChild(destinationSpan);
-//         detailsContainer.appendChild(packageNameP);
-//         detailsContainer.appendChild(durationP);
-//         detailsContainer.appendChild(bagIcon);
-        
-//         link.appendChild(image);
-//         link.appendChild(detailsContainer);
-        
-//         packageCard.appendChild(link);
-        
-//         return packageCard;
-//     }
-    
-//     // Example data
-//     let destination = 'Kodaikanal';
-//     let packageName = 'Journey to the Heart of the Hills';
-//     let duration = 5;
-//     let imageUrl = 'Assets/17702.jpg';
-    
-//     // Get the container element to append the package card
-//     let container = document.getElementById('Projects');
-    
-//     // Create the package card
-//     let packageCard = createPackageCard(destination, packageName, duration, imageUrl);
-    
-//     // Append the package card to the container
-//     container.appendChild(packageCard);
-// });
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, doc ,setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-const firebaseConfig = {
-    apiKey: "AIzaSyBl2nSsWE6IwcC3uPUZF7bgStLcoWJQ2g4",
-    authDomain: "dckaptrip-2.firebaseapp.com",
-    projectId: "dckaptrip-2",
-    storageBucket: "dckaptrip-2.appspot.com",
-    messagingSenderId: "1003076308711",
-    appId: "1:1003076308711:web:ebe6bf59db2211fad0dc42"
+import { getFirestore, getDoc, getDocs, doc, setDoc, updateDoc, addDoc,  collection } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+ const firebaseConfig = {
+    apiKey: "AIzaSyAb3BzH5tfNzTuKUDEhVpz51RzPySS5Vfc",
+    authDomain: "dckap-trip-26e10.firebaseapp.com",
+    databaseURL: "https://dckap-trip-26e10-default-rtdb.firebaseio.com",
+    projectId: "dckap-trip-26e10",
+    storageBucket: "dckap-trip-26e10.appspot.com",
+    messagingSenderId: "149435458483",
+    appId: "1:149435458483:web:41d72b11078e86b888e1c6"
   };
 
-// Initialize Firebase
+
+
 let app = initializeApp(firebaseConfig);
 let db = getFirestore(app);
 
-// // Function to retrieve packages from Firestore
-// async function getPackagesFromFirestore() {
-//     try {
-//         let querySnapshot = await getDocs(collection(db, "packages"));
-//         let packages = [];
-//         querySnapshot.forEach((doc) => {
-//             packages.push({
-//                 id: doc.id,
-//                 data: doc.data()
-//             });
-//         });
-//         return packages;
-//     } catch (error) {
-//         console.error("Error getting packages:", error);
-//         return [];
-//     }
-// }
-
-// // Usage example
-// getPackagesFromFirestore().then(packages => {
-//     console.log("Packages from Firestore:", JSON.stringify(packages, null, 2));
-// });
-// --------------
 document.addEventListener("DOMContentLoaded", async function() {
     // Function to generate package card HTML
     function createPackageCard(packageData) {
@@ -229,3 +132,258 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
   });
 
+//-------------------------------gunasri-----------------------
+
+
+var review_share_btn = document.querySelector(".review_share_btn");
+    // review_share_btn.classList.add("review_share_btn2");
+var review_container2=document.querySelector(".review_container2");
+var review_maincontainer2=document.querySelector(".review_maincontainer2");
+var review_star_icons =document.querySelector(".review_star_icon");
+var review_textarea =document.querySelector("#review_textarea");
+var review_submit_btn=document.querySelector(".review_submit_btn");
+var review_cancel_btn=document.querySelector("#review_cancel_btn");
+var searchInput = document.getElementById("search");
+
+let input = document.getElementById('dest-search');
+
+var stars = document.querySelectorAll(".stars i");
+
+// search click event
+// let search_btn = document.querySelector(".icon");
+// var search = document.getElementById('dest-search').value;
+        // search = search.toLowerCase();
+// let dest_search = document.querySelector("#dest-search").value;
+
+let search_btn = document.querySelector(".icon");
+let dest_search = document.getElementById('dest-search');
+
+search_btn.addEventListener("click", async () => {
+    var search = dest_search.value;
+
+    search = search.toLowerCase();
+    if (search === "kodaikanal") {
+        await firebaseReview("kodaikanal");
+    } else if (search === "ooty") {
+        await firebaseReview("ooty");
+    } else if (search === "munnar") {
+        await firebaseReview("munnar");
+    } else if (search === "trichy") {
+        await firebaseReview("trichy");
+    } else if (search === "chennai") {
+        await firebaseReview("chennai");
+    }
+    else if (search === "madurai") {
+        await firebaseReview("madurai");
+    }
+});
+
+dest_search.addEventListener("keydown", async (event) => {
+    if (event.key === "Enter") {
+        var search = dest_search.value;
+
+        search = search.toLowerCase();
+        if (search === "kodaikanal") {
+            await firebaseReview("kodaikanal");
+        } else if (search === "ooty") {
+            await firebaseReview("ooty");
+        } else if (search === "munnar") {
+            await firebaseReview("munnar");
+        } else if (search === "trichy") {
+            await firebaseReview("trichy");
+        } else if (search === "chennai") {
+            await firebaseReview("chennai");
+        }else if (search === "chennai") {
+            await firebaseReview("chennai");
+        }
+    }
+});
+
+async function firebaseReview(place) {
+    var tracklistTable = document.getElementById("main_id");
+    tracklistTable.innerHTML = "";
+
+    let displayRef = doc(db, "review_Collection", place);
+    let dataRef = await getDoc(displayRef);
+    let dataObj = dataRef.data();
+    if (dataObj) {
+        let dataArr = dataObj["reviewObj"];
+        for (let key in dataArr) {
+            tracklistTable.innerHTML += "<section class='container'>" +
+                "<div class='card'>" +
+                "<div class='content'>" +
+                "<div class='testimonial-avatar'><img class='img1' src='" + dataObj["reviewObj"][key].image + "' alt=''>" +
+                "<div class='content2'>" +
+                "<div class='h6'>" + dataObj["reviewObj"][key].user_name + "</div>" +
+                "<div class='testimonial-rating'>" + getRatingStar(dataObj["reviewObj"][key].rating) +
+                "</div>" +
+                "</div>" +
+                "</div>" +
+                "<div class='hover_content'>" +
+                "<p>" + dataObj["reviewObj"][key].description + "</p>" +
+                "</div>" +
+                "</div>" +
+                "</div> " +
+                "</section>";
+        }
+    } else {
+        console.log("No data found for " + place);
+    }
+}
+
+async function firebaseWriteReview(place) {
+    var tracklistTable = document.getElementById("main_id");
+    tracklistTable.innerHTML = "";
+
+    let displayRef = doc(db, "review_Collection", place);
+    let dataRef = await getDoc(displayRef);
+    let dataObj = dataRef.data();
+
+}
+review_share_btn.addEventListener("click",(e)=>{
+    review_container2.style.display="block";
+    // review_maincontainer2.style.height="38.5em"
+    review_maincontainer2.style.width="99%"
+    review_maincontainer2.style.position="absolute"
+    review_maincontainer2.style.display= "block";
+    review_maincontainer2.style.backgroundColor="rgba(0, 0, 0, 0.5)";;
+    document.body.style.opacity= "1";
+})
+
+
+
+
+
+//review_submit_btn
+review_submit_btn.addEventListener("click", async () => {
+    var search = document.getElementById('dest-search').value;
+    let place = search 
+    console.log(search);
+    submitReview(place);
+    console.log(place);
+  });
+  
+  
+  //submitReview function
+  
+  async function submitReview(place) {
+    
+    var tracklistTable = document.getElementById("main_id");
+    tracklistTable.innerHTML = "";
+    var comments = document.getElementById("review_textarea").value;
+    var element = document.getElementById("star_id");
+    var starCount = element.getElementsByClassName('fa-solid fa-star active').length;
+  
+    // Firebase data handling
+    let oldRef = doc(db, "review_Collection", place);
+    let oldDataRef = await getDoc(oldRef);
+    let oldData = oldDataRef.data();
+    
+    let oldArr = (oldData && Array.isArray(oldData.reviewObj)) ? oldData.reviewObj : [];
+    
+    let newReviewObj = {
+        user_id: "uid_3",
+        user_name: comments,
+        image: "Assets/Ellipse 4(8).png",
+        rating: starCount,
+        description: comments
+    };
+  
+    // Merge existing reviews with the new review
+    let updatedReviews = [...oldArr, newReviewObj];
+  
+    let objRef = doc(db, "review_Collection", place);
+    let objRefData = updateDoc(objRef, { 
+        reviewObj: updatedReviews 
+    })
+  
+    console.log(objRef);
+  
+    firebaseReview(place);
+  
+    // Function to call the container close 
+    cancel_fun();
+  }
+  
+  
+
+  function getRatingStar(num){
+  
+    if(num == 1){
+      return "<i class='fa-solid fa-star'></i>"+
+      "<i class='far fa-star'></i>"+
+      "<i class='far fa-star'></i>"+
+      "<i class='far fa-star'></i>"+
+      "<i class='far fa-star'></i>"
+    }else if(num == 2){
+      return "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='far fa-star'></i>"+
+      "<i class='far fa-star'></i>"+
+      "<i class='far fa-star'></i>"
+    }else if(num == 3){
+      return "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='far fa-star'></i>"+
+      "<i class='far fa-star'></i>"
+    }else if(num == 4){
+      return "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='far fa-star'></i>"
+    }
+    else if(num == 5){
+      return "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"+
+      "<i class='fa-solid fa-star'></i>"
+    }
+  
+    return "<i class='far fa-star'></i>"+
+    "<i class='far fa-star'></i>"+
+    "<i class='far fa-star'></i>"+
+    "<i class='far fa-star'></i>"+
+    "<i class='far fa-star'></i>";
+  }
+  
+  review_cancel_btn.addEventListener("click",cancel_fun);
+  function cancel_fun(){
+  
+    review_container2.style.display="none";
+    review_maincontainer2.style.display= "none";
+    review_maincontainer2.style.opacity= "0";
+    review_textarea.value=" ";
+  
+    stars.forEach((star) => {
+      star.classList.remove("active");
+  });
+  
+  }
+    
+  
+  var star_count=document.querySelector(".star_count")
+  var After_review_content=document.querySelector(".After_review_content");
+  
+  
+  
+  
+  
+  var stars = document.querySelectorAll(".stars i");
+  
+  stars.forEach((star, index1) => {
+   
+    star.addEventListener("click", () => {
+    
+      stars.forEach((star, index2) => {
+     
+        index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+  
+        
+      });
+  });
+  });
+  
+  
