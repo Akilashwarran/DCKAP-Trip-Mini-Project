@@ -225,7 +225,7 @@ otpbutton.addEventListener("click", async () => {
                 location.href="index.html"
             })
             let userData = {
-    uid: currebtID, // Initialize user ID
+    uid: currentID, // Initialize user ID
     username_signup: usernamevalue.value,
     email_signup: emailvalue.value,
     password_signup: passwordvalue.value
