@@ -1,26 +1,24 @@
 
-
 body {
   font-family: "Montserrat",sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
-
 .mainContainer {
   display: flex;
   max-width:100%;
 }
 
 .navleft{
-  width: 95px;
+  width: 90px;
   transition:0.2s linear ;
   position: fixed;
   border: 2px solid rgb(240, 240, 240);
 }
 .navleft:hover{
   width: 20%;
-
 }
 .leftContainer{
   padding: 1rem;
@@ -34,7 +32,6 @@ body {
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  /* box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1); */
   
 }
 .logo img{
@@ -46,7 +43,7 @@ body {
 .logo span{
   font-size: 18px;
   font-weight: bold;
-  padding-left: 10px;  
+  padding-left: 10px;
 }
 .menu_list{
   margin-top: 10px;
@@ -55,12 +52,13 @@ body {
   flex-direction: column;
   background-color: #fff;
   border-radius: 10px;
- 
+  overflow: auto; 
 }
 .menu_list a{
   display: flex;
+  height: 25px;
   align-items: center;
-  /* padding: 0.6rem; */
+  white-space: nowrap;
   padding: 10px;
   margin: 5px;
   color: rgb(39, 39, 39);
@@ -70,25 +68,21 @@ body {
 }
 .menu_list i{
   font-size: 1.2rem;
-  /* color: rgb(104, 103, 103); */
   margin: 0 1.8rem 0 0.3rem;
-
 }
 .menu_list a:hover{
-  /* background-color: rgb(238, 237, 237); */
   background-color: #F9896B;
   color: #FFF;
   border-radius: 100px;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1); 
   font-weight: bold;
 }
-
-
 .color {
   background-color: rgb(240, 240, 240);
   border-radius: 100px;
   font-weight: bold;
   color: #FFF;
+  /* box-shadow: 0px 0px 2px #535353; */
 }
 
 .rightContainer {
@@ -101,14 +95,12 @@ body {
   border: 2px solid rgb(240, 240, 240);
   border-radius: 10px;
 }
-
 .head {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
 }
-
 .btn {
   background-color: #F9896B;
   border: none;
@@ -117,6 +109,7 @@ body {
   width: 80px;
   padding: 10px;
   font-size: 16px;
+  /* box-shadow: 0px 0px 2px #535353; */
   text-align: center;
 
 }
@@ -162,9 +155,9 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* padding: 10px; */
   display: none;
 }
-
 .filed-con{
   font-size: 14px;
   color: rgb(10, 100, 185);
@@ -175,7 +168,6 @@ body {
   height: 2px;
   font-size: 12px;
   color: red;
-  
 }
 
 input {
@@ -183,6 +175,7 @@ input {
   padding: 10px;
   border: none;
   outline: none;
+  /* background-color: #f1f1f1; */
   border-radius: 100px;
   border: 2px solid #EAEAEA;
 }
@@ -201,7 +194,6 @@ input {
   border: 2px solid rgb(240, 240, 240);
   display: none;
 }
-
 .a,
 .b {
   display: flex;
@@ -231,8 +223,6 @@ input {
   background-color: #DB765B;
   cursor: pointer;
   font-weight: bold;
-
-  
 } 
 
 /* -----------------------profile image----------------------------------------------------- */
@@ -270,8 +260,6 @@ input {
 .proImgicon i {
   margin: 6px;
 }
-
-
 
 /* --------------------------password tooltip--------------------------------------------------------- */
 

@@ -1,20 +1,9 @@
-"use strict"
-
-
 "use strict";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, getDoc, getDocs, doc, setDoc, updateDoc, addDoc,  collection } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBl2nSsWE6IwcC3uPUZF7bgStLcoWJQ2g4",
-//     authDomain: "dckaptrip-2.firebaseapp.com",
-//     projectId: "dckaptrip-2",
-//     storageBucket: "dckaptrip-2.appspot.com",
-//     messagingSenderId: "1003076308711",
-//     appId: "1:1003076308711:web:ebe6bf59db2211fad0dc42"
-//   };
+import{getStorage,ref as sref,uploadBytesResumable,getDownloadURL}from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAb3BzH5tfNzTuKUDEhVpz51RzPySS5Vfc",
@@ -30,7 +19,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 var login_data = {
-    login_email : "babukumarkdckap@gmaiil.com"
+    login_email : "vedosemywu@mailinator.com",
+    is_admin : 5
 }
 
 var Username = document.getElementById("name");
@@ -38,53 +28,31 @@ var UseEmail = document.getElementById("email");
 var UserContact = document.getElementById("phone");
 
 var a = localStorage.setItem("login_data", JSON.stringify(login_data)); 
-var user = JSON.parse(localStorage.getItem("login_data"))
-var localValue = user.login_email;
+var user = JSON.parse(sessionStorage.getItem("userData"))
+console.log(user);
+
 
 document.addEventListener("DOMContentLoaded", async function() {
-   
-    const userCollectionRef = collection(db, "user_data");
-  try {
-    const querySnapshot = await getDocs(userCollectionRef);
-    var id = querySnapshot.size
 
-    querySnapshot.forEach((doc) => {
-        var curentuserID = doc.id
-        var userData = doc.data();
-        console.log(userData);
-  document.getElementById("defaultName").textContent = userData.username || "Default Name";
-  document.getElementById("defaultEmail").textContent = userData.email_ID || "+Add";
-  document.getElementById("defaultNo").textContent = userData.phone || "+Add";
+    let getRef = doc(db, "user_data", `${user}`);
 
-      if(localValue == doc.data().email_ID){
+    let getdata = await getDoc(getRef)
+         console.log(getdata.data().email_ID);
+ 
+         document.getElementById("defaultName").textContent = getdata.data().username || "Default Name";
+                 document.getElementById("defaultEmail").textContent =getdata.data().email_ID|| "+Add";
+                 document.getElementById("defaultNo").textContent = getdata.data().phone || "+Add";
+         
+                 document.getElementById("name").value = getdata.data().username || "";
+                 document.getElementById("email").value = getdata.data().email_ID || "";
+                 document.getElementById("phone").value = getdata.data().phone || "";
+                 document.getElementById("password").value = getdata.data().password || "";
+                 document.querySelector(".ProfileImg").src =  getdata.data().u_dp 
 
-        let ref = doc(db,"user_data",curentuserID);
-        updateDoc(
-          ref, {
-            email_ID: UseEmail.value,
-            UserContact: UserContact.value,
-            username: Username.value
-          }
-        ).then(()=>{
-          alert("Updated Successfully")
-        })
-      }
-
-    });
-  } catch (error) {
-    console.error("Error fetching user data: ", error);
-  }
-});
+})
 
 
-    // var store = sessionStorage.getItem("")
-   
-    //    console.log(store)
-   
-
-
-
-// // --------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------
 
 
 
@@ -101,30 +69,30 @@ document.addEventListener("DOMContentLoaded", function() {
     function showProfileDetails() {
         profileDetails.style.display = "block";
         addFavoriteDetails.style.display = "none";
-        travelHistoryDetails.style.display = "none";
+        // travelHistoryDetails.style.display = "none";
         personalInfo.classList.add("color");
-        Travelhistory.classList.remove("color");
+        // Travelhistory.classList.remove("color");
         addFavoriteinfo.classList.remove("color");
     }
 
     function showaddFavorite() {
         profileDetails.style.display = "none";
         addFavoriteDetails.style.display = "block";
-        travelHistoryDetails.style.display = "none";
+        // travelHistoryDetails.style.display = "none";
         personalInfo.classList.remove("color");
         addFavoriteinfo.classList.add("color");
-        Travelhistory.classList.remove("color");
+        // Travelhistory.classList.remove("color");
     }
 
-    function showAddTraval() {
-        profileDetails.style.display = "none";
-        addFavoriteDetails.style.display = "none";
-        travelHistoryDetails.style.display = "block";
-        personalInfo.classList.remove("color");
-        addFavoriteinfo.classList.remove("color");
-        Travelhistory.classList.add("color");
+    // function showAddTraval() {
+    //     profileDetails.style.display = "none";
+    //     addFavoriteDetails.style.display = "none";
+    //     travelHistoryDetails.style.display = "block";
+    //     personalInfo.classList.remove("color");
+    //     addFavoriteinfo.classList.remove("color");
+    //     Travelhistory.classList.add("color");
 
-    }
+    // }
 
     personalInfo.addEventListener("click", function() {
         showProfileDetails();
@@ -134,20 +102,61 @@ document.addEventListener("DOMContentLoaded", function() {
         showaddFavorite();
     });
 
-    Travelhistory.addEventListener("click", function() {
-        showAddTraval();
-    });
+    // Travelhistory.addEventListener("click", function() {
+    //     showAddTraval();
+    // });
 
 });
 
 
-// ----------------------------------profile pic---------------------------------------------------------------------
+
+// ----------------------------------logout function------------------------------------------------
+
+let logout = document.querySelector(".Log-out");
+logout.addEventListener("click",()=>{
+
+    if(sessionStorage.getItem('userData'))
+
+    { 
+        sessionStorage.clear();
+        let sessionStorage_value=sessionStorage.getItem('userData');
+        console.log("email: "+sessionStorage_value)
+        sign_in_btn.style.display = 'none';
+
+        user_profile_div.classList.add("user-profile_blk")
+    }
+    else{
+        sign_in_btn.style.display = 'block'
+    } 
+
+});
+
+
+// ----------------------------------profile pic---------------------------------------------------------
     let ProfileImg = document.querySelector(".ProfileImg");
     let inputfile= document.querySelector("#input-file");
 
 inputfile.onchange = function(){
+
     ProfileImg.src = URL.createObjectURL(inputfile.files[0]) 
-}
+    let pimage =  document.querySelector("#input-file").files[0]
+
+let meta_data = {contentype:pimage.type}
+let task = sref(getStorage(),'images'+pimage.name)
+let store = uploadBytesResumable(task,pimage,meta_data)
+store.then(getDownloadURL(store.snapshot.ref).then((downloadURL)=>{
+    let ref = doc(db,"user_data",`${user}`);
+
+    updateDoc(
+      ref,  {
+       u_dp:downloadURL
+      
+    }
+    ).then(()=>{
+      alert("Updated Successfully")
+    })
+}))
+};
 // -----------------------------------------------------------------------------------
 
 
@@ -172,17 +181,11 @@ const twoBtn = document.querySelector(".twoBtn")
         inputDetails.forEach(detail => {
         detail.style.display = "flex";
      });
-    }
+    };
     
 
 
 // ---------------------------get input & err msg-----------------------------------
-
-
-
-
-
-
 
 
 function validateInputs() {
@@ -259,28 +262,18 @@ function validateInputs() {
 
 
 
-
-
-
 editButton.addEventListener("click", function(event) {
-    // savebtn.style.display = "block"
     twoBtn.style.display = "block"
     toggleInputFields();
     event.preventDefault();
 
-    // // var nameInput = document.getElementById("name");
-    // var defaultName =  document.getElementById("defaultName").value
-    // // nameInput.value.textContent = defaultName.value;
-    // document.getElementById("name").value.textContent = defaultName.value;
-  
+});
 
 });
 
-})
-
 
 var savebtn = document.getElementById("savebtn")
-savebtn.addEventListener("click",function(event){
+savebtn.addEventListener("click",async function(event){
     event.preventDefault();
             const nameInput = document.getElementById("name").value;
             console.log(nameInput);
@@ -301,24 +294,26 @@ savebtn.addEventListener("click",function(event){
            console.log(defaultNo);
 
 
-        //    validateInputs() 
+           console.log(  UseEmail.value, UserContact.value, Username.value)
 
-        // if(nameInput || phoneInput || usernameInput || passwordInput || confirmPasswordInput !== ""){
-        //     // validateInputs()
 
-        //     // nameInput.value.textContent = defaultName
-        //     // phoneInput.value.textContent= defaultNo
 
-        //     detail.style.display = "none";
-        //     inputDetails.style.display = "block"
-        //     defaultName.value.textContent = nameInput
-        //     defaultNo.value.textContent= phoneInput
+            let ref = doc(db,"user_data",`${user}`);
 
-        // }
-        // else{
-        //     alert("hi")
-        // }
+            updateDoc(
+              ref,  {
+                username:nameInput,
+                email_ID:emailInput,
+                password:passwordInput,
+                // pno:phoneInput.value
+            }
+            ).then(()=>{
+              alert("Updated Successfully")
+            })
+        
            
+     
+       
 })
 
 var form = document.getElementById("profileform");
@@ -340,17 +335,9 @@ if (twoBtn.style.display != "none") {
     twoBtn.style.display = "none";
     editButton.style.display = "block";
 }
-  
+
 
 });
-
-
-
-
-
-    
-
-
 
 
 // // -----------------------------tooltip function-----------------------------------------------------------------
@@ -427,6 +414,4 @@ function passwordValidation(){
         leng.classList.add("invalid");
     }
 
-}
-
-
+};
