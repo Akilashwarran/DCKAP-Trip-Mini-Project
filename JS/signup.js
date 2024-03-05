@@ -5,7 +5,8 @@ const signupLink = document.querySelector("form .signup-link a");
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 
-const firebaseConfig = {
+// Your web app's Firebase configuration
+ const firebaseConfig = {
     apiKey: "AIzaSyAb3BzH5tfNzTuKUDEhVpz51RzPySS5Vfc",
     authDomain: "dckap-trip-26e10.firebaseapp.com",
     databaseURL: "https://dckap-trip-26e10-default-rtdb.firebaseio.com",
@@ -13,13 +14,16 @@ const firebaseConfig = {
     storageBucket: "dckap-trip-26e10.appspot.com",
     messagingSenderId: "149435458483",
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
-};
-
+  };
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 import { getFirestore, getDoc, getDocs, doc, setDoc, query, where, updateDoc, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 let db = getFirestore(app);
+console.log('db');
+
+console.log(db);
 
 let username_firebase = document.getElementById("Username");
 let password_firebase = document.getElementById("password_signup");
@@ -200,14 +204,14 @@ otpbutton.addEventListener("click", async () => {
     let otpbutton = document.querySelector("#otpbtn");
 
     if (otp_value == otp_random) {
-        alert("valid OTP");
-
-        let ref = doc(db, "user_data", `${id++}`);
+        // alert("valid OTP");
+        var currentID = id++
+        let ref = doc(db, "user_data", `${currentID}`);
 
 
         let user_details = {
             is_admin: 0,
-
+            is_user:currentID,
             username: username_firebase.value,
             password: password_firebase.value,
             email_ID: email_firebase.value,
@@ -221,19 +225,11 @@ otpbutton.addEventListener("click", async () => {
                 location.href="index.html"
             })
             let userData = {
-    uid: 0, // Initialize user ID
+    uid: currebtID, // Initialize user ID
     username_signup: usernamevalue.value,
     email_signup: emailvalue.value,
     password_signup: passwordvalue.value
 };
-
-// // Retrieve existing user data from session storage
-// let existingUserData = sessionStorage.getItem('userData');
-
-// // If existing user data exists, parse it from JSON
-// if (existingUserData) {
-//     userData = JSON.parse(existingUserData);
-// }
 
 // Increment user ID
 userData.uid = (userData.uid || 0) + 1;
@@ -436,4 +432,14 @@ password.addEventListener("input", (event) => {
         document.getElementById('passwordTooltip').classList.add('active');
     }
 })
+let forget=document.querySelector(".pass-link a")
+console.log(forget)
+
+forget.addEventListener("click",()=>{
+    let el=document.querySelector(".signup_full_page").style.display="none"
+console.log(el)
+
+let forget_main=document.querySelector(".forget_main").style.display="block"
+})
+
 
