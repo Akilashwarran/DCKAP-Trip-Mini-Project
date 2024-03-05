@@ -1,7 +1,6 @@
 
 "use strict"
 
-
 //--------------------explore buttons ----------------------------
 
 let destination_explore = document.querySelector("#destination-explore");
@@ -18,5 +17,4 @@ let collections_explore = document.querySelector("#collections-explore");
 collections_explore.addEventListener("click",()=>{
     collections_explore.href="collections.html";
 });
-
 

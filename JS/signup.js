@@ -256,13 +256,14 @@ if(sessionStorage.getItem('userData'))
 
   { 
    let sessionStorage_value=sessionStorage.getItem('userData');
+   let name = userData.username_signup;
    console.log("email: "+sessionStorage_value)
+   console.log(name);
  
    }
 else{
        console.log('user data not found')
 }
-
 
 
 function validateUsername(username) {
@@ -351,11 +352,11 @@ async function checkIfloginpasswordExists(pass) {
 }
 
 
-let storedEmail = sessionStorage.getItem("login_details");
-let storedName = localStorage.getItem("login_details");
 
-console.log(storedEmail);
-console.log(storedName);
+   let sessionStorage_value=sessionStorage.getItem('login_details');
+   console.log("login: "+sessionStorage_value)
+
+// console.log(storedName);
 //--------------tooltip--------------
 
 document.addEventListener('DOMContentLoaded', function () {
