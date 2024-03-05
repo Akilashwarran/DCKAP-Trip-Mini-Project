@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@400;500&family=Pacifico&family=Poppins:wght@200&family=Raleway:wght@300&display=swap"
       rel="stylesheet"
@@ -19,7 +20,7 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="CSS/destinations.css" />
-
+    <link rel="stylesheet" href="CSS/tripnav.css">
     <link rel="stylesheet" href="CSS/review.css" />
     <link
       rel="stylesheet"
@@ -32,16 +33,16 @@
   </head>
 
   <body>
-    <header style="position: sticky; top: 0; left: 0; z-index: 1000;"></header>
+    <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 40px; "></header>
 
     <!-- <main> -->
     <!-- source: https://github.com/mfg888/Responsive-Tailwind-CSS-Grid/blob/main/index.html -->
 
     <div class="top-div">
-      <h1 class="font-bold text-4xl mb-4 mt-4 destinations-heading">
+      <h1 class="font-bold text-4xl mb-4 mt-10 destinations-heading">
         Destinations
       </h1>
-      <h1 class="text-3xl">
+      <h1 class="text-3xl mb-6">
         “A journey of a thousand miles begins with a single step.”
       </h1>
       <div class="input-container">
@@ -83,8 +84,13 @@
       class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"
     ></section>
     <!-- </main> -->
+    <h1 class="font-bold text-4xl mb-4 mt-10 destinations-heading" style="text-align: center;">
+      Reviews
+    </h1>
+    <div class="review_main" id="main_id">
+      
 
-    <div class="review_main" id="main_id"></div>
+    </div>
 
     <div class="review_share">
       <button class="review_share_btn">Share Your Review</button>

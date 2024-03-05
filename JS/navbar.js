@@ -1,9 +1,9 @@
 
 //-------------------------- login signup process --------------------------
 
-let sign_in_btn = document.querySelector("#sign-in-btn");
-let user_profile_div = document.querySelector(".user_profile");
-let username = document.querySelector("#user-profile");
+let sign_in_btn = document.querySelector("#nav-btn");
+let user_profile_div = document.querySelector("#nav-profile");
+// let username = document.querySelector("#user-profile");
 
 // sessionStorage.clear();
 if(sessionStorage.getItem('userData'))

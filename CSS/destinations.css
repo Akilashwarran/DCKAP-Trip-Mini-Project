@@ -1,12 +1,10 @@
+
 html{
   overflow-x: hidden;
-  /* overflow-y: hidden; */
 }
 body {
   margin: 0;
-
   user-select: none;
-  /* overflow-y: visible; */
  
 }
 ::-webkit-scrollbar {
@@ -14,17 +12,16 @@ body {
 
 }
 
-/* Track */
+
 ::-webkit-scrollbar-track {
-  background: #ff000000;
+  background: #ffffff00;
 }
 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: #F9896B;
   border-radius: 2.5px;
 }
-
 
 /* --------------- */
 
@@ -32,7 +29,16 @@ body {
 main {
     margin-bottom: 200px; /* Adjust this value based on your design */
 }
-
+.review_main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+ 
+  /* background-color: #F9896B; */
+  /* height: 400px;  */
+  max-height: 400px;
+  overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+}
 
 /* ------------------------ */
 .input-container {

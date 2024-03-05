@@ -1,10 +1,27 @@
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      /* padding: 20px; */
-    }
+html{
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  user-select: none;
+ 
+}
+::-webkit-scrollbar {
+  width: 5px;
 
+}
+
+
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #F9896B;
+  border-radius: 2.5px;
+}
     h1 {
       text-align: center;
     }
