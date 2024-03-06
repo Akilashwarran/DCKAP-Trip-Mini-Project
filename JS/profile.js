@@ -151,8 +151,7 @@ logout.addEventListener("click",()=>{
     { 
         sessionStorage.clear();
         location.href="index.html"
-
-        
+   
     }
     else{
         sign_in_btn.style.display = 'block'
