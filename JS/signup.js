@@ -13,7 +13,8 @@ const firebaseConfig = {
     storageBucket: "dckap-trip-26e10.appspot.com",
     messagingSenderId: "149435458483",
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
-};
+  };
+
 
 const app = initializeApp(firebaseConfig);
 
@@ -257,13 +258,14 @@ if(sessionStorage.getItem('userData'))
 
   { 
    let sessionStorage_value=sessionStorage.getItem('userData');
+   let name = userData.username_signup;
    console.log("email: "+sessionStorage_value)
+   console.log(name);
  
    }
 else{
        console.log('user data not found')
 }
-
 
 
 function validateUsername(username) {
@@ -352,11 +354,11 @@ async function checkIfloginpasswordExists(pass) {
 }
 
 
-let storedEmail = sessionStorage.getItem("login_details");
-let storedName = localStorage.getItem("login_details");
 
-console.log(storedEmail);
-console.log(storedName);
+   let sessionStorage_value=sessionStorage.getItem('login_details');
+   console.log("login: "+sessionStorage_value)
+
+// console.log(storedName);
 //--------------tooltip--------------
 
 document.addEventListener('DOMContentLoaded', function () {

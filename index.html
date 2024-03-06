@@ -6,6 +6,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="CSS/dashboard.css" />
+  <!-- <link rel="stylesheet" href="CSS/tripnav.css"> -->
+  
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@400;500&family=Pacifico&family=Poppins:wght@200&family=Raleway:wght@300&display=swap"
     rel="stylesheet" />
@@ -15,50 +17,138 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<body>
-  <div class="navbar">
+<style>
 
+.topnav {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px #999;
+    z-index: 1000;
+  }
+  
+  .logo {
+    margin-left: 40px;
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Allows the logo div to adjust its height based on content */
+  }
+  
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .menu {
+    width: 70%;
+    /* flex: 1; */
+    display: flex;
+    
+    justify-content: flex-end; /* Takes up remaining space */
+  }
+  
+  .menu ul {
+    width: 80%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3%;
+    justify-content: flex-end; 
+  }
+  
+  .menu ul li {
+    margin-right: 10px;
+  }
+  
+  .menu ul li:last-child {
+    margin-right: 0; /* Removes margin from last menu item */
+  }
+  
+  .menu ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  .user {
+    width: 160px; /* Adjust width as needed */
+    display: flex;
+    justify-content: center; /* Aligns user links to the right */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Montserrat';
+  }
+  a,i{
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Montserrat';
+  }
+  .user a {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  .user a:hover {
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0px 1px 4px #999;
+}
+  
+  .user .profile i {
+    font-size: 24px;
+  }
+  .signin{
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #F9896B;
+    border-radius: 50px;
+  }
+  
+</style>
+    <body>
 
-    <div class="image">
-      <a href="index.html"><img class="logo" src="./Assets/dckap-trip-logo.png" alt="logo" /></a>
+  <!-- ------------------------------ navbar ----------------------------- -->
+  <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 40px; ">
+    <div class="topnav">
+      <div class="logo">
+        <img src="Assets/dckap-trip-logo.png" alt="Logo">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="collections.html">Critiq Collections</a></li>
+          <li><a href="admin.html">Admin Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="user">
+        <a href="login.html" id="nav-btn" class="signin"   >Sign In</a>
+        <a href="profile.html" id="nav-profile"  class="profile"><i class="fa-solid fa-user" style="color: #f9896b;"></i></i></a>
+      </div>
     </div>
-    <div class="element">
-      <div class="solution">
-        <a href="index.html">Home</a>
-      </div>
-      <div class="app">
-        <a href=" " id="destination-menu">Destinations</a>
-      </div>
-      <div class="customers">
-        <a href=" " id="planner-menu">Planner</a>
-      </div>
-      <div class="resourez">
-        <a href="  " id="collections-menu">Collections</a>
-      </div>
-
-      <a href="Admin" id="dashboard">Dashboard</a>
-      <a href=" " id="sign-in-btn"><button class="bt" id="sign-in-btn">Sign In</button></a>
-      <a href="profile.html"><div class="user_profile">
-        <i class="fa-solid fa-circle-user account"></i>
-       <p id="user-profile">Profile</p>
-      </div></a>
-    </div>
+  </header>
 
 
-  </div>
+  <!-- ------------------------------- home body ------------------------------------ -->
 
-
-  <div class="container" >
-    <div class="topbar">
-      <!-- <div class="para">
-          <p>
-            Unlock a world of customization for your favorite picks and collections today by<span>signing up!  </span>
-          </p>
-        </div> -->
-      <div class="we">
-        <div class="text">
+  <div class="main-home-container" >
+    <div class="homepage-body">
+    
+      <div class="homepage-innerbody">
+        <div class="tagline">
           <h1>The World Awaits</h1>
-          <div class="tophr">
+          <div class="tagline-hr">
             <hr />
           </div>
           <h2 contenteditable="false">
@@ -70,39 +160,45 @@
 
 
         </div>
-        <div class="pic">
+        <div class="homepage-body-pic">
           <a><img src="./Assets/home.jpg" alt="sale" /></a>
         </div>
       </div>
     </div>
 
-    <div class="parent">
-      <div class="wrapper">
-        <div class="tp">
-          <h2 class="eui">Easily plan your trips and embrace the adventure!</h2>
+    <div class="homepage-menus-descriptions">
+      <div class="homepage-menus-descriptions-innerbody">
+        <div class="home-page-menus-explain-sentence-div">
+          <h2 class="home-page-menus-explain-sentence">Easily plan your trips and embrace the adventure!</h2>
           <div class="hr1">
             <hr />
           </div>
         </div>
-        <div class="rw1">
-          <div class="rw1-1">
-            <img class="rw1-img" src="Assets/destination.png" alt="" />
+
+        <!-- -------------------------- destination menu ----------------------------->
+
+        <div class="destination-description">
+          <div class="destination-description-image-div">
+            <img class="destination-description-image" src="Assets/destination.png" alt="" />
           </div>
-          <div class="rw1-2">
-            <div class="rw1-2-inr">
+          <div class="destination-menu-content">
+            <div class="destination-menu-content-text">
               <h3>Destinations</h3>
               <p>
                 Access and ingest quality, consistent and <br />standardized
                 data, no matter where your data <br />
                 resides.
               </p>
-              <a href="" id="destination-explore">Explore</a>
+              <a href="destinations.html" id="destination-explore" class="explore-btn">Explore</a>
             </div>
           </div>
         </div>
-        <div class="rw2">
-          <div class="rw2-1">
-            <div class="rw2-1-inr">
+
+         <!-- -------------------------- planner menu ----------------------------->
+
+        <div class="planner-description">
+          <div class="planner-menu-content">
+            <div class="planner-menu-content-text">
               <h3>Planner</h3>
               <p>
                 Sync data across all your systems with <br />automatic
@@ -110,26 +206,29 @@
                 to streamline your <br />operations, improve efficiency, and
                 gain real- <br />time insights.
               </p>
-              <a href="" id="planner-explore">Explore</a>
+              <a href="" id="planner-explore" class="explore-btn">Explore</a>
             </div>
           </div>
-          <div class="rw2-2">
-            <img class="rw2-img" src="./Assets/planner.png" alt="" />
+          <div class="planner-description-image-div">
+            <img class="planner-description-image" src="./Assets/planner.png" alt="" />
           </div>
         </div>
-        <div class="rw3">
-          <div class="rw3-1">
-            <img class="rw3-img" src="./Assets/collections.png" alt="" />
+
+         <!-- -------------------------- collection menu ----------------------------->
+
+        <div class="collection-description">
+          <div class="collection-description-image-div">
+            <img class="collection-description-image" src="./Assets/collections.png" alt="" />
           </div>
-          <div class="rw3-2">
-            <div class="rw3-2-inr">
+          <div class="collection-menu-content">
+            <div class="collection-menu-content-text">
               <h3>Collections</h3>
               <p>
                 Eliminate data silos and achieve a single <br />
                 source of truth for all customer insights in <br />
                 your company.
               </p>
-              <a href="" id="collections-explore">Explore</a>
+              <a href="" id="collections-explore" class="explore-btn">Explore</a>
             </div>
           </div>
         </div>
@@ -137,10 +236,13 @@
       </div>
 
     </div>
-    <div class="container1">
-      <div class="head">
+
+    <!-- ------------------------ customer testimonial ---------------------------- -->
+
+    <div class="homepage-testimonial">
+      <div class="testimonial-head">
         <h2>Customer Testimonials</h2>
-        <div class="c1">
+        <div class="testimonial-head-content">
           <hr />
         </div>
         <p>
@@ -151,8 +253,8 @@
         </p>
       </div>
 
-      <div class="block">
-        <div class="block1">
+      <div class="testimonial-block">
+        <div class="testimonial-block-1">
                 <img src="./Assets/img_avatar.png" alt="" class="user-profile">
           <h3>Joel</h3>
           <p>
@@ -162,7 +264,7 @@
           </p>
         </div>
 
-        <div class="block2">
+        <div class="testimonial-block-2">
             <img src="./Assets/img_avatar2.png" alt="" class="user-profile">
           <h3>Smitha</h3>
           <p>
@@ -172,7 +274,7 @@
           </p>
         </div>
 
-        <div class="block3">
+        <div class="testimonial-block-3">
             <img src="./Assets/img_avatar.png" alt="" class="user-profile">
           <h3>Kavin</h3>
           <p>
@@ -182,7 +284,7 @@
           </p>
         </div>
 
-        <div class="block4">
+        <div class="testimonial-block-4">
             <img src="./Assets/img_avatar2.png" alt="" class="user-profile">
           <h3>Thara</h3>
           <p>
@@ -197,53 +299,13 @@
 
   </div>
 
-
-  <div class="footer">
-    <div class="ft-lin">
-      <!-- <hr /> -->
-    </div>
-    <div class="ft-content">
-      <div class="cot">
-        <div class="cot-img">
-          <img src="./Assets/dckap-trip-logo.png" alt="" id="footer-logo" />
-        </div>
+  <!-- -------------------------------- footer ------------------------------- -->
 
 
-      </div>
-      <div class="ft-right">
-        <div class="connectors">
-          <h2>Resources</h2>
-          <li><a href="https://mail.google.com/mail/u/0/?ogbl#inbox/FMfcgzGxRfDnCJRnbcKgPscsnJWhRWhT">Sunil M</a></li>
-          <li><a href="https://mail.google.com/mail/u/0/?ogbl#inbox/FMfcgzGxRfCdzVkcMZkcrtsJdrKjpqrW">Mukesh S</a></li>
-
-        </div>
-        <div class="epicor">
-          <h2>Follow Us</h2>
-          <li><a href="https://discord.com/channels/1130395220102623242/1199217823910744125">Discord</a></li>
-          <li><a href="https://github.com/Akilashwarran/DCKAP-Trip-Mini-Project">Github</a></li>
-        </div>
-        <div class="company">
-          <h2>Legal</h2>
-          <li><a href="">Privacy Policy</a></li>
-          <li><a href="">Terms and conditions</a></li>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="ft-c">
-      <hr id="footer-line"/>
-    </div>
-    <div class="ft-end">
-      <div class="cpr">
-        <!-- <p>© Copyright 2024 DCKAP Palli Inc. All rights reserved</p> -->
-      </div>
-      <div class="trm"></div>
-    </div>
-  </div>
 <script src="./JS/navbar.js"></script>
-<script type="module" src="./JS/signup.js"></script>
+<!-- <script type="module" src="./JS/signup.js"></script> -->
   <script src="./JS/dashboard.js"></script>
+
 </body>
 
 </html>
