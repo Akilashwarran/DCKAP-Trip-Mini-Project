@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let loginDetailsExists = sessionStorage.getItem("login_details");
     let userSignupDataExists = sessionStorage.getItem("user_signup_Data");
   
-    if (loginDetailsExists || userSignupDataExists) {
+    if (loginDetailsExists ) {
       
       let loginDetails = JSON.parse(loginDetailsExists);
-      if (loginDetails && loginDetails.email_login === "tripdckap@gmail.com") {
+      if (loginDetails && loginDetails.is_admin === 1) {
         signintag.style.display = "none";
         profiletag.style.display = "block";
         admintag.style.display = "block";
