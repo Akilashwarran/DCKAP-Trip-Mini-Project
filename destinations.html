@@ -16,12 +16,110 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="CSS/destinations.css" />
-  <link rel="stylesheet" href="CSS/tripnav.css">
+  <!-- <link rel="stylesheet" href="CSS/tripnav.css"> -->
   <link rel="stylesheet" href="CSS/review.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Document</title>
+  <style>
+
+.topnav {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px #999;
+    z-index: 1000;
+  }
+  
+  .logo {
+    margin-left: 40px;
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Allows the logo div to adjust its height based on content */
+  }
+  
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .menu {
+    width: 70%;
+    /* flex: 1; */
+    display: flex;
+    
+    justify-content: flex-end; /* Takes up remaining space */
+  }
+  
+  .menu ul {
+    width: 80%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3%;
+    justify-content: flex-end; 
+  }
+  
+  .menu ul li {
+    margin-right: 10px;
+  }
+  
+  .menu ul li:last-child {
+    margin-right: 0; /* Removes margin from last menu item */
+  }
+  
+  .menu ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  .user {
+    width: 160px; /* Adjust width as needed */
+    display: flex;
+    justify-content: center; /* Aligns user links to the right */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Montserrat';
+  }
+  a,i{
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Montserrat';
+  }
+  .user a {
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 50px;
+  }
+  .user a:hover {
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0px 1px 4px #999;
+}
+  
+  .user .profile i {
+    font-size: 24px;
+  }
+  .signin{
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: #F9896B;
+    border-radius: 50px;
+  }
+  
+  </style>
 </head>
 
 <body>
