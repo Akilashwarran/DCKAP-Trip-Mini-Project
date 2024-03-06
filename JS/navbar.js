@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let signintag = document.getElementById("nav-btn");
     let profiletag = document.getElementById("nav-profile");
     let admintag = document.querySelector('.menu li:nth-child(5)');
-  
+
     let loginDetailsExists = sessionStorage.getItem("login_details");
     let userSignupDataExists = sessionStorage.getItem("userData");
   
@@ -34,5 +34,4 @@ document.addEventListener("DOMContentLoaded", function() {
       admintag.style.display = "none";
     }
 });
-
 
