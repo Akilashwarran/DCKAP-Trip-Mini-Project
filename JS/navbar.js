@@ -7,25 +7,19 @@ document.addEventListener("DOMContentLoaded", function() {
     let admintag = document.querySelector('.menu li:nth-child(5)');
 
     let loginDetailsExists = sessionStorage.getItem("login_details");
-    let userSignupDataExists = sessionStorage.getItem("userData");
+    let userSignupDataExists = sessionStorage.getItem("user_signup_Data");
   
     if (loginDetailsExists || userSignupDataExists) {
       
-      signintag.style.display = "none";
-      profiletag.style.display = "block";
-  
-     
       let loginDetails = JSON.parse(loginDetailsExists);
       if (loginDetails && loginDetails.email_login === "tripdckap@gmail.com") {
+        signintag.style.display = "none";
+        profiletag.style.display = "block";
         admintag.style.display = "block";
       } else {
-       
-        let userSignupData = JSON.parse(userSignupDataExists);
-        if (userSignupData && userSignupData.is_admin === 1) {
-          admintag.style.display = "block";
-        } else {
-          admintag.style.display = "none";
-        }
+        signintag.style.display = "none";
+        profiletag.style.display = "block";
+        admintag.style.display = "none";
       }
     } else {
     
