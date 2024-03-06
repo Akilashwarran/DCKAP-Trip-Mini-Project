@@ -296,7 +296,7 @@ login_Form_validation.addEventListener("submit", async (e) => {
     let passwordExists = await checkIfloginpasswordExists(password_correct)
 
 
-    if(!passwordExists == !emailExists){
+    if(!passwordExists != !emailExists){
          alert("User not found instead signup")
     }
    else  if (!passwordExists) {

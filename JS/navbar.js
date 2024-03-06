@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (loginDetailsExists || userSignupDataExists) {
       
       let loginDetails = JSON.parse(loginDetailsExists);
-      if (loginDetails && loginDetails.email === "tripdckap@gmail.com") {
+      if (loginDetails && loginDetails.email_login === "tripdckap@gmail.com") {
         signintag.style.display = "none";
         profiletag.style.display = "block";
         admintag.style.display = "block";
