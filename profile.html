@@ -12,16 +12,133 @@
      rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="CSS/tripnav.css">
+    <!-- <link rel="stylesheet" href="CSS/tripnav.css"> -->
     <link rel="stylesheet" href="CSS/profile.css">
+    <style>
+
+        .topnav {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+            
+            border-radius: 2px;
+            box-shadow: 0px 1px 3px #999;
+            z-index: 1000;
+          }
+          
+          .logo {
+            margin-left: 40px;
+            width: 100px; /* Adjust width as needed */
+            height: auto; /* Allows the logo div to adjust its height based on content */
+          }
+          
+          .logo img {
+            max-width: 100%;
+            height: auto;
+          }
+          
+          .menu {
+            width: 70%;
+            /* flex: 1; */
+            display: flex;
+            
+            justify-content: flex-end; /* Takes up remaining space */
+          }
+          
+          .menu ul {
+            width: 80%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 3%;
+            justify-content: flex-end; 
+          }
+          
+          .menu ul li {
+            margin-right: 10px;
+          }
+          
+          .menu ul li:last-child {
+            margin-right: 0; /* Removes margin from last menu item */
+          }
+          
+          .menu ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+          }
+          
+          .user {
+            width: 160px; /* Adjust width as needed */
+            display: flex;
+            justify-content: center; /* Aligns user links to the right */
+          }
+          h1, h2, h3, h4, h5, h6 {
+            font-size: inherit;
+            font-weight: inherit;
+            font-family: 'Montserrat';
+          }
+          a,i{
+            font-size: inherit;
+            font-weight: inherit;
+            font-family: 'Montserrat';
+          }
+          .user a {
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin-left: 10px;
+          }
+          .user .signin:hover {
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0px 1px 4px #999;
+}
+          
+          .user .profile i {
+            font-size: 24px;
+          }
+          .signin{
+            padding: 8px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #F9896B;
+            border-radius: 50px;
+          }
+          
+            </style>
 </head>
 
 <body>
-    <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 40px; "></header>
+    <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 50px;  ">
+        <div class="topnav">
+            <div class="logo">
+              <img src="Assets/dckap-trip-logo.png" alt="Logo">
+            </div>
+            <div class="menu">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="planner.html">Planner</a></li>
+                <li><a href="collections.html">Critiq Collections</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+              </ul>
+            </div>
+            <div class="user">
+              <a href="login.html" id="nav-btn" class="signin"   >Sign In</a>
+              <a href="profile.html" id="nav-profile"  class="profile"><i class="fa-solid fa-user" style="color: #f9896b;"></i></i></a>
+            </div>
+          </div>
+    </header>
     <div class="mainContainer">
         <nav class="navleft">
             <div class="leftContainer">
-                <div class="logo">
+                <div class="profile-logo">
                     <img src="Assets/idAPAGJDW8.jpeg" alt=""><span>DCKAP<span style="color:#F9896B;">TRIP</span></span>
                 </div>
 
@@ -38,7 +155,7 @@
         </nav>
 
 
-        <div class="rightContainer">
+        <div class="rightContainer" style="margin-top: 40px;">
             <div class="profile-details">
                 <div class="head">
                     <h2>Profile Info</h2>
@@ -132,7 +249,7 @@
 
             </div>
         </div>
-        <div class="add-favorite">
+        <div class="add-favorite" style="margin-top: 60px;">
             <div class="b">
                 <h3>Add Favorite</h3>
                 <button class="addFavoritebtn">+ Add Favorite</button>
@@ -149,6 +266,7 @@
         </div>
     </div>
     <script type="module" src="JS/profile.js"></script>
+    <script src="JS/navbar.js"></script>
 </body>
 
 </html>

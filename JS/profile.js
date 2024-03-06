@@ -1,6 +1,5 @@
 "use strict";
 
-<<<<<<< HEAD
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, getDoc, getDocs, doc, setDoc, updateDoc, addDoc,  collection } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
@@ -14,16 +13,6 @@ const firebaseConfig = {
     storageBucket: "dckap-trip-26e10.appspot.com",
     messagingSenderId: "149435458483",
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
-=======
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBl2nSsWE6IwcC3uPUZF7bgStLcoWJQ2g4",
-    authDomain: "dckaptrip-2.firebaseapp.com",
-    projectId: "dckaptrip-2",
-    storageBucket: "dckaptrip-2.appspot.com",
-    messagingSenderId: "1003076308711",
-    appId: "1:1003076308711:web:ebe6bf59db2211fad0dc42"
->>>>>>> main
   };
 
 // // Initialize Firebase
@@ -161,11 +150,9 @@ logout.addEventListener("click",()=>{
 
     { 
         sessionStorage.clear();
-        let sessionStorage_value=sessionStorage.getItem('userData');
-        console.log("email: "+sessionStorage_value)
-        sign_in_btn.style.display = 'none';
+        location.href="index.html"
 
-        user_profile_div.classList.add("user-profile_blk")
+        
     }
     else{
         sign_in_btn.style.display = 'block'
