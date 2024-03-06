@@ -15,41 +15,72 @@ const firebaseConfig = {
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
   };
 
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
+// var login_data = {
+//     login_email : "vedosemywu@mailinator.com",
+//     is_admin : 5
+// }
+
+// var Username = document.getElementById("name");
+// var UseEmail = document.getElementById("email");
+// var UserContact = document.getElementById("phone");
+
+// var a = localStorage.setItem("login_data", JSON.stringify(login_data)); 
+// var user = JSON.parse(sessionStorage.getItem("userData"))
+// console.log(user);
+
+
+// document.addEventListener("DOMContentLoaded", async function() {
+
+//     let getRef = doc(db, "user_data", `${user}`);
+
+//     let getdata = await getDoc(getRef)
+//          console.log(getdata.data().email_ID);
+ 
+//                  document.getElementById("defaultName").textContent = getdata.data().username || "Default Name";
+//                  document.getElementById("defaultEmail").textContent = getdata.data().email_ID|| "+Add";
+//                  document.getElementById("defaultNo").textContent = getdata.data().phone || "+Add";
+         
+//                  document.getElementById("name").value = getdata.data().username || "";
+//                  document.getElementById("email").value = getdata.data().email_ID || "";
+//                  document.getElementById("phone").value = getdata.data().phone || "";
+//                  document.getElementById("password").value = getdata.data().password || "";
+//                  document.querySelector(".ProfileImg").src =  getdata.data().u_dp;
+
+// })
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-var login_data = {
-    login_email : "vedosemywu@mailinator.com",
-    is_admin : 5
-}
-
-var Username = document.getElementById("name");
-var UseEmail = document.getElementById("email");
-var UserContact = document.getElementById("phone");
-
-var a = localStorage.setItem("login_data", JSON.stringify(login_data)); 
-var user = JSON.parse(sessionStorage.getItem("userData"))
-console.log(user);
-
 
 document.addEventListener("DOMContentLoaded", async function() {
+    
+    const user = JSON.parse(sessionStorage.getItem("userData"));
+    console.log(user);
 
-    let getRef = doc(db, "user_data", `${user}`);
+    const getRef = doc(db, "user_data", `${user.uid}`);
+    console.log(getRef);
+    const getdata = await getDoc(getRef);
 
-    let getdata = await getDoc(getRef)
-         console.log(getdata.data().email_ID);
- 
-         document.getElementById("defaultName").textContent = getdata.data().username || "Default Name";
-                 document.getElementById("defaultEmail").textContent =getdata.data().email_ID|| "+Add";
-                 document.getElementById("defaultNo").textContent = getdata.data().phone || "+Add";
-         
-                 document.getElementById("name").value = getdata.data().username || "";
-                 document.getElementById("email").value = getdata.data().email_ID || "";
-                 document.getElementById("phone").value = getdata.data().phone || "";
-                 document.getElementById("password").value = getdata.data().password || "";
-                 document.querySelector(".ProfileImg").src =  getdata.data().u_dp 
+    
+    if (getdata.exists()) {
+        document.getElementById("defaultName").textContent = getdata.data().username || "Default Name";
+        document.getElementById("defaultEmail").textContent = getdata.data().email_ID || "+Add";
+        document.getElementById("defaultNo").textContent = getdata.data().phone || "+Add";
+    
+        document.getElementById("name").value = getdata.data().username || "";
+        document.getElementById("email").value = getdata.data().email_ID || "";
+        document.getElementById("phone").value = getdata.data().phone || "";
+        document.getElementById("password").value = getdata.data().password || "";
+        document.querySelector(".ProfileImg").src = getdata.data().u_dp;
+    } else {
+        console.log("User data not found in Firestore");
+    }
+});
 
-})
 
 
 // --------------------------------------------------------------------------------------------------
@@ -339,8 +370,7 @@ if (twoBtn.style.display != "none") {
 
 });
 
-
-// // -----------------------------tooltip function-----------------------------------------------------------------
+ // -----------------------------tooltip function-----------------------------------------------
 
 
 var passwordInput = document.getElementById("password");
