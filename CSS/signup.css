@@ -9,7 +9,10 @@ body, html {
     height: 100%;
 
 }
+::placeholder {
 
+  padding:12px;
+}
 .email {
     border: none;
     border-bottom: 2px solid #858585;
@@ -151,7 +154,7 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
+     gap: 24px;
 }
 
 .form-inner form .pass-link a:hover,
@@ -195,7 +198,7 @@ input[type="radio"] {
 }
 
 .login-btn button {
-  border-radius: 20px;
+      border-radius: 20px;
     background-color: #F9896B;
     color: #fff;
     font-weight: bold;
@@ -205,7 +208,7 @@ input[type="radio"] {
     position: relative;
     left: 27%;
     border: 0px;
-    top: 10%;
+    top: 72%;
     cursor: pointer;
 }
 
@@ -231,10 +234,10 @@ input {
 }
 
 #login .signup-link {
-    padding-right: 6%;
+ padding-right: 6%;
     text-align: center;
     position: relative;
-    top: 13px;
+    top: 75px;
 }
 
 #signup .signup-link {
@@ -314,7 +317,7 @@ hr {
 }
 input#login_email {
     position: relative;
-    bottom: 18px;
+    bottom: 13px;
 }
 svg {
   width: 10%;
@@ -465,8 +468,10 @@ svg {
 }
 
 span {
-  font-size: 12px;
-  color: red;
+font-size: 12px;
+    color: red;
+    letter-spacing: 2px;
+    font-weight: 900px;
 }
 
 .login_email_error {
@@ -482,7 +487,7 @@ span {
   display: flex;
 position: absolute;
     left: 21px;
- 
+     bottom: 9px;
    text-transform: uppercase;
 }
 
@@ -494,10 +499,10 @@ position: absolute;
 .signup_confirm_error,
 .signup_password_error,
 .signup_email_error {
-  font-size: 10px;
-  color: red;
-   text-transform: uppercase;
-
+  font-size: 12px;
+    color: red;
+    letter-spacing: 2px;
+    font-weight: 900px;
 }
 
 .signup_user_error {
@@ -614,7 +619,7 @@ position: absolute;
 
 }
 
-.another_way_login .google_btn span {
+/* .another_way_login .google_btn span {
     width: 120px;
      padding: 0.5rem 1.4rem;
     align-items: center;
@@ -623,16 +628,16 @@ position: absolute;
     background-color: #fff;
     cursor: pointer;
     transition: all .6s ease;
-}
+} */
 
-.another_way_login .google_btn .button svg {
+/* .another_way_login .google_btn .button svg {
     height: 24px;
     width: 33px;
         position: relative;
     top: 7px;
-}
+} */
 
-.another_way_login .google_btn span:hover {
+/* .another_way_login .google_btn span:hover {
   transform: scale(1.02);
 }
 
@@ -645,7 +650,7 @@ position: absolute;
     background-color: #fff;
     cursor: pointer;
     transition: all .6s ease;
-}
+} */
 .text p{
   font-size: 24px;
 }
@@ -655,7 +660,7 @@ position: absolute;
         position: relative;
     top: 7px;
 }
-
+/* 
 .login_way .google_btn span:hover {
   transform: scale(1.02);
 }
@@ -663,9 +668,48 @@ position: absolute;
 left: 73px;
     top: 32%;
     position: relative;
+} */
+
+.pass {
+  padding-right: 30px; 
+  position: relative;
 }
 
-.forget_main{
-  display: none;
+/* Style for the eye icon */
+.eye-icon {
+position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
+
+.fa-eye {
+  content: "\f06e"; 
+}
+
+
+.fa-eye-slash {
+  content: "\f070"; 
+}
+
+.pass {
+  padding-right: 30px; 
+  position: relative;
+}
+
+.fa-eye-slash, .fa-eye {
+  position: absolute;
+  top: 50%;
+  right: 30px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.fa-eye {
+  content: "\f06e"; 
+  }
+.fa-eye-slash {
+  content: "\f070"; 
+}
