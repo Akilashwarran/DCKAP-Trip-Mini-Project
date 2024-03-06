@@ -3,9 +3,9 @@ const loginBtn = document.querySelector("label.login");
 const signupBtn = document.querySelector("label.signup");
 const signupLink = document.querySelector("form .signup-link a");
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 
-const firebaseConfig = {
+// Your web app's Firebase configuration
+ const firebaseConfig = {
     apiKey: "AIzaSyAb3BzH5tfNzTuKUDEhVpz51RzPySS5Vfc",
     authDomain: "dckap-trip-26e10.firebaseapp.com",
     databaseURL: "https://dckap-trip-26e10-default-rtdb.firebaseio.com",
@@ -15,20 +15,20 @@ const firebaseConfig = {
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
   };
 
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 import { getFirestore, getDoc, getDocs, doc, setDoc, query, where, updateDoc, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 let db = getFirestore(app);
-
+let collation = collection(db,"user_data");
 let username_firebase = document.getElementById("Username");
 let password_firebase = document.getElementById("password_signup");
 let email_firebase = document.getElementById("signup_email")
-// console.log(username_firebase)
-// console.log(password_firebase)
-// console.log(email_firebase)
 let signup_fire_btn = document.getElementById("sign_up_button");
+//---------------------top-radio toggle-------------------
 
 signupBtn.addEventListener('click', () => {
     loginForm.style.marginLeft = "-50%";
@@ -42,50 +42,45 @@ signupLink.addEventListener('click', (event) => {
     signupBtn.click();
     event.preventDefault();
 });
+//-----------------------confirm password and password icon change------------------
+ function togglePasswordVisibility(inputId, iconId) {
+    const passwordInput = document.getElementById(inputId);
+    const eyeIcon = document.getElementById(iconId);
 
-// ------------login password icon change--------------
-
-let icon_hide = document.querySelector(".fa-eye-slash");
-let pass = document.querySelector(".pass");
-
-icon_hide.addEventListener("click", () => {
-    if (pass.type == "password") {
-        pass.type = "text";
-        icon_hide.classList.remove("fa-eye-slash");
-        icon_hide.classList.add("fa-eye");
-    } else if (pass.type == "text") {
-        pass.type = "password";
-        icon_hide.classList.remove("fa-eye");
-        icon_hide.classList.add("fa-eye-slash");
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      eyeIcon.classList.remove("fa-eye-slash");
+      eyeIcon.classList.add("fa-eye");
+    } else {
+      passwordInput.type = "password";
+      eyeIcon.classList.remove("fa-eye");
+      eyeIcon.classList.add("fa-eye-slash");
     }
-});
+  }
 
+  document.getElementById("eye_icon_signup").addEventListener("click", function () {
+    togglePasswordVisibility("password_signup", "eye_icon_signup");
+  });
 
-// ---------------------signup password icon change---
-let eyeIconSignup = document.getElementById("eye_icon_signup");
-let eyeIconConfirm = document.getElementById("eye_icon_confirm");
-let passSignup = document.getElementById("password_signup");
-let passConfirm = document.getElementById("Confirm_password");
+  document.getElementById("eye_icon_confirm").addEventListener("click", function () {
+    togglePasswordVisibility("Confirm_password", "eye_icon_confirm");
+  });
 
-eyeIconSignup.addEventListener("click", () => {
-    togglePasswordVisibility(passSignup, eyeIconSignup);
-});
+//------------------login password  icon change--------------------------
+document.getElementById("login_eye").addEventListener("click", function () {
+    const passwordInput = document.getElementById("login_pass");
+    const icon = document.getElementById("login_eye");
 
-eyeIconConfirm.addEventListener("click", () => {
-    togglePasswordVisibility(passConfirm, eyeIconConfirm);
-});
-
-function togglePasswordVisibility(passwordInput, eyeIcon) {
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        eyeIcon.classList.remove("fa-eye-slash");
-        eyeIcon.classList.add("fa-eye");
-    } else if (passwordInput.type === "text") {
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    } else {
         passwordInput.type = "password";
-        eyeIcon.classList.remove("fa-eye");
-        eyeIcon.classList.add("fa-eye-slash");
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
     }
-}
+});
 
 // ------------------------xmark-------------------------------------
 let x_button = document.querySelector("#xmark")
@@ -172,7 +167,7 @@ document.forms.signup.addEventListener("submit", async (e) => {
         Subject: "Enter the OTP",
         Body: mail_msg,
     }).then(
-        message => alert(message)
+        // message => alert(message)
     ).catch(error => alert(error));
 
     // Continue with OTP verification
@@ -195,20 +190,24 @@ let getRef = collection(db, "user_data");
 let getData = await getDocs(getRef);
 let id = getData.size;
 let otpbutton = document.querySelector("#otpbtn")
+// ----------------OTP verification------------
+
 otpbutton.addEventListener("click", async () => {
     console.log("otp");
     let otp_value = document.getElementById("otpinputvalue").value;
     let otpbutton = document.querySelector("#otpbtn");
 
     if (otp_value == otp_random) {
-        alert("valid OTP");
+        
 
-        let ref = doc(db, "user_data", `${id++}`);
+        var currentID = id++
+      
+        let ref = doc(db, "user_data", `u_id${currentID}`);
 
 
         let user_details = {
             is_admin: 0,
-
+            is_user:currentID,
             username: username_firebase.value,
             password: password_firebase.value,
             email_ID: email_firebase.value,
@@ -218,29 +217,23 @@ otpbutton.addEventListener("click", async () => {
 
         setDoc(ref, user_details)
             .then(() => {
-                // alert("Data Added Successfully");
-                location.href="index.html"
+                              location.href="index.html"
             })
-            let userData = {
-    uid: 0, // Initialize user ID
-    username_signup: usernamevalue.value,
-    email_signup: emailvalue.value,
-    password_signup: passwordvalue.value
-};
+        //     let userData = {
+        //     uid: currentID, 
+        //     username_signup: usernamevalue.value,
+        //     email_signup: emailvalue.value,
+        //     password_signup: passwordvalue.value,
+        //     phone_no
+        //    };
 
-// // Retrieve existing user data from session storage
-// let existingUserData = sessionStorage.getItem('userData');
-
-// // If existing user data exists, parse it from JSON
-// if (existingUserData) {
-//     userData = JSON.parse(existingUserData);
-// }
 
 // Increment user ID
-userData.uid = (userData.uid || 0) + 1;
+// userData.uid = (userData.uid || 0) + 1;
+  sessionStorage.setItem('userData', JSON.stringify(`u_id${currentID}`));
 
-// Store updated user data in session storage
-sessionStorage.setItem('userData', JSON.stringify(userData));
+
+
 
     } else {
         alert("invalid OTP");
@@ -252,21 +245,6 @@ async function checkIfEmailExists(email) {
     const checking_email = await getDocs(collection(db, "user_data"));
     return checking_email.docs.some(doc => doc.data().email_ID === email);
 }
-
-
-if(sessionStorage.getItem('userData'))
-
-  { 
-   let sessionStorage_value=sessionStorage.getItem('userData');
-   let name = userData.username_signup;
-   console.log("email: "+sessionStorage_value)
-   console.log(name);
- 
-   }
-else{
-       console.log('user data not found')
-}
-
 
 function validateUsername(username) {
     return username.trim() !== '';
@@ -280,7 +258,7 @@ function validatePassword(password) {
     return password.length >= 6;
 }
 
-// --------------------------------form--basic--validation----------------
+// --------------------------------login validation----------------
 let login_Form_validation = document.forms.login;
 
 
@@ -318,12 +296,15 @@ login_Form_validation.addEventListener("submit", async (e) => {
     let passwordExists = await checkIfloginpasswordExists(password_correct)
 
 
-
-    if (!passwordExists) {
+    if(!passwordExists == !emailExists){
+         alert("User not found instead signup")
+    }
+   else  if (!passwordExists) {
        
           login_password_validation.classList.add("border");
           login_password_error.style.display = "block";
     }
+   
     else if(!emailExists){
                login_email_validation.classList.add("border");
                login_email_error.style.display = "block";
@@ -331,8 +312,10 @@ login_Form_validation.addEventListener("submit", async (e) => {
     else {
         location.href = "index.html"
         let login_data = {
+
             email_login: login_email_validation.value,
             password_login: login_password_validation.value,
+
         };
 
         sessionStorage.setItem('login_details', JSON.stringify(login_data));
@@ -438,4 +421,3 @@ password.addEventListener("input", (event) => {
         document.getElementById('passwordTooltip').classList.add('active');
     }
 })
-

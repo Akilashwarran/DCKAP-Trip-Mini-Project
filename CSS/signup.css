@@ -4,38 +4,44 @@
   box-sizing: border-box;
   font-family: 'Montserrat'
 }
-body {
-  
-  filter: none;
-  transition: filter 0.3s ease-in-out;
+body, html {
+    margin: 0;
+    height: 100%;
+
+}
+::placeholder {
+
+  padding:12px;
+}
+.email {
+    border: none;
+    border-bottom: 2px solid #858585;
+    outline: none;
+    width: 100%;
+    height: 19px;
+    position: relative;
 }
 
-body.blur {
-  
-  filter: blur(5px); 
+.email:focus::placeholder {
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: #333;
 }
-html,
-body {
-  display: grid;
-  height: 100%;
-  width: 100%;
-  place-items: center;
-  overflow: hidden;
-}
+
 
 .main_container {
-  display: none;
-  width: 72%;
-  height: 89%;
-  background-color: rgb(255, 255, 255);
-  border-radius: 12px;
-  position: relative;
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
-  top: 40px;
-  position: absolute;
-  right: 185px;
+     display: none;
+    width: 1007px;
+    height: 89%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    top: 40px;
+    position: absolute;
+    right: 185px;
 }
 
 .container img {
@@ -49,11 +55,10 @@ body {
 }
 
 .wrapper {
-  width: 50%;
-  overflow: hidden;
-  padding: 30px;
-  position: relative;
-  right: 54px;
+     width: 50%;
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
 }
 
 .wrapper .title-text {
@@ -70,16 +75,16 @@ body {
 }
 
 .wrapper .slide-controls {
-  position: relative;
-  display: flex;
-  height: 50px;
-  width: 100%;
-  overflow: hidden;
-  margin: 15px 0 10px 0;
-  justify-content: space-between;
-  border: 1px solid lightgrey;
-  border-radius: 15px;
-  bottom: 16px;
+ position: relative;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin: 15px 0 10px 0;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    bottom: 11px;
 }
 
 .slide-controls .slide {
@@ -137,10 +142,6 @@ input[type="radio"] {
   user-select: none;
 }
 
-.wrapper .form-container {
-  width: 100%;
-  overflow: hidden;
-}
 
 .form-container .form-inner {
   display: flex;
@@ -153,7 +154,7 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
+     gap: 24px;
 }
 
 .form-inner form .pass-link a:hover,
@@ -175,19 +176,18 @@ input[type="radio"] {
 }
 
 .signup-btn button {
-  border-radius: 20px;
-  background-color: #F9896B;
-  font-weight: bold;
-  color: #fff;
-  width: 150px;
-  height: 40px;
-  font-size: 17px;
-  position: relative;
-  left: 30%;
-  border: 0px;
-  /* bottom: 11px; */
-  top: 0px;
-  cursor: pointer;
+     border-radius: 20px;
+    background-color: #F9896B;
+    font-weight: bold;
+    color: #fff;
+    width: 188px;
+    height: 47px;
+    font-size: 17px;
+    position: relative;
+    left: 25%;
+    border: 0px;
+    top: 0px;
+    cursor: pointer;
 
 }
 
@@ -198,24 +198,24 @@ input[type="radio"] {
 }
 
 .login-btn button {
-  border-radius: 20px;
-  background-color: #F9896B;
-  color: #fff;
-  font-weight: bold;
-  width: 150px;
-  height: 40px;
-  font-size: 17px;
-  position: relative;
-  left: 30%;
-  border: 0px;
-  top: 10%;
-  cursor: pointer;
+      border-radius: 20px;
+    background-color: #F9896B;
+    color: #fff;
+    font-weight: bold;
+    width: 188px;
+    height: 47px;
+    font-size: 17px;
+    position: relative;
+    left: 27%;
+    border: 0px;
+    top: 72%;
+    cursor: pointer;
 }
 
 #login_way p {
 
   position: relative;
-  left: 124px;
+  left: 112px;
   top: 9px;
 }
 
@@ -227,27 +227,43 @@ input[type="radio"] {
 }
 
 input {
+
   border: none;
   border-bottom: 2px solid #858585;
   outline: none;
 }
 
 #login .signup-link {
-  padding-top: 5%;
-  padding-right: 5%;
-  text-align: center;
-
+ padding-right: 6%;
+    text-align: center;
+    position: relative;
+    top: 75px;
 }
 
 #signup .signup-link {
   text-align: center;
   padding-right: 5%;
 }
-
+#signup .signup-link {
+    position: relative;
+    top: 30px;
+}
 .login {
   display: flex;
   flex-direction: column;
+
   gap: 40px;
+
+}
+
+form#signup {
+    position: relative;
+    left: 2%;
+}
+.signup-btn {
+     position: relative;
+    top: 13px;
+    left: 2%;
 
 }
 
@@ -261,15 +277,20 @@ input {
 }
 
 .login_way p {
-  position: relative;
-  bottom: 0;
-  top: 11px;
-  left: 45%;
+   position: relative;
+    bottom: 0;
+    top: 10px;
+    left: 17%;
+    font-size: 24px;
 }
 
 .login_way {
-  position: relative;
-  bottom: 6px;
+     position: relative;
+    width: 54%;
+    height: 106px;
+    left: 105px;
+    line-height: 0px;
+    top: 27px;
 }
 
 #login_way {
@@ -294,7 +315,10 @@ hr {
   left: 53%;
   bottom: 2px;
 }
-
+input#login_email {
+    position: relative;
+    bottom: 13px;
+}
 svg {
   width: 10%;
 }
@@ -320,7 +344,7 @@ svg {
   gap: 15px;
 }
 
-.signup .login_way {
+.signup ._way {
   padding-top: 5%;
 }
 
@@ -419,12 +443,12 @@ svg {
 }
 
 #otpbtn {
-  width: 70%;
-  height: 40px;
-  border-radius: 12px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
+ width: 61%;
+    height: 46px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .otpdiv {
@@ -437,33 +461,33 @@ svg {
 }
 
 .xmark {
-  z-index: 1;
-  margin-left: 95%;
-  margin-bottom: 38%;
-}
-
-#xmark {
-  width: 20%;
-  height: 40px;
-  text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px; 
 }
 
 span {
-  font-size: 12px;
-  color: red;
+font-size: 12px;
+    color: red;
+    letter-spacing: 2px;
+    font-weight: 900px;
 }
 
 .login_email_error {
 
-   text-transform: uppercase;
-  display: none;
+      text-transform: uppercase;
+    display: none;
+    position: relative;
+    bottom: 13px;
+
 }
 
 .pass-link .login_password_error {
   display: flex;
 position: absolute;
     left: 21px;
- 
+     bottom: 9px;
    text-transform: uppercase;
 }
 
@@ -475,10 +499,10 @@ position: absolute;
 .signup_confirm_error,
 .signup_password_error,
 .signup_email_error {
-  font-size: 10px;
-  color: red;
-   text-transform: uppercase;
-
+  font-size: 12px;
+    color: red;
+    letter-spacing: 2px;
+    font-weight: 900px;
 }
 
 .signup_user_error {
@@ -583,4 +607,109 @@ position: absolute;
   border-bottom: 2px solid red;
 }
 
+.another_way_login {
+       text-align: center;
+    line-height: 36px;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    top: 19px;
 
+}
+
+/* .another_way_login .google_btn span {
+    width: 120px;
+     padding: 0.5rem 1.4rem;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 0.75rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .6s ease;
+} */
+
+/* .another_way_login .google_btn .button svg {
+    height: 24px;
+    width: 33px;
+        position: relative;
+    top: 7px;
+} */
+
+/* .another_way_login .google_btn span:hover {
+  transform: scale(1.02);
+}
+
+.login_way .google_btn span {
+    width: 120px;
+     padding: 0.5rem 1.4rem;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 0.75rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .6s ease;
+} */
+.text p{
+  font-size: 24px;
+}
+.login_way .google_btn .button svg {
+    height: 24px;
+    width: 33px;
+        position: relative;
+    top: 7px;
+}
+/* 
+.login_way .google_btn span:hover {
+  transform: scale(1.02);
+}
+.login_way .google_btn {
+left: 73px;
+    top: 32%;
+    position: relative;
+} */
+
+.pass {
+  padding-right: 30px; 
+  position: relative;
+}
+
+/* Style for the eye icon */
+.eye-icon {
+position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.fa-eye {
+  content: "\f06e"; 
+}
+
+
+.fa-eye-slash {
+  content: "\f070"; 
+}
+
+.pass {
+  padding-right: 30px; 
+  position: relative;
+}
+
+.fa-eye-slash, .fa-eye {
+  position: absolute;
+  top: 50%;
+  right: 30px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.fa-eye {
+  content: "\f06e"; 
+  }
+.fa-eye-slash {
+  content: "\f070"; 
+}
