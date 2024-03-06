@@ -48,10 +48,9 @@
   
   .menu {
     width: 70%;
-    /* flex: 1; */
     display: flex;
     
-    justify-content: flex-end; /* Takes up remaining space */
+    justify-content: flex-end; 
   }
   
   .menu ul {
@@ -69,19 +68,20 @@
   }
   
   .menu ul li:last-child {
-    margin-right: 0; /* Removes margin from last menu item */
+    margin-right: 0;
   }
   
   .menu ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
   }
-  
+
   .user {
-    width: 160px; /* Adjust width as needed */
+    width: 160px;
     display: flex;
-    justify-content: center; /* Aligns user links to the right */
+    justify-content: center; 
   }
+  
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
@@ -113,11 +113,16 @@
     background-color: #F9896B;
     border-radius: 50px;
   }
+
+.menu a:hover{
+  color: #F9896B;
+}
   
 </style>
     <body>
 
   <!-- ------------------------------ navbar ----------------------------- -->
+
   <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 40px; ">
     <div class="topnav">
       <div class="logo">

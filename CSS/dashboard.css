@@ -23,94 +23,6 @@ body {
   border-radius: 2.5px;
 }
 
-/* ----------------------------navbar ----------------------------- */
-
-
-.navbar {
-  max-width: 1440px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: white;
-  padding: 40px;
-  padding-right: 40px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  position: sticky;
-  top: 0px;
-  left: 0px;
-  z-index: 1000;
-  height: 50px;
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-}
-
-.navbar-menus a {
-  text-decoration: none;
-  color: rgb(1, 1, 36);
-  padding: 15px;
-}
-
-.navbar-home-menu:hover .sol{
-  display: block;
- 
-}
-
-.navbar-destination-menu:hover .apps{
-  display: block;
-}
-
-.navbar-planner-menu:hover .cust{
-  display: block;
-}
-
-.navbar-collection-menu:hover .reso{
-  display:block;
-}
-
-
-.navbar-menus {
-  padding-right: 50px;
-  display: flex;
-  align-items: center;
-  font-family: "Montserrat";
-  margin-top: -1%;
-}
-
-.navbar button{
-  border-radius: 20px;
-  width: 70%;
-  height: 50%;
-  background-color: #F9896B;
-  color: white;
-  margin-left: 40px;
-  border: 0px;
-  padding: 12px;
-}
-
-.navbar-menus a:hover {
-  color: #F9896B;
-}
-
-.user_profile{
-  
- display: none;
-}
-
-#user-profile {
-  margin-left: 35%;
-}
-
-.account{
- position: absolute;
- top: 40%;
-}
-
-.user-profile_blk{
-  display: block;
-  display: flex;
-  gap: 10%;
-}
 
 /* ------------------------------- home body --------------------------------- */
 
@@ -127,16 +39,9 @@ body {
   width: 100%;
   height: 100%;
 }
-/* .homepage-image {
-  width: 10%;
-  height: 10%;
-  padding-left: 70px;
-  justify-content: center;
-} */
 
 .logo {
   width: 100%;
-  /* margin-left: -40%; */
 }
 
 
@@ -275,19 +180,7 @@ span {
 
 @media screen and (max-width:1024px){
   
-  .navbar-menus{
-   
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    line-height: 40px;
-    background-color: white;
-    z-index: 1;
-    min-width: 160px;
-    margin-top: 20px;
-    display: none;
-  }
-  
+
   .para{
     display: none;
   }
