@@ -217,7 +217,7 @@ otpbutton.addEventListener("click", async () => {
 
         setDoc(ref, user_details)
             .then(() => {
-                              location.href="index.html"
+                              location.href="login.html"
             })
         //     let userData = {
         //     uid: currentID, 
@@ -230,7 +230,7 @@ otpbutton.addEventListener("click", async () => {
 
 // Increment user ID
 // userData.uid = (userData.uid || 0) + 1;
-  sessionStorage.setItem('userData', JSON.stringify(`u_id${currentID}`));
+//   sessionStorage.setItem('userData', JSON.stringify(`u_id${currentID}`));
 
 
 
