@@ -1,10 +1,31 @@
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-    }
+html{
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  user-select: none;
+ 
+}
+::-webkit-scrollbar {
+  width: 5px;
 
+}
+
+
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #F9896B;
+  border-radius: 2.5px;
+}
+.package-dest{
+  margin-top: 35px;
+
+}
     h1 {
       text-align: center;
     }
@@ -16,6 +37,8 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-height: 504px;
+      overflow-y: auto;
     }
 
     label {

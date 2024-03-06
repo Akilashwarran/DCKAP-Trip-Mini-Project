@@ -10,7 +10,7 @@ const firebaseConfig = {
     storageBucket: "dckap-trip-26e10.appspot.com",
     messagingSenderId: "149435458483",
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
-};
+  };
 
 let app = initializeApp(firebaseConfig);
 let db = getFirestore(app);
@@ -40,7 +40,7 @@ document.getElementById('packageForm').addEventListener('submit', async function
         let name = document.getElementById('name').value.trim();
         let days = parseInt(document.getElementById('days').value.trim());
         let image = document.getElementById('image').value.trim();
-        let iframeLink = document.getElementById('iframeLink').value.trim();
+        
 
       
         let places = [];
@@ -51,6 +51,7 @@ document.getElementById('packageForm').addEventListener('submit', async function
 
       
         for (let i = 0; i < placeNameInputs.length; i++) {
+            
             let placeName = placeNameInputs[i].value.trim();
             let placeDescription = placeDescriptionInputs[i].value.trim();
             places.push({ name: placeName, description: placeDescription });
@@ -65,7 +66,7 @@ document.getElementById('packageForm').addEventListener('submit', async function
             days: days,
             image: image,
             places: places,
-            iframeLink: iframeLink
+            
         });
 
         console.log("Package added to Firestore");

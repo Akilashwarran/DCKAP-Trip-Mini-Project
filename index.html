@@ -6,6 +6,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="CSS/dashboard.css" />
+  <!-- <link rel="stylesheet" href="CSS/tripnav.css"> -->
+  
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@400;500&family=Pacifico&family=Poppins:wght@200&family=Raleway:wght@300&display=swap"
     rel="stylesheet" />
@@ -15,38 +17,128 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<body>
+<style>
+
+.topnav {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px #999;
+    z-index: 1000;
+  }
+  
+  .logo {
+    margin-left: 40px;
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Allows the logo div to adjust its height based on content */
+  }
+  
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .menu {
+    width: 70%;
+    /* flex: 1; */
+    display: flex;
+    
+    justify-content: flex-end; /* Takes up remaining space */
+  }
+  
+  .menu ul {
+    width: 80%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3%;
+    justify-content: flex-end; 
+  }
+  
+  .menu ul li {
+    margin-right: 10px;
+  }
+  
+  .menu ul li:last-child {
+    margin-right: 0; /* Removes margin from last menu item */
+  }
+  
+  .menu ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  .user {
+    width: 160px; /* Adjust width as needed */
+    display: flex;
+    justify-content: center; /* Aligns user links to the right */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Montserrat';
+  }
+  a,i{
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: 'Montserrat';
+  }
+  .user a {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  .user a:hover {
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0px 1px 4px #999;
+}
+  
+  .user .profile i {
+    font-size: 24px;
+  }
+  .signin{
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #F9896B;
+    border-radius: 50px;
+  }
+  
+</style>
+    <body>
 
   <!-- ------------------------------ navbar ----------------------------- -->
-
-  <div class="navbar">
-    <div class="homepage-image">
-      <a href="index.html"><img class="logo" src="./Assets/dckap-trip-logo.png" alt="logo" /></a>
+  <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 40px; ">
+    <div class="topnav">
+      <div class="logo">
+        <img src="Assets/dckap-trip-logo.png" alt="Logo">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="collections.html">Critiq Collections</a></li>
+          <li><a href="admin.html">Admin Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="user">
+        <a href="login.html" id="nav-btn" class="signin"   >Sign In</a>
+        <a href="profile.html" id="nav-profile"  class="profile"><i class="fa-solid fa-user" style="color: #f9896b;"></i></i></a>
+      </div>
     </div>
-    <div class="navbar-menus">
-      <div class="navbar-home-menu">
-        <a href="index.html">Home</a>
-      </div>
-      <div class="navbar-destination-menu">
-        <a href=" " id="destination-menu">Destinations</a>
-      </div>
-      <div class="navbar-planner-menu">
-        <a href=" " id="planner-menu">Planner</a>
-      </div>
-      <div class="navbar-collection-menu">
-        <a href="  " id="collections-menu">Collections</a>
-      </div>
+  </header>
 
-      <a href="Admin" id="dashboard">Dashboard</a>
-      <a href=" " id="sign-in-btn"><button class="bt" id="sign-in-btn">Sign In</button></a>
-      <a href="profile.html"><div class="user_profile">
-        <i class="fa-solid fa-circle-user account"></i>
-       <p id="user-profile">Profile</p>
-      </div></a>
-    </div>
-
-
-  </div>
 
   <!-- ------------------------------- home body ------------------------------------ -->
 
@@ -97,7 +189,7 @@
                 data, no matter where your data <br />
                 resides.
               </p>
-              <a href="" id="destination-explore" class="explore-btn">Explore</a>
+              <a href="destinations.html" id="destination-explore" class="explore-btn">Explore</a>
             </div>
           </div>
         </div>
@@ -209,50 +301,11 @@
 
   <!-- -------------------------------- footer ------------------------------- -->
 
-  <div class="footer">
-    <div class="ft-lin">
-      <!-- <hr /> -->
-    </div>
-    <div class="ft-content">
-      <div class="footer-logo-div">
-        <div class="footer-logo">
-          <img src="./Assets/dckap-trip-logo.png" alt="" id="footer-logo" />
-        </div>
 
-
-      </div>
-      <div class="ft-right">
-        <div class="resources">
-          <h2>Resources</h2>
-          <li><a href="https://mail.google.com/mail/u/0/?ogbl#inbox/FMfcgzGxRfDnCJRnbcKgPscsnJWhRWhT">Sunil M</a></li>
-          <li><a href="https://mail.google.com/mail/u/0/?ogbl#inbox/FMfcgzGxRfCdzVkcMZkcrtsJdrKjpqrW">Mukesh S</a></li>
-
-        </div>
-        <div class="ft-follow-us">
-          <h2>Follow Us</h2>
-          <li><a href="https://discord.com/channels/1130395220102623242/1199217823910744125">Discord</a></li>
-          <li><a href="https://github.com/Akilashwarran/DCKAP-Trip-Mini-Project">Github</a></li>
-        </div>
-        <div class="ft-legal">
-          <h2>Legal</h2>
-          <li><a href="">Privacy Policy</a></li>
-          <li><a href="">Terms and conditions</a></li>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="ft-c">
-      <hr id="footer-line"/>
-    </div>
-    <div class="ft-end">
-  
-      <div class="footer-space"></div>
-    </div>
-  </div>
 <script src="./JS/navbar.js"></script>
-<script type="module" src="./JS/signup.js"></script>
+<!-- <script type="module" src="./JS/signup.js"></script> -->
   <script src="./JS/dashboard.js"></script>
+
 </body>
 
 </html>

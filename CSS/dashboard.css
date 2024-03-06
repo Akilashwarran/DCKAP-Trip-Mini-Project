@@ -33,13 +33,16 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: white;
-  /* padding: 7px; */
+  padding: 40px;
+  padding-right: 40px;
   padding-top: 7px;
   padding-bottom: 7px;
   position: sticky;
   top: 0px;
   left: 0px;
+  z-index: 1000;
   height: 50px;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 
 .navbar-menus a {
@@ -76,6 +79,8 @@ body {
 
 .navbar button{
   border-radius: 20px;
+  width: 70%;
+  height: 50%;
   background-color: #F9896B;
   color: white;
   margin-left: 40px;
@@ -122,16 +127,16 @@ body {
   width: 100%;
   height: 100%;
 }
-.homepage-image {
+/* .homepage-image {
   width: 10%;
   height: 10%;
   padding-left: 70px;
   justify-content: center;
-}
+} */
 
 .logo {
   width: 100%;
-  margin-left: -40%;
+  /* margin-left: -40%; */
 }
 
 
@@ -199,9 +204,9 @@ span {
 }
 .homepage-innerbody h2 {
   font-size: 28px;
-  padding: 40px;
+  padding-left: 40px;
   color: rgb(131, 123, 123);
-  padding-top: 8%;
+  /* padding-top: 8%; */
   font-family: "Montserrat";
   color: #23313e;
   font-weight: lighter;
@@ -451,6 +456,7 @@ span {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 
   }
@@ -468,8 +474,9 @@ span {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 0px 45px;
-    text-align: center;
+    /* text-align: center; */
     height: 100%;
   }
   .destination-menu-content-text {

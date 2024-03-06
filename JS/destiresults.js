@@ -9,7 +9,9 @@ const firebaseConfig = {
     storageBucket: "dckap-trip-26e10.appspot.com",
     messagingSenderId: "149435458483",
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
-};
+  };
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // Retrieve package data from sessionStorage
