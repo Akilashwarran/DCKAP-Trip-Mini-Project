@@ -260,12 +260,8 @@ function validatePassword(password) {
 
 // --------------------------------login validation----------------
 let login_Form_validation = document.forms.login;
-
-
 let login_email_validation = document.getElementById("login_email")
-
 let login_password_validation = document.getElementById("login_pass")
-
 login_Form_validation.addEventListener("submit", async (e) => {
     e.preventDefault();
     console.log("clicked");
@@ -310,18 +306,16 @@ login_Form_validation.addEventListener("submit", async (e) => {
                login_email_error.style.display = "block";
     }
     else {
+        let u_value = await getUserDataByEmail(email_id);
+      
+        let login_data= u_value
+        let userData =JSON.parse(sessionStorage.getItem('login_details'))
+        console.log(userData)
         location.href = "index.html"
-        let login_data = {
-
-            email_login: login_email_validation.value,
-            password_login: login_password_validation.value,
-
-        };
+      
 
         sessionStorage.setItem('login_details', JSON.stringify(login_data));
-
-
-
+      
         location.href = "index.html"
 
     }
@@ -333,9 +327,20 @@ async function checkIfloginEmailExists(email) {
 }
 async function checkIfloginpasswordExists(pass) {
     const checking_email = await getDocs(collection(db, "user_data"));
-    return checking_email.docs.some(doc => doc.data().password === pass);
+   
+    return checking_email.docs.some(doc => doc.data().password === pass );
+   
 }
-
+async function getUserDataByEmail(email) {
+    const querySnapshot = await getDocs(query(collection(db, "user_data"), where("email_ID", "==", email)));
+    let u_value = {};
+    querySnapshot.forEach((doc) => {
+        u_value = doc.data();
+    });
+    
+    return u_value;
+    
+}
 
 
    let sessionStorage_value=sessionStorage.getItem('login_details');

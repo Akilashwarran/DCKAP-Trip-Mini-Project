@@ -105,3 +105,5 @@ document.addEventListener("DOMContentLoaded", function() {
 // dashboard.addEventListener("click",()=>{
 //     dashboard.href="admin.html";
 // })
+let userData =JSON.parse(sessionStorage.getItem('login_details'))
+console.log(userData)
