@@ -310,3 +310,24 @@ function password_validation(){
     }
 
 }
+
+//-------------------------- logout -------------------------------
+
+let logout = document.querySelector(".Log-out");
+logout.addEventListener("click",()=>{
+
+    if(sessionStorage.getItem('userData'))
+
+    { 
+        sessionStorage.clear();
+        let sessionStorage_value=sessionStorage.getItem('userData');
+        console.log("email: "+sessionStorage_value)
+        sign_in_btn.style.display = 'none';
+        
+        user_profile_div.classList.add("user-profile_blk")
+    }
+    else{
+        sign_in_btn.style.display = 'block'
+    } 
+
+});

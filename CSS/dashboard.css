@@ -92,9 +92,13 @@ body {
  display: none;
 }
 
+#user-profile {
+  margin-left: 35%;
+}
 
 .account{
-margin-top: 28%;
+ position: absolute;
+ top: 40%;
 }
 
 .user-profile_blk{
