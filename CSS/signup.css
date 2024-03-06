@@ -383,7 +383,7 @@ svg {
   text-align: center;
 }
 
-#otp_container {
+.OtpContainer {
   display: none;
 }
 

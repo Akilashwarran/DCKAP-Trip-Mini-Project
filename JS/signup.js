@@ -180,7 +180,7 @@ console.log(usernamevalue)
 var emailvalue = document.getElementById("signup_email");
 var passwordvalue = document.getElementById("password_signup");
 let overlap = document.querySelector(".overlap");
-let otp_container = document.getElementById("otp_container");
+let otp_container = document.querySelector(".OtpContainer");
 
 var otp_random = Math.floor(Math.random() * 100000);
 console.log(otp_random);
