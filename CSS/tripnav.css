@@ -9,7 +9,7 @@
     position: sticky;
     top: 0px;
     left: 0px;
-   
+    
     border-radius: 2px;
     box-shadow: 0px 1px 3px #999;
     z-index: 1000;
@@ -40,8 +40,8 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 5%;
-    justify-content: space-around; /* Aligns menu items to the right */
+    gap: 3%;
+    justify-content: flex-end; 
   }
   
   .menu ul li {
@@ -78,6 +78,10 @@
     text-decoration: none;
     margin-left: 10px;
   }
+  .user a:hover {
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0px 1px 4px #999;
+}
   
   .user .profile i {
     font-size: 24px;

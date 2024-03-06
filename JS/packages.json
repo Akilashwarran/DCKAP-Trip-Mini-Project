@@ -17,15 +17,15 @@
         "name": "Pine Forest",
         "description": "Details about the Pine Forest."
       }
-    ],
-    "iframeLink": "https://www.google.com/maps/embed?pb=..."
+    ]
+    
 },
 
 {
 
     "days":2,
     "destination":"Ooty",
-    "iframeLink":"asdasdasdsad",
+   
     "image":"Assets/17702.jpg",
     "name":"Enchanted Ooty Expedition",
 

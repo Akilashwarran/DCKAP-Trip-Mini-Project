@@ -19,8 +19,27 @@
 <body>
   <!-- ------------------------------ navbar ----------------------------- -->
 
-  <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 40px;"></header>
-
+  <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 40px;">
+    <div class="topnav">
+      <div class="logo">
+        <img src="Assets/dckap-trip-logo.png" alt="Logo">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="collections.html">Critiq Collections</a></li>
+          <li><a href="admin.html">Admin Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="user">
+        <a href="login.html" id="nav-btn" class="signin"   >Sign In</a>
+        <a href="profile.html" id="nav-profile"  class="profile"><i class="fa-solid fa-user" style="color: #f9896b;"></i></i></a>
+      </div>
+    </div>
+  </header>
+<div class="package-dest">
   <h1>Add Package</h1>
   <form id="packageForm">
     <label for="destination">Destination:</label><br>
@@ -42,15 +61,30 @@
     </div>
     
     <button type="button" onclick="addPlace()">Add Another Place</button><br><br>
-    
-    <label for="iframeLink">Iframe Link:</label><br>
-    <input type="text" id="iframeLink" name="iframeLink"><br><br>
     <button type="submit">Add Package</button>
   </form>
+</div>
+
   
+
+ 
   <script>
     function addPlace() {
       var container = document.getElementById('placesContainer');
+      var daysInput = document.getElementById('days');
+      var numOfDays = parseInt(daysInput.value);
+      var numOfPlaces = container.getElementsByClassName('place').length;
+  
+      // Check if the number of places exceeds the number of days
+      if (!daysInput.value.trim()){
+        alert("First enter number of days");
+        return;
+      }
+      if (numOfPlaces >= numOfDays) {
+        alert("You cannot add more places than the number of days.");
+        return;
+      }
+  
       var placeDiv = document.createElement('div');
       placeDiv.classList.add('place');
       placeDiv.innerHTML = `
@@ -61,15 +95,17 @@
     }
   </script>
   
+  
 
 <script  type="module" src="JS/packages.js"></script>
-<script>
+<script src="JS/navbar.js"></script>
+<!-- <script>
   fetch('tripnav.html')
 .then(response => response.text())
 .then(data => {
   document.querySelector('header').innerHTML += data;
 });
-</script>
+</script> -->
 
 </body>
 </html>
