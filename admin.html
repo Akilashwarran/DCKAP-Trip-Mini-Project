@@ -117,7 +117,7 @@
     function checkAdminStatus() {
         const sessionObj = JSON.parse(sessionStorage.getItem('login_details')); // Make sure to replace 'yourSessionKeyName' with the actual key
         if (!sessionObj || sessionObj.is_admin !== 1) {
-            window.location.href = '/unauthorized.html';
+            window.location.href = '/auth.html';
         }
     }
     checkAdminStatus();
