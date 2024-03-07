@@ -177,40 +177,56 @@
   <!-- </main> -->
 
 
+  <!-- -------------------------------------review-code-gunasri-------------------------------- -->
+
   <div class="review-div">
-    <h1 class="font-bold text-4xl mb-4 mt-10 destinations-heading" style="text-align: center;">
-      Reviews
-    </h1>
-    <div class="review_main" id="main_id">
+    <h1 class="re-heading">Reviews</h1>
+
+  
+      <div class="review_main" id="main_id">
+
+      </div>
+
+
+    <div class="review_share">
+      <button class="review_share_btn">Share Your Review</button>
+    </div>
+    <br><br>
+
+
+    <div class="review_maincontainer2">
+    </div>
+    <div class="review_container2_parent">
+      <div class="review_container2">
+        <button id="review_cancel_btn"><i class="fa-solid fa-xmark"></i></button>
+        <h2 class="review_container2_heading1">Review Zone Share Your Thoughts!!</h2>
+        <h3 class="review_container2_heading2">How would you rate your experience ?</h3>
+        <div class="stars" id="star_id">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <p id="star_rating_value"></p>
+        </div>
+        <p class="star_error_msg"></p>
+        <h3 class="review_container2_heading2">Write a Review</h3>
+        <textarea id="review_textarea" rows="3" cols="50" spellcheck="false"
+          placeholder="Write a review here..."></textarea>
+        <p class="textarea_error_msg"></p><br>
+        <button class="review_submit_btn">Submit review</button>
+      </div>
     </div>
 
 
+    <div id="signupPopup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
 
-  </div>
-
-  <div class="review_share">
-    <button class="review_share_btn">Share Your Review</button>
-  </div>
-  <div class="review_maincontainer2"></div>
-  <div class="review_container2">
-    <button id="review_cancel_btn"><i class="fa-solid fa-xmark"></i></button>
-    <h2 class="review_container2_heading1">
-      Review Zone Share Your Thoughts!!
-    </h2>
-    <h3 class="review_container2_heading2">
-      How would you rate your experience ?
-    </h3>
-    <div class="stars" id="star_id">
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
+        <p class="popup-text">You need to sign up or log in to submit a review.</p>
+      </div>
     </div>
-    <h3 class="review_container2_heading2">Write a Review</h3>
-    <textarea id="review_textarea" rows="3" cols="50" spellcheck="false"
-      placeholder="Write a review here..."></textarea>
-    <button class="review_submit_btn">Submit review</button>
+
   </div>
 <!-- -----------------------------footer------------------- -->
 <footer>
@@ -219,18 +235,18 @@
           <img src="Assets/logo-full-palli-tamil-color.png" alt="Logo">
       </div>
       <div class="footer-links">
-          <div class="footer-section">
-              <h3>Resources</h3>
-              <a href="#">Destinations</a>
-              <a href="#">Planner</a>
-              <a href="#">Critiq Collections</a>
-          </div>
-          <div class="footer-section">
-              <h3>Follow Us</h3>
-              <a href="#">Discord</a>
-              <a href="#">Linkedin</a>
-              <a href="#">Instagram</a>
-          </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <a href="destinations.html">Destinations</a>
+          <a href="planner.html">Planner</a>
+          <a href="collections.html">Critiq Collections</a>
+      </div>
+      <div class="footer-section">
+          <h3>Follow Us</h3>
+          <a href="https://discord.gg/mMbcRrMz">Discord</a>
+          <a href="https://www.linkedin.com/company/dckap-palli/mycompany/">Linkedin</a>
+          <a href="https://www.instagram.com/dckappalli/">Instagram</a>
+      </div>
           <div class="footer-section">
               <h3>Legal</h3>
               <a href="#">Privacy Policy</a>
