@@ -149,16 +149,15 @@ let input = document.getElementById('dest-search');
 
 var stars = document.querySelectorAll(".stars i");
 
-// search click event
-// let search_btn = document.querySelector(".icon");
-// var search = document.getElementById('dest-search').value;
-        // search = search.toLowerCase();
-// let dest_search = document.querySelector("#dest-search").value;
+let review_heading = document.querySelector(".re-heading");
+
 
 let search_btn = document.querySelector(".icon");
 let dest_search = document.getElementById('dest-search');
 
 search_btn.addEventListener("click", async () => {
+review_share_btn.style.display="block";
+review_heading.style.display = "block";
     var search = dest_search.value;
 
     search = search.toLowerCase();
@@ -181,6 +180,8 @@ search_btn.addEventListener("click", async () => {
 dest_search.addEventListener("keydown", async (event) => {
     if (event.key === "Enter") {
         var search = dest_search.value;
+        review_share_btn.style.display="block";
+        review_heading.style.display = "block";
 
         search = search.toLowerCase();
         if (search === "kodaikanal") {
@@ -214,7 +215,7 @@ async function firebaseReview(place) {
                 "<div class='content'>" +
                 "<div class='testimonial-avatar'><img class='img1' src='" + dataObj["reviewObj"][key].image + "' alt=''>" +
                 "<div class='content2'>" +
-                "<div class='h6'>" + dataObj["reviewObj"][key].user_name + "</div>" +
+                "<div class='h6'>" + dataObj["reviewObj"][key].user_name+ "</div>" +
                 "<div class='testimonial-rating'>" + getRatingStar(dataObj["reviewObj"][key].rating) +
                 "</div>" +
                 "</div>" +
@@ -240,6 +241,8 @@ async function firebaseWriteReview(place) {
     let dataObj = dataRef.data();
 
 }
+
+
 review_share_btn.addEventListener("click",(e)=>{
     review_container2.style.display="block";
     // review_maincontainer2.style.height="38.5em"
@@ -252,43 +255,113 @@ review_share_btn.addEventListener("click",(e)=>{
 
 
 
-
-
 //review_submit_btn
 review_submit_btn.addEventListener("click", async () => {
-    var search = document.getElementById('dest-search').value;
-    let place = search 
-    console.log(search);
-    submitReview(place);
-    console.log(place);
-  });
-  
-  
+    var user = JSON.parse(sessionStorage.getItem("login_details"));
+    var username = user ? user.username : null;
+    
+    if(!username){
+       
+        showPopup();
+    
+    }
+    else{
+        var search = document.getElementById('dest-search').value;
+    
+        let place = search;
+        console.log(search);
+        submitReview(place);
+        console.log(place);
+        
+    }
+   
+});
+// -------------------------------popup---------------------------------
+
+
+
+// Function to show the popup
+function showPopup() {
+    var popup = document.getElementById("signupPopup");
+    popup.style.display = "block";
+}
+
+// Function to close the popup
+
+
+    var popupclose = document.querySelector(".close-btn");
+    popupclose.addEventListener("click",()=>{
+        var popup = document.getElementById("signupPopup");
+        popup.style.display = "none";
+        cancel_fun()
+    })
+   
+
+
+
+
+var star_error_msg = document.querySelector(".star_error_msg");
+var textarea_error_msg = document.querySelector(".textarea_error_msg");
   //submitReview function
   
   async function submitReview(place) {
-    
+
     var tracklistTable = document.getElementById("main_id");
-    tracklistTable.innerHTML = "";
-    var comments = document.getElementById("review_textarea").value;
-    var element = document.getElementById("star_id");
-    var starCount = element.getElementsByClassName('fa-solid fa-star active').length;
+        var comments = document.getElementById("review_textarea").value;
+        var element = document.getElementById("star_id");
+        var starCount = element.getElementsByClassName('fa-solid fa-star active').length;
+       
+
+    if (comments.trim() === "" && starCount === 0) {
   
-    // Firebase data handling
+        star_error_msg.innerText="This field is required *"
+        star_error_msg.classList.add("error_star");
+        textarea_error_msg.innerText="This field is required *"
+        textarea_error_msg.classList.add("error_star")
+    }
+    else if(comments.trim() === ""){ 
+        textarea_error_msg.innerText="This field is required *"
+        textarea_error_msg.classList.add("error_star")
+      
+    }
+    else if(starCount === 0){
+        star_error_msg.innerText="This field is required *"
+        star_error_msg.classList.add("error_star");
+    }
+    else{
+        tracklistTable.innerHTML = "";
+        
+     // Firebase data handling
     let oldRef = doc(db, "review_Collection", place);
     let oldDataRef = await getDoc(oldRef);
     let oldData = oldDataRef.data();
     
     let oldArr = (oldData && Array.isArray(oldData.reviewObj)) ? oldData.reviewObj : [];
     
+ 
+
+    var user = JSON.parse(sessionStorage.getItem("login_details"));
+
+    console.log("Test user");
+    console.log(user);
+    // Extracting username from session
+    var username = user.username;
+    
+    var user_id = 0;
+    user_id++; 
+    
+    // Creating newReviewObj
     let newReviewObj = {
-        user_id: "uid_3",
-        user_name: comments,
-        image: "Assets/Ellipse 4(8).png",
+        user_id: user_id,
+        user_name: username,
+        image: "./Assets/gray-user-profile-icon-png-fP8Q1P.png",
         rating: starCount,
         description: comments
     };
-  
+
+console.log(newReviewObj);
+
+
     // Merge existing reviews with the new review
     let updatedReviews = [...oldArr, newReviewObj];
   
@@ -305,11 +378,15 @@ review_submit_btn.addEventListener("click", async () => {
     cancel_fun();
   }
   
-  
+}
+
+
+  let star_rating_value = document.getElementById("star_rating_value")
 
   function getRatingStar(num){
-  
+
     if(num == 1){
+        
       return "<i class='fa-solid fa-star'></i>"+
       "<i class='far fa-star'></i>"+
       "<i class='far fa-star'></i>"+
@@ -355,20 +432,28 @@ review_submit_btn.addEventListener("click", async () => {
     review_container2.style.display="none";
     review_maincontainer2.style.display= "none";
     review_maincontainer2.style.opacity= "0";
-    review_textarea.value=" ";
-  
+    review_textarea.value="";
+    review_textarea.placeholder= "Write a review here...";
+    star_rating_value.innerText="";
+    star_error_msg.innerText="";
+    textarea_error_msg.innerText="";
     stars.forEach((star) => {
       star.classList.remove("active");
   });
   
   }
-    
-  
+
   var star_count=document.querySelector(".star_count")
   var After_review_content=document.querySelector(".After_review_content");
   
+  let review=['Bad','Not bad','Good','Very good','Excellent']
   
-  
+  stars.forEach((star,index) => {
+    star.addEventListener("click",()=>{
+        star_rating_value.innerText = review[index]
+       
+    })
+});
   
   
   var stars = document.querySelectorAll(".stars i");
@@ -386,4 +471,5 @@ review_submit_btn.addEventListener("click", async () => {
   });
   });
   
-  
+
+
