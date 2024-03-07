@@ -180,22 +180,27 @@ review_heading.style.display = "block";
 dest_search.addEventListener("keydown", async (event) => {
     if (event.key === "Enter") {
         var search = dest_search.value;
-        review_share_btn.style.display="block";
-        review_heading.style.display = "block";
+      
 
         search = search.toLowerCase();
         if (search === "kodaikanal") {
             await firebaseReview("kodaikanal");
+            review_share_btn.style.display="block";
+            review_heading.style.display = "block";
         } else if (search === "ooty") {
             await firebaseReview("ooty");
+            review_share_btn.style.display="block";
+            review_heading.style.display = "block";
         } else if (search === "munnar") {
             await firebaseReview("munnar");
-        } else if (search === "trichy") {
-            await firebaseReview("trichy");
-        } else if (search === "chennai") {
+            review_share_btn.style.display="block";
+            review_heading.style.display = "block";
+        }
+         else if (search === "chennai") {
             await firebaseReview("chennai");
-        }else if (search === "chennai") {
-            await firebaseReview("chennai");
+            review_share_btn.style.display="block";
+            review_heading.style.display = "block";
+
         }
     }
 });

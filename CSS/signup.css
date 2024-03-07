@@ -9,10 +9,10 @@ body, html {
     height: 100%;
 
 }
-::placeholder {
+/* ::placeholder {
 
-  padding:12px;
-}
+  padding:10px;
+} */
 .email {
     border: none;
     border-bottom: 2px solid #858585;
@@ -22,11 +22,11 @@ body, html {
     position: relative;
 }
 
-.email:focus::placeholder {
-    transform: translateY(-20px);
+/* .email:focus::placeholder {
+    transform: translatey(0px);
     font-size: 12px;
     color: #333;
-}
+} */
 
 
 .main_container {

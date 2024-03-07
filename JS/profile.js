@@ -15,71 +15,38 @@ const firebaseConfig = {
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
   };
 
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const db = getFirestore(app);
-// var login_data = {
-//     login_email : "vedosemywu@mailinator.com",
-//     is_admin : 5
-// }
-
-// var Username = document.getElementById("name");
-// var UseEmail = document.getElementById("email");
-// var UserContact = document.getElementById("phone");
-
-// var a = localStorage.setItem("login_data", JSON.stringify(login_data)); 
-// var user = JSON.parse(sessionStorage.getItem("userData"))
-// console.log(user);
-
-
-// document.addEventListener("DOMContentLoaded", async function() {
-
-//     let getRef = doc(db, "user_data", `${user}`);
-
-//     let getdata = await getDoc(getRef)
-//          console.log(getdata.data().email_ID);
- 
-//                  document.getElementById("defaultName").textContent = getdata.data().username || "Default Name";
-//                  document.getElementById("defaultEmail").textContent = getdata.data().email_ID|| "+Add";
-//                  document.getElementById("defaultNo").textContent = getdata.data().phone || "+Add";
-         
-//                  document.getElementById("name").value = getdata.data().username || "";
-//                  document.getElementById("email").value = getdata.data().email_ID || "";
-//                  document.getElementById("phone").value = getdata.data().phone || "";
-//                  document.getElementById("password").value = getdata.data().password || "";
-//                  document.querySelector(".ProfileImg").src =  getdata.data().u_dp;
-
-// })
-
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-document.addEventListener("DOMContentLoaded", async function() {
-    
-    const user = JSON.parse(sessionStorage.getItem("userData"));
-    console.log(user);
+var Username = document.getElementById("name");
+var UseEmail = document.getElementById("email");
+var UserContact = document.getElementById("phone");
 
-    const getRef = doc(db, "user_data", `${user.uid}`);
-    console.log(getRef);
-    const getdata = await getDoc(getRef);
+var user = JSON.parse(sessionStorage.getItem("login_details"))
+console.log("TEST");
+console.log(user);
+// console.log(user.email_ID);
 
-    
-    if (getdata.exists()) {
-        document.getElementById("defaultName").textContent = getdata.data().username || "Default Name";
-        document.getElementById("defaultEmail").textContent = getdata.data().email_ID || "+Add";
-        document.getElementById("defaultNo").textContent = getdata.data().phone || "+Add";
-    
-        document.getElementById("name").value = getdata.data().username || "";
-        document.getElementById("email").value = getdata.data().email_ID || "";
-        document.getElementById("phone").value = getdata.data().phone || "";
-        document.getElementById("password").value = getdata.data().password || "";
-        document.querySelector(".ProfileImg").src = getdata.data().u_dp;
-    } else {
-        console.log("User data not found in Firestore");
-    }
-});
+
+document.addEventListener("DOMContentLoaded", async function () {
+
+    let getRef = doc(db, "user_data", `u_id${user.is_user}`);
+
+    let getdata = await getDoc(getRef)
+         console.log(getdata.data().email_ID);
+ 
+                 document.getElementById("defaultName").textContent = getdata.data().username || "Default Name";
+                 document.getElementById("defaultEmail").textContent = getdata.data().email_ID|| "+Add";
+                 document.getElementById("defaultNo").textContent = getdata.data().pno|| "+Add";
+         
+                 document.getElementById("name").value = getdata.data().username || "";
+                 document.getElementById("email").value = getdata.data().email_ID || "";
+                 document.getElementById("phone").value = getdata.data(). pno || "";
+                 document.getElementById("password").value = getdata.data().password || "";
+                 document.querySelector(".ProfileImg").src =  getdata.data().u_dp||"Assets/gray-user-profile-icon-png-fP8Q1P copy.png";
+
+})
 
 
 
@@ -146,10 +113,10 @@ document.addEventListener("DOMContentLoaded", function() {
 let logout = document.querySelector(".Log-out");
 logout.addEventListener("click",()=>{
 
-    if(sessionStorage.getItem('userData'))
+    if(sessionStorage.getItem('login_details'))
 
     { 
-        sessionStorage.clear();
+        sessionStorage.removeItem('login_details');
         location.href="index.html"
 
         
@@ -197,8 +164,6 @@ const editButton = document.querySelector(".btn");
 const savebtn = document.getElementById("savebtn")
 const twoBtn = document.querySelector(".twoBtn")
 
-// const form = document.getElementById("profileform");
-    // savebtn.style.display = "none"
     twoBtn.style.display = "none"
     function toggleInputFields(){
         const defaultDetails = document.querySelector(".defaultShow-detials");
@@ -212,81 +177,6 @@ const twoBtn = document.querySelector(".twoBtn")
      });
     };
     
-
-
-// ---------------------------get input & err msg-----------------------------------
-
-
-function validateInputs() {
-     
-    const nameInput = document.getElementById("name").value;
-    const emailInput = document.getElementById("email").value;
-    const phoneInput = document.getElementById("phone").value;
-    const usernameInput = document.getElementById("username").value;
-    const passwordInput = document.getElementById("password").value.trim();
-    const confirmPasswordInput = document.getElementById("confirm-password").value.trim();
-    const showErrorname = document.getElementById("errorName");
-    const showErroremail = document.getElementById("errorEmali");
-    const showErrorphoneNo = document.getElementById("errorPhonenumber");
-    const showErroruserName = document.getElementById("errorUsername");
-    const showErrorpassWord = document.getElementById("errorPassword");
-    const showErrorConpassword = document.getElementById("errorconPassword");
-
-            // Regex validation
-            const nameRegex = /^[a-zA-Z ]+$/
-            const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
-            const phoneRegex = /^\d{10}$/
-            const usernameRegex = /^[a-zA-Z0-9$]+$/
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
-           
-
-            if(!nameRegex.test(nameInput)){
-                showErrorname.textContent="Please enter a valid Name."
-                
-            setTimeout(() =>{
-                showErrorname.textContent=" "},1000)
-            return
-            };
-
-            if(!emailRegex.test(emailInput)){
-                showErroremail.textContent="Please enter a valid email address."
-            setTimeout(() =>{
-                showErroremail.textContent=" "},1000)
-            return
-            };
-
-            if(!phoneRegex.test(phoneInput)){
-                showErrorphoneNo.textContent="Please enter a valid phone number."
-            setTimeout(() =>{
-                showErrorphoneNo.textContent=" "},1000)
-            return
-            };
-
-            if(!usernameRegex.test(usernameInput)){
-                showErroruserName.textContent="Please enter a valid username."
-            setTimeout(() =>{
-                showErroruserName.textContent=" "},1000)
-            return 
-            };
-
-            if(!passwordRegex.test(passwordInput)){
-                    showErrorpassWord.textContent="Please enter a valid Password"
-                    setTimeout(() =>{
-                        showErrorpassWord.textContent=" "},1000)
-                    return
-                };
-               
-
-        if (passwordInput!== confirmPasswordInput) {
-            showErrorConpassword.textContent="Passwords do not match."
-            setTimeout(() =>{
-                showErrorConpassword.textContent=" "},1000)
-            return;
-        };
-
-        alert('Your profile updated.!');
-}
-
 
 
 
@@ -327,17 +217,30 @@ savebtn.addEventListener("click",async function(event){
 
 
 
-            let ref = doc(db,"user_data",`${user}`);
+            
+            let ref = doc(db, "user_data", `u_id${user.is_user}`);
 
             updateDoc(
               ref,  {
-                username:nameInput,
-                email_ID:emailInput,
+                 username:nameInput,
+                // email_ID:emailInput,
                 password:passwordInput,
-                // pno:phoneInput.value
+                pno:phoneInput
             }
             ).then(()=>{
-              alert("Updated Successfully")
+            //   alert("Updated Successfully")
+            const inputDetails = document.querySelectorAll(".details");
+            const defaultDetails = document.querySelector(".defaultShow-detials");
+            var twoBtn = document.querySelector(".twoBtn");
+            var editButton = document.querySelector(".btn");
+
+            // inputDetails.forEach(detail => {
+            //     detail.style.display = "none";
+            //  });
+            // defaultDetails.style.display = "block";
+            // twoBtn.style.display = "none";
+            // editButton.style.display = "block";
+                location.href="profile.html"
             })
         
            
@@ -374,7 +277,7 @@ if (twoBtn.style.display != "none") {
 var passwordInput = document.getElementById("password");
 var confirmPasswordInput = document.getElementById("confirm-password");
 
-passwordInput.addEventListener("click",function(){
+passwordInput.addEventListener("keyup",function(){
     document.getElementById("message").style.display="block";
     passwordValidation();
 })
@@ -441,5 +344,12 @@ function passwordValidation(){
         leng.classList.remove("valid");
         leng.classList.add("invalid");
     }
+
+
+if(   letter.classList.contains("valid") && capital.classList.contains("valid")
+ &&  num .classList.contains("valid") &&   special .classList.contains("valid")
+ && leng .classList.contains("valid") ){
+    document.getElementById("message").style.display="none";
+}
 
 };

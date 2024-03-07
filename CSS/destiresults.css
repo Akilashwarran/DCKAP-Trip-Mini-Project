@@ -102,13 +102,12 @@ body {
     /* border:  1px solid #23313e; */
     
   }
-.we2 .pic {
-  
-}
+
 .pic img {
   width: 90%;
 }
 #pic {
+  align-self: flex-start;
   width : 400px;
   height : 400px;
 }
