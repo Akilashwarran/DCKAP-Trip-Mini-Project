@@ -103,11 +103,14 @@ body {
     
   }
 .we2 .pic {
-  width: 20%;
-  height: 60%;
+  
 }
 .pic img {
   width: 90%;
+}
+#pic {
+  width : 400px;
+  height : 400px;
 }
 
 .we2 {
