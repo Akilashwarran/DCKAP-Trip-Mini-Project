@@ -1,7 +1,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, doc ,setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-const firebaseConfig = {
+let firebaseConfig = {
     apiKey: "AIzaSyAb3BzH5tfNzTuKUDEhVpz51RzPySS5Vfc",
     authDomain: "dckap-trip-26e10.firebaseapp.com",
     databaseURL: "https://dckap-trip-26e10-default-rtdb.firebaseio.com",
@@ -12,58 +12,54 @@ const firebaseConfig = {
   };
 
 
+ // get the seleccted package from sessionStorage and update text contents
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve package data from sessionStorage
-    const packageData = JSON.parse(sessionStorage.getItem('selectedPackage'));
-    
-    // Print packageData to console
+
+    let packageData = JSON.parse(sessionStorage.getItem('selectedPackage'));
     console.log(packageData);
-});
-document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve package data from sessionStorage
-    const packageData = JSON.parse(sessionStorage.getItem('selectedPackage'));
-    
-    // Select the elements by class name
-    const destinationNameElement = document.querySelector('.destinationName');
-    const packageNameElement = document.querySelector('.packagename');
+   
+    let destinationNameElement = document.querySelector('.destinationName');
+    let packageNameElement = document.querySelector('.packagename');
 
-    // Update the text content of the elements with data from packageData
+   
     if (destinationNameElement && packageNameElement && packageData) {
         destinationNameElement.textContent = packageData.destination;
         packageNameElement.textContent = `"${packageData.name}"`;
     }
 });
+
+// func to create each day place cards
 document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve package data from sessionStorage
-    const packageData = JSON.parse(sessionStorage.getItem('selectedPackage'));
+  
+    let packageData = JSON.parse(sessionStorage.getItem('selectedPackage'));
 
-    // Select the trip-details container
-    const tripDetailsContainer = document.getElementById('trip-details');
+   
+    let tripDetailsContainer = document.getElementById('trip-details');
 
-    // Function to create place card HTML
+  
     function createPlaceCard(place, dayNumber) {
-        const placeCard = document.createElement('section');
+        let placeCard = document.createElement('section');
         placeCard.classList.add('container');
 
-        const card = document.createElement('div');
+        let card = document.createElement('div');
         card.classList.add('card');
 
-        const content = document.createElement('div');
+        let content = document.createElement('div');
         content.classList.add('content');
 
-        const dayCount = document.createElement('p');
+        let dayCount = document.createElement('p');
         dayCount.classList.add('day-count', 'logo');
         dayCount.textContent = 'Day ' + dayNumber;
 
-        const placeName = document.createElement('div');
+        let placeName = document.createElement('div');
         placeName.classList.add('place-name', 'h6');
         placeName.textContent = place.name;
 
-        const hoverContent = document.createElement('div');
+        let hoverContent = document.createElement('div');
         hoverContent.classList.add('hover_content');
 
-        const placeDescription = document.createElement('p');
+        let placeDescription = document.createElement('p');
         placeDescription.classList.add('place-description');
         placeDescription.textContent = place.description;
 
@@ -80,10 +76,10 @@ document.addEventListener("DOMContentLoaded", function() {
         return placeCard;
     }
 
-    // Create place cards for each place in packageData
+    //loop for multiple cards
     if (packageData && packageData.places) {
         packageData.places.forEach((place, index) => {
-            const placeCard = createPlaceCard(place, index + 1);
+            let placeCard = createPlaceCard(place, index + 1);
             tripDetailsContainer.appendChild(placeCard);
         });
     }
@@ -92,9 +88,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // ------------------------------------------------------
-// Assuming you have already included the Google Maps API script tag in your HTML with a valid API key
+// map integration - map API script in destiresults -html
 document.addEventListener('DOMContentLoaded', function() {
-    initMap(); // Initialize map when document is ready
+    initMap(); 
 });
 
 function initMap() {
@@ -104,7 +100,7 @@ function initMap() {
         console.error('Invalid or insufficient data in selected package');
         return;
     }
-
+        
     var places = selectedPackage.places;
     var origin = places[0].name + ', Tamil Nadu, India';
     var destination = places[places.length - 1].name + ', Tamil Nadu, India';

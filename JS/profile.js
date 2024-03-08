@@ -1,6 +1,6 @@
 "use strict";
 
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, getDoc, getDocs, doc, setDoc, updateDoc, addDoc,  collection } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 import{getStorage,ref as sref,uploadBytesResumable,getDownloadURL}from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
@@ -15,7 +15,7 @@ const firebaseConfig = {
     appId: "1:149435458483:web:41d72b11078e86b888e1c6"
   };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
@@ -234,12 +234,7 @@ savebtn.addEventListener("click",async function(event){
             var twoBtn = document.querySelector(".twoBtn");
             var editButton = document.querySelector(".btn");
 
-            // inputDetails.forEach(detail => {
-            //     detail.style.display = "none";
-            //  });
-            // defaultDetails.style.display = "block";
-            // twoBtn.style.display = "none";
-            // editButton.style.display = "block";
+            
                 location.href="profile.html"
             })
         

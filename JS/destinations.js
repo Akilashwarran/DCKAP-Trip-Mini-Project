@@ -18,7 +18,8 @@ let app = initializeApp(firebaseConfig);
 let db = getFirestore(app);
 
 document.addEventListener("DOMContentLoaded", async function() {
-    // Function to generate package card HTML
+    // Function to generate package card dynamically  HTML tailwind cards 
+    // created by adding their css in line 
     function createPackageCard(packageData) {
         let { destination, name, days, image, places } = packageData;
         console.log(packageData)
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", async function() {
         durationP.classList.add('no-days', 'text-lg', 'font-semibold', 'text-black', 'cursor-auto', 'my-3');
         durationP.textContent = days + ' Days';
 
-        // Append elements
         detailsContainer.appendChild(destinationSpan);
         detailsContainer.appendChild(packageNameP);
         detailsContainer.appendChild(durationP);
@@ -53,23 +53,23 @@ document.addEventListener("DOMContentLoaded", async function() {
         packageCard.appendChild(img);
         packageCard.appendChild(detailsContainer);
 
-        // Attach click event listener to the package card
+       // to store the data of the card that's clicked in sessionStorage
         packageCard.addEventListener('click', function() {
-            // Save package data to sessionStorage
+         
             sessionStorage.setItem('selectedPackage', JSON.stringify(packageData));
 
-            // Redirect to destiresults.html
+           
             window.location.href = 'destiresults.html';
         });
 
         return packageCard;
     }
 
-    // Get the container element to append the package cards
+  
     let container = document.getElementById('Projects');
 
     // Fetch package data from Firestore
-    async function fetchPackageDataFromFirestore() {
+    async function getfromefirestore() {
         try {
             let querySnapshot = await getDocs(collection(db, "packages"));
             let packageData = querySnapshot.docs.map(doc => doc.data());
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
     // Fetch package data and create cards
-    let packageData = await fetchPackageDataFromFirestore();
+    let packageData = await getfromefirestore();
     packageData.forEach(data => {
         let packageCard = createPackageCard(data);
         container.appendChild(packageCard);
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 
-// ----------------------- Search click and blur event----------------
+// ----------------------- Searchbar click and blur event----------------
   document.addEventListener('DOMContentLoaded', (event) => {
 
 
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
   });
 
-//-------------------------------gunasri-----------------------
+//-------------------------------gunasri review div-----------------------
 
 
 var review_share_btn = document.querySelector(".review_share_btn");

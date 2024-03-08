@@ -31,6 +31,7 @@ getLastDocumentId().then(lastId => {
     id = lastId + 1;
 });
 
+// function to add packges to fire store | admin 
 document.getElementById('packageForm').addEventListener('submit', async function(event) {
     event.preventDefault();
     
