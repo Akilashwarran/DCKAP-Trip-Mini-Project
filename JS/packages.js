@@ -75,4 +75,5 @@ document.getElementById('packageForm').addEventListener('submit', async function
     }
 
     this.reset();
+    
 });

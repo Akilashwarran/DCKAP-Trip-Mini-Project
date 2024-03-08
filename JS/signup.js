@@ -147,18 +147,15 @@ document.forms.signup.addEventListener("submit", async (e) => {
         confirmPasswordInput.classList.remove("border");
     }
 
-
     let email_id = emailInput.value;
     let emailExists = await checkIfEmailExists(email_id);
 
     if (emailExists) {
         alert("Email already exists. Please login instead.");
-      
         return;
     }
-   
-    let mail_msg = `Hi ${usernameInput.value} welcome to our website please verify email id and enter your otp
-                OTP:<br> ${otp_random} <br>`;
+
+    let mail_msg = `Hi ${usernameInput.value} welcome to our website please verify email id and enter your otp OTP:<br> ${otp_random} <br>`;
 
     Email.send({
         SecureToken: "92b969b6-deef-4c44-8b9e-f31609066e86",
@@ -180,7 +177,7 @@ console.log(usernamevalue)
 var emailvalue = document.getElementById("signup_email");
 var passwordvalue = document.getElementById("password_signup");
 let overlap = document.querySelector(".overlap");
-let otp_container = document.getElementById("otp_container");
+let otp_container = document.querySelector(".OtpContainer");
 
 var otp_random = Math.floor(Math.random() * 100000);
 console.log(otp_random);
@@ -188,59 +185,42 @@ console.log(otp_random);
 let getRef = collection(db, "user_data");
 
 let getData = await getDocs(getRef);
-let id = getData.size;
-let otpbutton = document.querySelector("#otpbtn")
-// ----------------OTP verification------------
+let latestUserData = getData.docs[getData.docs.length - 1].data();
+let latestUserID = latestUserData.is_user;
+let otpbutton = document.querySelector("#otpbtn");
 
+// OTP verification
 otpbutton.addEventListener("click", async () => {
     console.log("otp");
     let otp_value = document.getElementById("otpinputvalue").value;
-    let otpbutton = document.querySelector("#otpbtn");
 
     if (otp_value == otp_random) {
-        
-
-        var currentID = id++
-      
+        let currentID = latestUserID + 1;
         let ref = doc(db, "user_data", `u_id${currentID}`);
-
 
         let user_details = {
             is_admin: 0,
-            is_user:currentID,
+            is_user: currentID,
             username: username_firebase.value,
             password: password_firebase.value,
             email_ID: email_firebase.value,
-
-
+            pno: 0
         }
 
         setDoc(ref, user_details)
             .then(() => {
-                              location.href="index.html"
-            })
-        //     let userData = {
-        //     uid: currentID, 
-        //     username_signup: usernamevalue.value,
-        //     email_signup: emailvalue.value,
-        //     password_signup: passwordvalue.value,
-        //     phone_no
-        //    };
+                location.href = "login.html";
+            });
 
-
-// Increment user ID
-// userData.uid = (userData.uid || 0) + 1;
-  sessionStorage.setItem('userData', JSON.stringify(`u_id${currentID}`));
-
-
-
-
+        // Update latestUserID for next signup
+        latestUserID = currentID;
     } else {
-        alert("invalid OTP");
+        alert("Invalid OTP");
     }
 
     otp_value = "";
 });
+
 async function checkIfEmailExists(email) {
     const checking_email = await getDocs(collection(db, "user_data"));
     return checking_email.docs.some(doc => doc.data().email_ID === email);
@@ -260,12 +240,8 @@ function validatePassword(password) {
 
 // --------------------------------login validation----------------
 let login_Form_validation = document.forms.login;
-
-
 let login_email_validation = document.getElementById("login_email")
-
 let login_password_validation = document.getElementById("login_pass")
-
 login_Form_validation.addEventListener("submit", async (e) => {
     e.preventDefault();
     console.log("clicked");
@@ -296,35 +272,60 @@ login_Form_validation.addEventListener("submit", async (e) => {
     let passwordExists = await checkIfloginpasswordExists(password_correct)
 
 
-    if(!passwordExists != !emailExists){
-         alert("User not found instead signup")
-    }
-   else  if (!passwordExists) {
-       
-          login_password_validation.classList.add("border");
-          login_password_error.style.display = "block";
-    }
-   
-    else if(!emailExists){
-               login_email_validation.classList.add("border");
-               login_email_error.style.display = "block";
-    }
-    else {
+    if (!emailExists && !passwordExists) {
+        alert("Email and password not found. Please sign up.");
+    } else if (!emailExists) {
+        // alert("Invalid email. ");
+           login_email_validation.classList.add("border");
+           login_email_error.style.display = "block";
+    } else if (!passwordExists) {
+         login_password_validation.classList.add("border");
+         login_password_error.style.display = "block";
+    } else {
+        let u_value = await getUserDataByEmail(email_id);
+      
+        let login_data= u_value
+        let userData =JSON.parse(sessionStorage.getItem('login_details'))
+        console.log(userData)
         location.href = "index.html"
-        let login_data = {
-
-            email_login: login_email_validation.value,
-            password_login: login_password_validation.value,
-
-        };
+      
 
         sessionStorage.setItem('login_details', JSON.stringify(login_data));
-
-
-
+      
         location.href = "index.html"
-
     }
+
+
+
+
+
+//     if(!passwordExists != !emailExists){
+//          alert("User not found instead signup")
+//     }
+//    else  if (!passwordExists) {
+       
+//           login_password_validation.classList.add("border");
+//           login_password_error.style.display = "block";
+//     }
+   
+//     else if(!emailExists){
+//                login_email_validation.classList.add("border");
+//                login_email_error.style.display = "block";
+//     }
+//     else {
+//         let u_value = await getUserDataByEmail(email_id);
+      
+//         let login_data= u_value
+//         let userData =JSON.parse(sessionStorage.getItem('login_details'))
+//         console.log(userData)
+//         location.href = "index.html"
+      
+
+//         sessionStorage.setItem('login_details', JSON.stringify(login_data));
+      
+//         location.href = "index.html"
+
+//     }
 
 });
 async function checkIfloginEmailExists(email) {
@@ -333,9 +334,20 @@ async function checkIfloginEmailExists(email) {
 }
 async function checkIfloginpasswordExists(pass) {
     const checking_email = await getDocs(collection(db, "user_data"));
-    return checking_email.docs.some(doc => doc.data().password === pass);
+   
+    return checking_email.docs.some(doc => doc.data().password === pass );
+   
 }
-
+async function getUserDataByEmail(email) {
+    const querySnapshot = await getDocs(query(collection(db, "user_data"), where("email_ID", "==", email)));
+    let u_value = {};
+    querySnapshot.forEach((doc) => {
+        u_value = doc.data();
+    });
+    
+    return u_value;
+    
+}
 
 
    let sessionStorage_value=sessionStorage.getItem('login_details');

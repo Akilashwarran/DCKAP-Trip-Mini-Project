@@ -88,3 +88,49 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
+
+// ------------------------------------------------------
+// Assuming you have already included the Google Maps API script tag in your HTML with a valid API key
+document.addEventListener('DOMContentLoaded', function() {
+    initMap(); // Initialize map when document is ready
+});
+
+function initMap() {
+    console.log('test')
+    var selectedPackage = JSON.parse(sessionStorage.getItem('selectedPackage'));
+    if (!selectedPackage || !selectedPackage.places || selectedPackage.places.length < 2) {
+        console.error('Invalid or insufficient data in selected package');
+        return;
+    }
+
+    var places = selectedPackage.places;
+    var origin = places[0].name + ', Tamil Nadu, India';
+    var destination = places[places.length - 1].name + ', Tamil Nadu, India';
+    var waypoints = places.slice(1, -1).map(place => ({ location: place.name + ', Tamil Nadu, India', stopover: true }));
+
+    var map = new google.maps.Map(document.getElementById('pic'), {
+        
+    });
+    
+    var directionsService = new google.maps.DirectionsService();
+    var directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsRenderer.setMap(map);
+
+    var request = {
+        origin: origin,
+        destination: destination,
+        waypoints: waypoints,
+        travelMode: google.maps.TravelMode.DRIVING,
+    };
+
+    directionsService.route(request, (result, status) => {
+        if (status === google.maps.DirectionsStatus.OK) {
+            directionsRenderer.setDirections(result);
+        } else {
+            console.error('Directions request failed due to ' + status);
+        }
+    });
+}
+

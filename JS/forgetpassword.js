@@ -67,7 +67,7 @@ forget_email_form.addEventListener("submit", async (e) => {
           Subject: "Enter the OTP",
           Body: mail_msg,
         }).then(
-          (message) => alert(message)
+         
         ).catch((error) => alert(error));
 
         email_block.style.display = "none";

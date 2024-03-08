@@ -6,8 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="CSS/dashboard.css" />
-  <!-- <link rel="stylesheet" href="CSS/tripnav.css"> -->
-  
+  <link rel="stylesheet" href="CSS/footer.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@400;500&family=Pacifico&family=Poppins:wght@200&family=Raleway:wght@300&display=swap"
     rel="stylesheet" />
@@ -37,8 +36,8 @@
   
   .logo {
     margin-left: 40px;
-    width: 100px; 
-    height: auto; 
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Allows the logo div to adjust its height based on content */
   }
   
   .logo img {
@@ -48,9 +47,10 @@
   
   .menu {
     width: 70%;
+    /* flex: 1; */
     display: flex;
     
-    justify-content: flex-end; 
+    justify-content: flex-end; /* Takes up remaining space */
   }
   
   .menu ul {
@@ -68,20 +68,19 @@
   }
   
   .menu ul li:last-child {
-    margin-right: 0;
+    margin-right: 0; /* Removes margin from last menu item */
   }
   
   .menu ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
   }
-
+  
   .user {
-    width: 160px;
+    width: 160px; /* Adjust width as needed */
     display: flex;
-    justify-content: center; 
+    justify-content: center; /* Aligns user links to the right */
   }
-
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
@@ -114,13 +113,11 @@
     background-color: #F9896B;
     border-radius: 50px;
   }
-
   
 </style>
     <body>
 
   <!-- ------------------------------ navbar ----------------------------- -->
-
   <header style="position: sticky; top: 0; left: 0; z-index: 1000; height: 40px; ">
     <div class="topnav">
       <div class="logo">
@@ -187,10 +184,13 @@
           <div class="destination-menu-content">
             <div class="destination-menu-content-text">
               <h3>Destinations</h3>
-              <p>
-                Access and ingest quality, consistent and <br />standardized
-                data, no matter where your data <br />
-                resides.
+              <p style="line-height: 20px;">
+                Exploring destinations is akin to embarking on a journey 
+                of self-discovery, where every path ventured and every sight 
+                beheld unveils a piece of the intricate puzzle that is life. 
+                With each new destination, we immerse ourselves in the vibrant tapestry of 
+                cultures, traditions, and landscapes, enriching our understanding of the world 
+                and our place within it. 
               </p>
               <a href="destinations.html" id="destination-explore" class="explore-btn">Explore</a>
             </div>
@@ -203,11 +203,11 @@
           <div class="planner-menu-content">
             <div class="planner-menu-content-text">
               <h3>Planner</h3>
-              <p>
-                Sync data across all your systems with <br />automatic
-                bidirectional data transfers enabled <br />by DCKAP Integrator
-                to streamline your <br />operations, improve efficiency, and
-                gain real- <br />time insights.
+              <p style="line-height: 20px;">
+                Planning your trip yourself is an empowering experience, <br>
+                where you become the architect of your own adventure. <br>From researching 
+                destinations to crafting itineraries, <br> every decision is a step towards 
+                personalizing your journey.
               </p>
               <a href="" id="planner-explore" class="explore-btn">Explore</a>
             </div>
@@ -226,10 +226,10 @@
           <div class="collection-menu-content">
             <div class="collection-menu-content-text">
               <h3>Collections</h3>
-              <p>
-                Eliminate data silos and achieve a single <br />
-                source of truth for all customer insights in <br />
-                your company.
+              <p style="line-height: 20px;">
+                Collecting your plans and showcasing them is like curating <br>
+                 a gallery of your adventures, where each detail becomes <br> a cherished exhibit in 
+                 the museum of your memories. Organizing them into a digital or physical travel journal, you create a tangible reminder of the journey ahead, a roadmap of dreams waiting to be realized.
               </p>
               <a href="" id="collections-explore" class="explore-btn">Explore</a>
             </div>
@@ -244,15 +244,15 @@
 
     <div class="homepage-testimonial">
       <div class="testimonial-head">
-        <h2>Customer Testimonials</h2>
+        <h2 style="font-family: 'Montserrat'; font-weight: bolder; font-size: 28px;">Customer Testimonials</h2>
         <div class="testimonial-head-content">
           <hr />
         </div>
         <p>
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-          when an unknown printer took a galley of type and scrambled it to make a type
-          specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged.
+          Customer testimonials are the heart of our success story. Hear firsthand from 
+          our satisfied clients about their exceptional experiences. Discover why they trust 
+          us to deliver top-notch service and quality, every time. Join our community of happy 
+          customers and experience excellence for yourself.
         </p>
       </div>
 
@@ -303,7 +303,34 @@
   </div>
 
   <!-- -------------------------------- footer ------------------------------- -->
-
+  <footer>
+    <!-- <hr style="width:100%;text-align:left;margin-left:0"> -->
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="Assets/logo-full-palli-tamil-color.png" alt="Logo">
+        </div>
+        <div class="footer-links">
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="destinations.html">Destinations</a>
+                <a href="planner.html">Planner</a>
+                <a href="collections.html">Critiq Collections</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="https://discord.gg/mMbcRrMz">Discord</a>
+                <a href="https://www.linkedin.com/company/dckap-palli/mycompany/">Linkedin</a>
+                <a href="https://www.instagram.com/dckappalli/">Instagram</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Privacy Policy</a>
+                <!-- <a href="#">Link 2</a>
+                <a href="#">Link 3</a> -->
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script src="./JS/navbar.js"></script>
 <!-- <script type="module" src="./JS/signup.js"></script> -->
